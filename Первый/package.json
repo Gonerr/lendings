@@ -35,10 +35,10 @@
     "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
-    "vinext": "0.0.50",
+    "vinext": "^0.0.50",
     "vite": "8.0.13",
     "wrangler": "4.92.0"
   },
   "type": "module",
-  "displayName": "\u041f\u0435\u0440\u0432\u044b\u0439 \u2014 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430\u043c\u0438"
+  "displayName": "Первый — управление пространствами"
 }

@@ -10,7 +10,7 @@ const gallery = [
   {
     src: "/images/alleya-vkusov-hall-2.jpg",
     alt: "Просторная посадочная зона фуд-холла «Аллея вкусов»",
-    label: "Просторная посадочная зона",
+    label: "Комфортное пространство",
   },
   {
     src: "/images/alleya-vkusov-corners.jpg",
@@ -25,12 +25,12 @@ const gallery = [
   {
     src: "/images/alleya-vkusov-hall-1.jpg",
     alt: "Ряд ресторанных корнеров и посадочные места",
-    label: "Ресторанные корнеры",
+    label: "Работа с операторами",
   },
   {
     src: "/images/alleya-vkusov-lounge.jpg",
     alt: "Лаунж-зона фуд-холла с живыми растениями",
-    label: "Зона для встреч и отдыха",
+    label: "Ежедневные процессы",
   },
   {
     src: "/images/park-mall-green-zone.jpg",
@@ -64,12 +64,14 @@ const services = [
 
 const details = [
   ["Полное наименование", "Общество с ограниченной ответственностью «Первый»"],
-  ["Юридический адрес", "195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6"],
+  [
+    "Юридический адрес",
+    "195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6",
+  ],
   ["Дата регистрации", "23 августа 2007 года"],
   ["ОГРН", "1077847557127"],
   ["ИНН / КПП", "7841368684 / 780601001"],
   ["Генеральный директор", "Кожемяко Людмила Михайловна"],
-  ["Налоговый режим", "УСН · микропредприятие"],
 ];
 
 function Arrow() {
@@ -95,13 +97,15 @@ export default function Home() {
         "",
         formData.message || "Прошу связаться со мной.",
       ].join("\n"),
-    [formData],
+    [formData]
   );
 
   const mailtoHref = useMemo(
     () =>
-      `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Обращение с сайта ООО «Первый»")}&body=${encodeURIComponent(mailBody)}`,
-    [mailBody],
+      `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+        "Обращение с сайта ООО «Первый»"
+      )}&body=${encodeURIComponent(mailBody)}`,
+    [mailBody]
   );
 
   const closeForm = () => {
@@ -144,7 +148,11 @@ export default function Home() {
           <a href="#contacts">Контакты</a>
         </nav>
 
-        <button className="header-action" type="button" onClick={() => setIsFormOpen(true)}>
+        <button
+          className="header-action"
+          type="button"
+          onClick={() => setIsFormOpen(true)}
+        >
           Обратный звонок <Arrow />
         </button>
 
@@ -160,21 +168,31 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-image" style={{ backgroundImage: `url(${heroImage})` }} aria-hidden="true" />
+        <div
+          className="hero-image"
+          style={{ backgroundImage: `url(${heroImage})` }}
+          aria-hidden="true"
+        />
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content shell">
-          <p className="eyebrow light">Парк Молл · Аллея вкусов</p>
+          <p className="eyebrow light">Парк Молл · с 2007 года</p>
           <h1>
-            Место, где
+            Пространство,
             <br />
-            <em>встречаются вкусы</em>
+            <em>в котором всё работает</em>
           </h1>
           <p className="hero-copy">
-            ООО «Первый» управляет фуд-холлом «Аллея вкусов» в Парк Молле. Более 20 гастрономических концепций,
-            кухни разных стран и общее пространство для встреч, отдыха и событий.
+            ООО «Первый» — участник ЖСК и управляющая компания фуд-кортной зоны
+            в торгово-развлекательном комплексе. Координируем ежедневные
+            процессы и помогаем участникам решать рабочие вопросы без лишней
+            бюрократии.
           </p>
           <div className="hero-actions">
-            <button className="button button-gold" type="button" onClick={() => setIsFormOpen(true)}>
+            <button
+              className="button button-gold"
+              type="button"
+              onClick={() => setIsFormOpen(true)}
+            >
               Оставить заявку <Arrow />
             </button>
             <a className="text-link light-link" href="#services">
@@ -184,32 +202,37 @@ export default function Home() {
         </div>
         <div className="hero-note">
           <span>01</span>
-          <p>Более 20 концепций · 2-й этаж · ежедневно с 10:00 до 22:00</p>
+          <p>
+            Управление общими пространствами и рабочее взаимодействие с
+            операторами
+          </p>
         </div>
       </section>
 
       <section className="intro shell" id="about">
         <div>
           <p className="eyebrow">О компании</p>
-          <h2>Гастрономическое пространство для всего города</h2>
+          <h2>Спокойная работа сложного пространства</h2>
         </div>
         <div className="intro-copy">
           <p>
-            «Аллея вкусов» объединяет более 20 ресторанных концепций: от сербской, итальянской и японской кухни до
-            вьетнамских блюд и знакомых гастрономических форматов.
+            «Аллея вкусов» объединяет более 20 ресторанных концепций: от
+            сербской, итальянской и японской кухни до вьетнамских блюд и
+            знакомых гастрономических форматов.
           </p>
           <p>
-            ООО «Первый» координирует ежедневную работу пространства, взаимодействие операторов и эксплуатационные
-            вопросы, чтобы гостям было комфортно проводить здесь время каждый день.
+            ООО «Первый» координирует ежедневную работу пространства,
+            взаимодействие операторов и эксплуатационные вопросы, чтобы гостям
+            было комфортно проводить здесь время каждый день.
           </p>
           <div className="facts-row">
             <div>
-              <strong>20+</strong>
-              <span>гастрономических концепций</span>
+              <strong>2007</strong>
+              <span>год основания</span>
             </div>
             <div>
-              <strong>2 этаж</strong>
-              <span>Парк Молл</span>
+              <strong>20+</strong>
+              <span>гастрономических концепций</span>
             </div>
             <div>
               <strong>10–22</strong>
@@ -224,11 +247,16 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="eyebrow light">Направления работы</p>
-              <h2>От общего порядка<br />до конкретной задачи</h2>
+              <h2>
+                От общего порядка
+                <br />
+                до конкретной задачи
+              </h2>
             </div>
             <p>
-              Единая команда координирует рабочие процессы, помогает операторам и поддерживает пространство, в которое
-              хочется возвращаться.
+              Единая точка координации помогает быстрее находить ответственных,
+              фиксировать договорённости и не терять обращения в ежедневном
+              потоке.
             </p>
           </div>
 
@@ -249,10 +277,15 @@ export default function Home() {
           <p className="eyebrow">Принцип работы</p>
           <h2>Один запрос — понятный маршрут</h2>
           <p>
-            Не усложняем то, что можно решить прямым взаимодействием. Разбираемся в контексте, определяем ответственного
-            и остаёмся на связи до результата.
+            Не усложняем то, что можно решить прямым взаимодействием.
+            Разбираемся в контексте, определяем ответственного и остаёмся на
+            связи до результата.
           </p>
-          <button className="button button-dark" type="button" onClick={() => setIsFormOpen(true)}>
+          <button
+            className="button button-dark"
+            type="button"
+            onClick={() => setIsFormOpen(true)}
+          >
             Обсудить вопрос <Arrow />
           </button>
         </div>
@@ -285,7 +318,10 @@ export default function Home() {
       <section className="gallery-section" aria-label="Пространство и процессы">
         <div className="gallery-track">
           {gallery.map((image, index) => (
-            <figure className={`gallery-item gallery-item-${index + 1}`} key={image.src}>
+            <figure
+              className={`gallery-item gallery-item-${index + 1}`}
+              key={image.src}
+            >
               <img src={image.src} alt={image.alt} />
               <figcaption>
                 <span>0{index + 1}</span>
@@ -303,7 +339,8 @@ export default function Home() {
             <p className="eyebrow">Официальная информация</p>
             <h2>Реквизиты компании</h2>
             <p>
-              Данные об организации собраны в одном месте — удобно для договоров, счетов и деловой переписки.
+              Данные об организации собраны в одном месте — удобно для
+              договоров, счетов и деловой переписки.
             </p>
           </div>
           <dl className="details-list">
@@ -321,19 +358,33 @@ export default function Home() {
         <div className="shell contact-grid">
           <div className="contact-panel">
             <p className="eyebrow light">Контакты</p>
-            <h2>Есть вопрос?<br />Давайте обсудим</h2>
+            <h2>
+              Есть вопрос?
+              <br />
+              Давайте обсудим
+            </h2>
             <p>
-              Оставьте контакты и коротко опишите задачу. Форма подготовит письмо на адрес нашей команды — вам останется
-              проверить данные и отправить его в почтовом приложении.
+              Оставьте контакты и коротко опишите задачу. Форма подготовит
+              письмо на адрес нашей команды — вам останется проверить данные и
+              отправить его в почтовом приложении.
             </p>
-            <button className="button button-gold" type="button" onClick={() => setIsFormOpen(true)}>
+            <button
+              className="button button-gold"
+              type="button"
+              onClick={() => setIsFormOpen(true)}
+            >
               Оставить заявку <Arrow />
             </button>
 
             <div className="contact-address">
               <span>Фуд-холл</span>
               <address>
-                Санкт-Петербург,<br />проспект Просвещения, 43,<br />2-й этаж · ежедневно 10:00–22:00
+                195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н,
+                каб. 6 Санкт-Петербург,
+                <br />
+                ул. Таллинская, д. 7, лит. А,
+                <br />
+                пом. 6Н, каб. 6
               </address>
               <span>Связаться</span>
               <div className="contact-links">
@@ -342,7 +393,7 @@ export default function Home() {
               </div>
               <a
                 className="map-link"
-                href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20проспект%20Просвещения%2C%2043"
+                href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20ул.%20Таллинская%2C%20д.%207%2C%20лит.%20А%2C%20пом.%206Н%2C%20каб.%206"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -353,13 +404,13 @@ export default function Home() {
 
           <div className="map-wrap">
             <iframe
-              title="Карта: Санкт-Петербург, проспект Просвещения, 43"
-              src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20проспект%20Просвещения%2C%2043&z=16"
+              title="Карта: Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6"
+              src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20Таллинская%20улица%2C%207&amp;z=16"
               allowFullScreen
             />
             <div className="map-label">
-              <span>Аллея вкусов · Парк Молл</span>
-              <strong>пр. Просвещения, 43</strong>
+              <span>ООО «Первый»</span>
+              <strong>Таллинская ул., 7</strong>
             </div>
           </div>
         </div>
@@ -388,7 +439,11 @@ export default function Home() {
       </footer>
 
       {isFormOpen && (
-        <div className="modal-backdrop" role="presentation" onMouseDown={closeForm}>
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onMouseDown={closeForm}
+        >
           <section
             className="request-modal"
             role="dialog"
@@ -396,7 +451,12 @@ export default function Home() {
             aria-labelledby="request-title"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <button className="modal-close" type="button" aria-label="Закрыть форму" onClick={closeForm}>
+            <button
+              className="modal-close"
+              type="button"
+              aria-label="Закрыть форму"
+              onClick={closeForm}
+            >
               ×
             </button>
 
@@ -405,12 +465,19 @@ export default function Home() {
                 <p className="eyebrow">Обратная связь</p>
                 <h2 id="request-title">Расскажите, чем помочь</h2>
                 <p className="modal-copy">
-                  Заполните форму — мы подготовим письмо на {CONTACT_EMAIL} и откроем его в вашем почтовом приложении.
+                  Заполните форму — мы подготовим письмо на {CONTACT_EMAIL} и
+                  откроем его в вашем почтовом приложении.
                 </p>
                 <form onSubmit={submitRequest}>
                   <label>
                     Ваше имя
-                    <input name="name" value={formData.name} onChange={updateField} autoFocus required />
+                    <input
+                      name="name"
+                      value={formData.name}
+                      onChange={updateField}
+                      autoFocus
+                      required
+                    />
                   </label>
                   <label>
                     Телефон
@@ -425,17 +492,33 @@ export default function Home() {
                   </label>
                   <label>
                     E-mail <span>необязательно</span>
-                    <input name="email" type="email" value={formData.email} onChange={updateField} />
+                    <input
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={updateField}
+                    />
                   </label>
                   <label>
                     Комментарий <span>необязательно</span>
-                    <textarea name="message" rows="3" value={formData.message} onChange={updateField} />
+                    <textarea
+                      name="message"
+                      rows="3"
+                      value={formData.message}
+                      onChange={updateField}
+                    />
                   </label>
                   <label className="consent">
                     <input type="checkbox" required />
-                    <span>Я согласен(на) на обработку указанных данных для ответа на обращение</span>
+                    <span>
+                      Я согласен(на) на обработку указанных данных для ответа на
+                      обращение
+                    </span>
                   </label>
-                  <button className="button button-dark submit-button" type="submit">
+                  <button
+                    className="button button-dark submit-button"
+                    type="submit"
+                  >
                     Отправить по e-mail <Arrow />
                   </button>
                 </form>
@@ -446,9 +529,12 @@ export default function Home() {
                 <p className="eyebrow">Готово</p>
                 <h2 id="request-title">Обращение подготовлено</h2>
                 <p>
-                  Письмо адресовано {CONTACT_EMAIL}. Проверьте данные и нажмите «Отправить» в почтовом приложении.
+                  Письмо адресовано {CONTACT_EMAIL}. Проверьте данные и нажмите
+                  «Отправить» в почтовом приложении.
                 </p>
-                <a className="button button-dark" href={mailtoHref}>Открыть почту ещё раз <Arrow /></a>
+                <a className="button button-dark" href={mailtoHref}>
+                  Открыть почту ещё раз <Arrow />
+                </a>
               </div>
             )}
           </section>
