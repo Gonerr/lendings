@@ -35,6 +35,9 @@ function Logo() {
   );
 }
 
+const heroImage = "/images/hero.avif";
+const trainZal = "/images/train-zal.avif";
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -81,10 +84,7 @@ export default function App() {
 
       <section className="hero">
         <div className="hero-media">
-          <img
-            src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?auto=format&fit=crop&w=1800&q=80"
-            alt="Вода в бассейне комплекса Нептун"
-          />
+          <img src={heroImage} alt="Вода в бассейне комплекса Нептун" />
         </div>
         <div className="container hero-content">
           <p className="eyebrow" style={{ color: "rgba(246,245,239,0.8)" }}>
@@ -155,10 +155,7 @@ export default function App() {
               абонементах и аренде зала для группы.
             </p>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80"
-            alt="Интерьер спортивного зала"
-          />
+          <img src={trainZal} alt="Интерьер спортивного зала" />
         </div>
       </section>
 
