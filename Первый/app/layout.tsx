@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Первый — управление пространствами",
+  title: "Первый — фуд-холл «Аллея вкусов»",
   description:
-    "ООО «Первый» — участник ЖСК и управляющая компания фуд-кортной зоны в Санкт-Петербурге.",
+    "ООО «Первый» — управление фуд-холлом «Аллея вкусов» в Парк Молле, Санкт-Петербург.",
   other: {
     "codex-preview": "development",
   },

@@ -2,24 +2,40 @@
 
 import { useMemo, useState } from "react";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1758448500799-0162cffd85d6?auto=format&fit=crop&fm=jpg&q=82&w=2000";
+const CONTACT_EMAIL = "vopros@park-mall.shop";
+const CONTACT_PHONE = "+7 (812) 305-33-55";
+const heroImage = "/images/alleya-vkusov-hero.jpg";
 
 const gallery = [
   {
-    src: "https://images.unsplash.com/photo-1783853907146-56ec8104a98d?auto=format&fit=crop&fm=jpg&q=78&w=1200",
-    alt: "Современное общественное пространство с посадочными местами",
-    label: "Комфортная среда",
+    src: "/images/alleya-vkusov-hall-2.jpg",
+    alt: "Просторная посадочная зона фуд-холла «Аллея вкусов»",
+    label: "Просторная посадочная зона",
   },
   {
-    src: "https://images.unsplash.com/photo-1763925386496-2dfe019508b2?auto=format&fit=crop&fm=jpg&q=78&w=1200",
-    alt: "Повар за стойкой открытой кухни",
-    label: "Работа с операторами",
+    src: "/images/alleya-vkusov-corners.jpg",
+    alt: "Ресторанные концепции с кухнями разных стран",
+    label: "Кухни разных стран",
   },
   {
-    src: "https://images.unsplash.com/photo-1780397390490-365d92d99dcc?auto=format&fit=crop&fm=jpg&q=78&w=1200",
-    alt: "Линия раздачи с разнообразными блюдами",
-    label: "Ежедневные процессы",
+    src: "/images/alleya-vkusov-hall-3.jpg",
+    alt: "Зелёная зона с диванами и столами в фуд-холле",
+    label: "Зелёный интерьер",
+  },
+  {
+    src: "/images/alleya-vkusov-hall-1.jpg",
+    alt: "Ряд ресторанных корнеров и посадочные места",
+    label: "Ресторанные корнеры",
+  },
+  {
+    src: "/images/alleya-vkusov-lounge.jpg",
+    alt: "Лаунж-зона фуд-холла с живыми растениями",
+    label: "Зона для встреч и отдыха",
+  },
+  {
+    src: "/images/park-mall-green-zone.jpg",
+    alt: "Общественное пространство Парк Молла с зелёной зоной",
+    label: "Пространство Парк Молла",
   },
 ];
 
@@ -48,6 +64,7 @@ const services = [
 
 const details = [
   ["Полное наименование", "Общество с ограниченной ответственностью «Первый»"],
+  ["Юридический адрес", "195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6"],
   ["Дата регистрации", "23 августа 2007 года"],
   ["ОГРН", "1077847557127"],
   ["ИНН / КПП", "7841368684 / 780601001"],
@@ -81,6 +98,12 @@ export default function Home() {
     [formData],
   );
 
+  const mailtoHref = useMemo(
+    () =>
+      `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Обращение с сайта ООО «Первый»")}&body=${encodeURIComponent(mailBody)}`,
+    [mailBody],
+  );
+
   const closeForm = () => {
     setIsFormOpen(false);
     setSubmitted(false);
@@ -96,6 +119,7 @@ export default function Home() {
     }
 
     setSubmitted(true);
+    window.location.href = mailtoHref;
   };
 
   const updateField = (event) => {
@@ -139,15 +163,15 @@ export default function Home() {
         <div className="hero-image" style={{ backgroundImage: `url(${heroImage})` }} aria-hidden="true" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content shell">
-          <p className="eyebrow light">Санкт-Петербург · с 2007 года</p>
+          <p className="eyebrow light">Парк Молл · Аллея вкусов</p>
           <h1>
-            Пространство,
+            Место, где
             <br />
-            <em>в котором всё работает</em>
+            <em>встречаются вкусы</em>
           </h1>
           <p className="hero-copy">
-            ООО «Первый» — участник ЖСК и управляющая компания фуд-кортной зоны в торгово-развлекательном комплексе.
-            Координируем ежедневные процессы и помогаем участникам решать рабочие вопросы без лишней бюрократии.
+            ООО «Первый» управляет фуд-холлом «Аллея вкусов» в Парк Молле. Более 20 гастрономических концепций,
+            кухни разных стран и общее пространство для встреч, отдыха и событий.
           </p>
           <div className="hero-actions">
             <button className="button button-gold" type="button" onClick={() => setIsFormOpen(true)}>
@@ -160,36 +184,36 @@ export default function Home() {
         </div>
         <div className="hero-note">
           <span>01</span>
-          <p>Управление общими пространствами и рабочее взаимодействие с операторами</p>
+          <p>Более 20 концепций · 2-й этаж · ежедневно с 10:00 до 22:00</p>
         </div>
       </section>
 
       <section className="intro shell" id="about">
         <div>
           <p className="eyebrow">О компании</p>
-          <h2>Спокойная работа сложного пространства</h2>
+          <h2>Гастрономическое пространство для всего города</h2>
         </div>
         <div className="intro-copy">
           <p>
-            Фуд-корт объединяет гостей, операторов, сотрудников торгового комплекса и технические службы. Наша задача —
-            сделать их взаимодействие последовательным и понятным.
+            «Аллея вкусов» объединяет более 20 ресторанных концепций: от сербской, итальянской и японской кухни до
+            вьетнамских блюд и знакомых гастрономических форматов.
           </p>
           <p>
-            Мы сосредоточены на текущем управлении, координации участников и поддержании общей среды. Без громких
-            обещаний — с вниманием к деталям, срокам и конкретному запросу.
+            ООО «Первый» координирует ежедневную работу пространства, взаимодействие операторов и эксплуатационные
+            вопросы, чтобы гостям было комфортно проводить здесь время каждый день.
           </p>
           <div className="facts-row">
             <div>
-              <strong>2007</strong>
-              <span>год основания</span>
+              <strong>20+</strong>
+              <span>гастрономических концепций</span>
             </div>
             <div>
-              <strong>Санкт-Петербург</strong>
-              <span>город присутствия</span>
+              <strong>2 этаж</strong>
+              <span>Парк Молл</span>
             </div>
             <div>
-              <strong>УСН</strong>
-              <span>микропредприятие</span>
+              <strong>10–22</strong>
+              <span>ежедневно</span>
             </div>
           </div>
         </div>
@@ -203,8 +227,8 @@ export default function Home() {
               <h2>От общего порядка<br />до конкретной задачи</h2>
             </div>
             <p>
-              Единая точка координации помогает быстрее находить ответственных, фиксировать договорённости и не терять
-              обращения в ежедневном потоке.
+              Единая команда координирует рабочие процессы, помогает операторам и поддерживает пространство, в которое
+              хочется возвращаться.
             </p>
           </div>
 
@@ -270,9 +294,7 @@ export default function Home() {
             </figure>
           ))}
         </div>
-        <p className="photo-credit">
-          Иллюстративные фотографии: Unsplash · Aalo Lens, Evan Marvell, Sijmen van Hooff, Grace Anne Bobadilla
-        </p>
+        <p className="photo-credit">Фуд-холл «Аллея вкусов» · Парк Молл</p>
       </section>
 
       <section className="details-section" id="details">
@@ -301,20 +323,26 @@ export default function Home() {
             <p className="eyebrow light">Контакты</p>
             <h2>Есть вопрос?<br />Давайте обсудим</h2>
             <p>
-              Оставьте контакты и коротко опишите задачу. Мы подготовим обращение, чтобы его можно было сразу направить
-              ответственному сотруднику.
+              Оставьте контакты и коротко опишите задачу. Форма подготовит письмо на адрес нашей команды — вам останется
+              проверить данные и отправить его в почтовом приложении.
             </p>
             <button className="button button-gold" type="button" onClick={() => setIsFormOpen(true)}>
               Оставить заявку <Arrow />
             </button>
 
             <div className="contact-address">
-              <span>Юридический адрес</span>
+              <span>Фуд-холл</span>
               <address>
-                195196, Санкт-Петербург,<br />ул. Таллинская, д. 7, лит. А,<br />пом. 6Н, каб. 6
+                Санкт-Петербург,<br />проспект Просвещения, 43,<br />2-й этаж · ежедневно 10:00–22:00
               </address>
+              <span>Связаться</span>
+              <div className="contact-links">
+                <a href="tel:+78123053355">{CONTACT_PHONE}</a>
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              </div>
               <a
-                href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20Таллинская%20улица%2C%207"
+                className="map-link"
+                href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20проспект%20Просвещения%2C%2043"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -325,13 +353,13 @@ export default function Home() {
 
           <div className="map-wrap">
             <iframe
-              title="Карта: Санкт-Петербург, Таллинская улица, 7"
-              src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20Таллинская%20улица%2C%207&z=16"
+              title="Карта: Санкт-Петербург, проспект Просвещения, 43"
+              src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20проспект%20Просвещения%2C%2043&z=16"
               allowFullScreen
             />
             <div className="map-label">
-              <span>ООО «Первый»</span>
-              <strong>Таллинская ул., 7</strong>
+              <span>Аллея вкусов · Парк Молл</span>
+              <strong>пр. Просвещения, 43</strong>
             </div>
           </div>
         </div>
@@ -377,7 +405,7 @@ export default function Home() {
                 <p className="eyebrow">Обратная связь</p>
                 <h2 id="request-title">Расскажите, чем помочь</h2>
                 <p className="modal-copy">
-                  Заполните форму — мы подготовим текст обращения и откроем его в вашем почтовом приложении.
+                  Заполните форму — мы подготовим письмо на {CONTACT_EMAIL} и откроем его в вашем почтовом приложении.
                 </p>
                 <form onSubmit={submitRequest}>
                   <label>
@@ -408,7 +436,7 @@ export default function Home() {
                     <span>Я согласен(на) на обработку указанных данных для ответа на обращение</span>
                   </label>
                   <button className="button button-dark submit-button" type="submit">
-                    Подготовить обращение <Arrow />
+                    Отправить по e-mail <Arrow />
                   </button>
                 </form>
               </>
@@ -418,14 +446,9 @@ export default function Home() {
                 <p className="eyebrow">Готово</p>
                 <h2 id="request-title">Обращение подготовлено</h2>
                 <p>
-                  Текст скопирован в буфер. Когда корпоративный e-mail будет добавлен на сайт, отправка займёт один клик.
+                  Письмо адресовано {CONTACT_EMAIL}. Проверьте данные и нажмите «Отправить» в почтовом приложении.
                 </p>
-                <a
-                  className="button button-dark"
-                  href={`mailto:?subject=${encodeURIComponent("Обращение с сайта ООО «Первый»")}&body=${encodeURIComponent(mailBody)}`}
-                >
-                  Открыть почту <Arrow />
-                </a>
+                <a className="button button-dark" href={mailtoHref}>Открыть почту ещё раз <Arrow /></a>
               </div>
             )}
           </section>
