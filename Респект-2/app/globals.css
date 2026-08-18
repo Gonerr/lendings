@@ -168,30 +168,120 @@ button { color: inherit; }
 .phone-link { color: var(--navy); font-size: 17px; font-weight: 800; text-decoration: underline; }
 
 .hero-card {
-  padding: 34px;
-  background: #fff;
-  border: 1px solid #cbd7e2;
-  border-radius: 6px;
-  box-shadow: 0 12px 34px rgba(23, 54, 95, 0.1);
-}
-
-.shield {
-  display: flex;
-  width: 64px;
-  height: 64px;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   color: #fff;
-  border-radius: 50%;
-  background: var(--navy);
-  font-size: 30px;
-  font-weight: 800;
+  background: var(--navy-dark);
+  border: 1px solid #244d73;
+  border-radius: 6px;
+  box-shadow: 0 18px 42px rgba(16, 40, 70, 0.2);
 }
 
-.hero-card h2 { margin: 20px 0 4px; color: var(--navy); font-size: 28px; line-height: 1.2; }
-.hero-card > p { margin: 0 0 20px; color: var(--muted); }
-.hero-card ul { margin: 0; padding: 18px 0 0 22px; border-top: 1px solid var(--line); }
-.hero-card li { margin: 7px 0; }
+.radar-panel {
+  padding: 18px 20px 16px;
+  background: #091c2f;
+  border-bottom: 1px solid #315779;
+}
+
+.radar-labels,
+.radar-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b8d0e4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.radar-labels i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #63d7ff;
+  box-shadow: 0 0 10px #63d7ff;
+}
+
+.radar-screen {
+  position: relative;
+  width: min(250px, 82%);
+  aspect-ratio: 1;
+  margin: 14px auto 12px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 215, 255, 0.5);
+  border-radius: 50%;
+  background:
+    linear-gradient(rgba(99, 215, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 215, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(circle, transparent 32%, rgba(99, 215, 255, 0.18) 33%, transparent 34%, transparent 65%, rgba(99, 215, 255, 0.22) 66%, transparent 67%);
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  box-shadow: inset 0 0 35px rgba(31, 133, 178, 0.16), 0 0 24px rgba(31, 133, 178, 0.12);
+}
+
+.radar-screen::before,
+.radar-screen::after {
+  content: "";
+  position: absolute;
+  background: rgba(99, 215, 255, 0.35);
+}
+
+.radar-screen::before { top: 50%; right: 0; left: 0; height: 1px; }
+.radar-screen::after { top: 0; bottom: 0; left: 50%; width: 1px; }
+
+.radar-sweep {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(99, 215, 255, 0.42), transparent 24%, transparent 100%);
+  animation: radar-rotate 5s linear infinite;
+}
+
+.radar-core {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #071827;
+  border-radius: 50%;
+  background: #63d7ff;
+  font-size: 15px;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 22px rgba(99, 215, 255, 0.7);
+}
+
+.radar-point {
+  position: absolute;
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #a8ebff;
+  border-radius: 50%;
+  background: #63d7ff;
+  box-shadow: 0 0 12px #63d7ff;
+}
+
+.point-one { top: 27%; left: 65%; }
+.point-two { top: 67%; left: 26%; }
+.point-three { top: 72%; left: 72%; }
+
+.radar-status strong { color: #63d7ff; font-size: 17px; }
+.hero-card-copy { padding: 26px 30px 28px; }
+.hero-card h2 { margin: 0 0 4px; color: #fff; font-size: 27px; line-height: 1.2; }
+.hero-card-copy > p { margin: 0 0 18px; color: #c4d2df; }
+.hero-card ul { margin: 0; padding: 17px 0 0 22px; border-top: 1px solid #3e5a73; }
+.hero-card li { margin: 5px 0; color: #edf6fb; }
+
+@keyframes radar-rotate {
+  to { transform: rotate(360deg); }
+}
 
 .section { padding: 86px 0; }
 .section-muted { background: var(--muted-bg); }
@@ -396,7 +486,8 @@ footer { padding: 44px 0 28px; color: #fff; background: var(--navy-dark); }
   .hero-lead { font-size: 18px; }
   .hero-actions { align-items: stretch; flex-direction: column; gap: 16px; }
   .phone-link { text-align: center; }
-  .hero-card { padding: 26px; }
+  .radar-screen { width: min(230px, 78%); }
+  .hero-card-copy { padding: 24px; }
   .section { padding: 64px 0; }
   .section-heading { margin-bottom: 32px; text-align: left; }
   .section-heading > p:last-child { margin-left: 0; }
@@ -415,4 +506,5 @@ footer { padding: 44px 0 28px; color: #fff; background: var(--navy-dark); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .radar-sweep { animation: none; transform: rotate(28deg); }
 }
