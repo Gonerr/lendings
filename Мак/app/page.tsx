@@ -33,7 +33,7 @@ const companyDetails = [
   ["ОГРН", "1217800168134"],
   ["ИНН / КПП", "7802917179 / 780201001"],
   ["Генеральный директор", "Белова Наталья Александровна"],
-  ["Налоговый режим", "УСН / микропредприятие"],
+  //   ["Налоговый режим", "УСН / микропредприятие"],
 ];
 
 function ArrowIcon() {
@@ -77,7 +77,7 @@ export default function Home() {
     const message = String(data.get("message") || "");
     const subject = encodeURIComponent(`Обращение с сайта ООО «МАК»: ${topic}`);
     const body = encodeURIComponent(
-      `Имя: ${name}\nКонтакт для ответа: ${contact}\nТема: ${topic}\n\nСообщение:\n${message}`,
+      `Имя: ${name}\nКонтакт для ответа: ${contact}\nТема: ${topic}\n\nСообщение:\n${message}`
     );
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setFormOpen(false);
@@ -89,9 +89,13 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="ООО МАК — на главную">
-          <span className="brand-mark" aria-hidden="true"><span /></span>
+          <span className="brand-mark" aria-hidden="true">
+            <span />
+          </span>
           <span className="brand-word">МАК</span>
-          <span className="brand-caption">физкультурно-оздоровительный комплекс</span>
+          <span className="brand-caption">
+            физкультурно-оздоровительный комплекс
+          </span>
         </a>
 
         <button
@@ -105,14 +109,29 @@ export default function Home() {
           <span />
         </button>
 
-        <nav className={menuOpen ? "nav nav-open" : "nav"} aria-label="Основная навигация">
-          <a href="#about" onClick={closeMenu}>О комплексе</a>
-          <a href="#spaces" onClick={closeMenu}>Пространства</a>
-          <a href="#company" onClick={closeMenu}>О компании</a>
-          <a href="#contacts" onClick={closeMenu}>Контакты</a>
+        <nav
+          className={menuOpen ? "nav nav-open" : "nav"}
+          aria-label="Основная навигация"
+        >
+          <a href="#about" onClick={closeMenu}>
+            О комплексе
+          </a>
+          <a href="#spaces" onClick={closeMenu}>
+            Пространства
+          </a>
+          <a href="#company" onClick={closeMenu}>
+            О компании
+          </a>
+          <a href="#contacts" onClick={closeMenu}>
+            Контакты
+          </a>
         </nav>
 
-        <button className="header-contact" type="button" onClick={() => setFormOpen(true)}>
+        <button
+          className="header-contact"
+          type="button"
+          onClick={() => setFormOpen(true)}
+        >
           Связаться
           <ArrowIcon />
         </button>
@@ -122,8 +141,10 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">Санкт-Петербург · Кустодиева, 7</p>
           <h1>
-            Движение.<br />
-            <span>Вода.</span><br />
+            Движение.
+            <br />
+            <span>Вода.</span>
+            <br />
             Сила.
           </h1>
           <p className="hero-lead">
@@ -131,20 +152,31 @@ export default function Home() {
             активного отдыха и хорошего самочувствия.
           </p>
           <div className="hero-actions">
-            <button className="button button-red" type="button" onClick={() => setFormOpen(true)}>
+            <button
+              className="button button-red"
+              type="button"
+              onClick={() => setFormOpen(true)}
+            >
               Задать вопрос
               <ArrowIcon />
             </button>
-            <a className="text-link" href={PHONE_LINK}>{PHONE_DISPLAY}</a>
+            <a className="text-link" href={PHONE_LINK}>
+              {PHONE_DISPLAY}
+            </a>
           </div>
         </div>
 
         <figure className="hero-media">
-          <img src="/images/fitness24-gym.webp" alt="Просторный тренажёрный зал FITNESS 24 на улице Кустодиева" />
+          <img
+            src="/images/fitness24-gym.webp"
+            alt="Просторный тренажёрный зал FITNESS 24 на улице Кустодиева"
+          />
           <figcaption>Спортивное пространство на Кустодиева, 7</figcaption>
         </figure>
 
-        <div className="hero-index" aria-hidden="true">01 / МАК</div>
+        <div className="hero-index" aria-hidden="true">
+          01 / МАК
+        </div>
       </section>
 
       <div className="color-ribbon" aria-hidden="true">
@@ -164,15 +196,21 @@ export default function Home() {
           <h2>Место, где спорт становится частью обычного дня.</h2>
           <div className="intro-copy">
             <p>
-              ООО «МАК» работает в сфере физкультурно-оздоровительной деятельности.
-              В центре внимания — понятная инфраструктура для движения, тренировок
-              и восстановления рядом с домом.
+              ООО «МАК» работает в сфере физкультурно-оздоровительной
+              деятельности. В центре внимания — понятная инфраструктура для
+              движения, тренировок и восстановления рядом с домом.
             </p>
             <p>
-              На площадке по адресу ул. Кустодиева, 7 расположены спортивные зоны
-              FITNESS 24: тренажёрный зал, бассейны, игровые и групповые пространства.
+              На площадке по адресу ул. Кустодиева, 7 расположены спортивные
+              зоны FITNESS 24: тренажёрный зал, бассейны, игровые и групповые
+              пространства.
             </p>
-            <a className="source-link" href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">
+            <a
+              className="source-link"
+              href="https://fitnessclub24.ru/clubs/prosvet/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Подробнее о спортивной площадке
               <ArrowIcon />
             </a>
@@ -195,7 +233,10 @@ export default function Home() {
           </div>
           <div className="direction-list">
             {directions.map((item) => (
-              <article className={`direction-card card-${item.color}`} key={item.number}>
+              <article
+                className={`direction-card card-${item.color}`}
+                key={item.number}
+              >
                 <span className="direction-number">{item.number}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -208,20 +249,36 @@ export default function Home() {
 
       <section className="photo-story">
         <div className="photo-story-image">
-          <img src="/images/fitness24-pool.webp" alt="Светлый спортивный бассейн с дорожками" loading="lazy" />
+          <img
+            src="/images/fitness24-pool.webp"
+            alt="Светлый спортивный бассейн с дорожками"
+            loading="lazy"
+          />
         </div>
         <div className="photo-story-copy">
           <p className="eyebrow dark">Водное пространство</p>
           <h2>Тренировка и восстановление в воде</h2>
           <p>
-            По информации FITNESS 24, на площадке работают 25-метровый бассейн
-            с пятью дорожками, отдельный бассейн для аквафитнеса и детский бассейн.
+            По информации FITNESS 24, на площадке работают 25-метровый бассейн с
+            пятью дорожками, отдельный бассейн для аквафитнеса и детский
+            бассейн.
           </p>
           <div className="pool-facts">
-            <div><strong>25 м</strong><span>длина большого бассейна</span></div>
-            <div><strong>3</strong><span>бассейна для разных задач</span></div>
+            <div>
+              <strong>25 м</strong>
+              <span>длина большого бассейна</span>
+            </div>
+            <div>
+              <strong>3</strong>
+              <span>бассейна для разных задач</span>
+            </div>
           </div>
-          <a className="button button-dark" href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">
+          <a
+            className="button button-dark"
+            href="https://fitnessclub24.ru/clubs/prosvet/"
+            target="_blank"
+            rel="noreferrer"
+          >
             О площадке FITNESS 24
             <ArrowIcon />
           </a>
@@ -234,14 +291,20 @@ export default function Home() {
           <h2>Не рекорды ради рекордов. Движение ради себя.</h2>
         </div>
         <figure className="rhythm-photo">
-          <img src="/images/fitness24-equipment.webp" alt="Современные тренажёры в клубе FITNESS 24" loading="lazy" />
+          <img
+            src="/images/fitness24-equipment.webp"
+            alt="Современные тренажёры в клубе FITNESS 24"
+            loading="lazy"
+          />
           <figcaption>Фото: FITNESS 24, клуб «Просвещения»</figcaption>
         </figure>
         <div className="rhythm-note">
-          <span className="poppy-symbol" aria-hidden="true"><i /></span>
+          <span className="poppy-symbol" aria-hidden="true">
+            <i />
+          </span>
           <p>
-            Сильное тело начинается с привычки: найти удобное время,
-            выбрать подходящую нагрузку и возвращаться к движению снова.
+            Сильное тело начинается с привычки: найти удобное время, выбрать
+            подходящую нагрузку и возвращаться к движению снова.
           </p>
         </div>
       </section>
@@ -279,7 +342,11 @@ export default function Home() {
             <a href={PHONE_LINK}>{PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>
-          <button className="button button-red" type="button" onClick={() => setFormOpen(true)}>
+          <button
+            className="button button-red"
+            type="button"
+            onClick={() => setFormOpen(true)}
+          >
             Написать нам
             <ArrowIcon />
           </button>
@@ -287,11 +354,18 @@ export default function Home() {
         <div className="contacts-address">
           <span className="contacts-label">Адрес</span>
           <p>
-            194291, Санкт-Петербург,<br />
-            ул. Кустодиева, д. 7, к. 2, стр. 1,<br />
+            194291, Санкт-Петербург,
+            <br />
+            ул. Кустодиева, д. 7, к. 2, стр. 1,
+            <br />
             помещ. 16-Н
           </p>
-          <a className="map-link" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Кустодиева%2C%207%2C%20корпус%202" target="_blank" rel="noreferrer">
+          <a
+            className="map-link"
+            href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Кустодиева%2C%207%2C%20корпус%202"
+            target="_blank"
+            rel="noreferrer"
+          >
             Открыть на карте
             <ArrowIcon />
           </a>
@@ -300,38 +374,78 @@ export default function Home() {
 
       <footer className="footer">
         <div className="footer-brand">
-          <span className="brand-mark small" aria-hidden="true"><span /></span>
+          <span className="brand-mark small" aria-hidden="true">
+            <span />
+          </span>
           <strong>МАК</strong>
         </div>
         <div className="footer-meta">
-          <p>© {new Date().getFullYear()} ООО «МАК». Информация не является публичной офертой.</p>
           <p>
-            Фотографии спортивного пространства: {" "}
-            <a href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">FITNESS 24, клуб «Просвещения»</a>
+            © {new Date().getFullYear()} ООО «МАК». Информация не является
+            публичной офертой.
+          </p>
+          <p>
+            Фотографии спортивного пространства:{" "}
+            <a
+              href="https://fitnessclub24.ru/clubs/prosvet/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              FITNESS 24, клуб «Просвещения»
+            </a>
           </p>
         </div>
-        <a className="footer-up" href="#top" aria-label="Наверх">↑</a>
+        <a className="footer-up" href="#top" aria-label="Наверх">
+          ↑
+        </a>
       </footer>
 
       {formOpen && (
-        <div className="modal-backdrop" role="presentation" onMouseDown={() => setFormOpen(false)}>
-          <section className="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" onMouseDown={(event) => event.stopPropagation()}>
-            <button className="modal-close" type="button" onClick={() => setFormOpen(false)} aria-label="Закрыть форму">
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onMouseDown={() => setFormOpen(false)}
+        >
+          <section
+            className="contact-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              type="button"
+              onClick={() => setFormOpen(false)}
+              aria-label="Закрыть форму"
+            >
               <CloseIcon />
             </button>
             <p className="eyebrow dark">Связаться с нами</p>
             <h2 id="contact-title">Расскажите, чем мы можем помочь</h2>
             <p className="modal-note">
-              После отправки откроется ваше почтовое приложение с готовым письмом на {EMAIL}.
+              После отправки откроется ваше почтовое приложение с готовым
+              письмом на {EMAIL}.
             </p>
             <form onSubmit={handleSubmit}>
               <label>
                 <span>Ваше имя</span>
-                <input name="name" type="text" autoComplete="name" required placeholder="Как к вам обращаться" />
+                <input
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  placeholder="Как к вам обращаться"
+                />
               </label>
               <label>
                 <span>Телефон или e-mail</span>
-                <input name="contact" type="text" required placeholder="Контакт для ответа" />
+                <input
+                  name="contact"
+                  type="text"
+                  required
+                  placeholder="Контакт для ответа"
+                />
               </label>
               <label>
                 <span>Тема</span>
@@ -344,11 +458,19 @@ export default function Home() {
               </label>
               <label>
                 <span>Сообщение</span>
-                <textarea name="message" rows={4} required placeholder="Коротко опишите вопрос" />
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Коротко опишите вопрос"
+                />
               </label>
               <label className="consent">
                 <input type="checkbox" required />
-                <span>Согласен на обработку указанных в обращении персональных данных.</span>
+                <span>
+                  Согласен на обработку указанных в обращении персональных
+                  данных.
+                </span>
               </label>
               <button className="button button-red submit-button" type="submit">
                 Подготовить письмо
