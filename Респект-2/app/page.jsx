@@ -145,7 +145,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">ООО «ЧОО Респект-2»</p>
-            <h1>Надёжная охрана объектов в Санкт-Петербурге</h1>
+            <h1>Надёжная охрана объектов <span>в Санкт-Петербурге</span></h1>
             <p className="hero-lead">Организуем физическую охрану жилых комплексов, строительных площадок, складов и производственных территорий.</p>
             <div className="hero-actions">
               <button className="button" type="button" onClick={openForm}>Получить консультацию</button>
