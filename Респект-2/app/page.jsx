@@ -154,15 +154,27 @@ export default function Home() {
           </div>
 
           <aside className="hero-card" aria-label="Кратко о компании">
-            <div className="shield" aria-hidden="true">✓</div>
-            <h2>Более 20 лет опыта</h2>
-            <p>Компания работает с 7 октября 2004 года.</p>
-            <ul>
-              <li>Физическая охрана объектов</li>
-              <li>Пропускной режим</li>
-              <li>Контроль территории</li>
-              <li>Аудит безопасности</li>
-            </ul>
+            <div className="radar-panel" aria-hidden="true">
+              <div className="radar-labels"><span>Периметр</span><span><i /> Контроль активен</span></div>
+              <div className="radar-screen">
+                <div className="radar-sweep" />
+                <span className="radar-core">Р2</span>
+                <i className="radar-point point-one" />
+                <i className="radar-point point-two" />
+                <i className="radar-point point-three" />
+              </div>
+              <div className="radar-status"><span>Санкт-Петербург</span><strong>24 / 7</strong></div>
+            </div>
+            <div className="hero-card-copy">
+              <h2>Более 20 лет опыта</h2>
+              <p>Компания работает с 7 октября 2004 года.</p>
+              <ul>
+                <li>Физическая охрана объектов</li>
+                <li>Пропускной режим</li>
+                <li>Контроль территории</li>
+                <li>Аудит безопасности</li>
+              </ul>
+            </div>
           </aside>
         </div>
       </section>
