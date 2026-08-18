@@ -51,9 +51,21 @@ const safetyZones = [
 ];
 
 const steps = [
-  ["01", "Осматриваем объект", "Изучаем территорию, входы, движение людей и транспорта, определяем основные риски."],
-  ["02", "Готовим предложение", "Определяем количество постов, график работы, обязанности сотрудников и порядок реагирования."],
-  ["03", "Организуем охрану", "Выводим сотрудников на объект и контролируем выполнение согласованных требований."],
+  [
+    "01",
+    "Осматриваем объект",
+    "Изучаем территорию, входы, движение людей и транспорта, определяем основные риски.",
+  ],
+  [
+    "02",
+    "Готовим предложение",
+    "Определяем количество постов, график работы, обязанности сотрудников и порядок реагирования.",
+  ],
+  [
+    "03",
+    "Организуем охрану",
+    "Выводим сотрудников на объект и контролируем выполнение согласованных требований.",
+  ],
 ];
 
 const requisites = [
@@ -62,14 +74,22 @@ const requisites = [
   ["ОГРН", "1047855102888"],
   ["ИНН / КПП", "7841304024 / 781001001"],
   ["Генеральный директор", "Серобаба Василий Васильевич"],
-  ["Юридический адрес", "196066, Санкт-Петербург, Московский пр., д. 183-185, литер Б, пом. 251-Н"],
-  ["Налоговый режим", "УСН · малое предприятие"],
+  [
+    "Юридический адрес",
+    "196066, Санкт-Петербург, Московский пр., д. 183-185, литер Б, пом. 251-Н",
+  ],
+  //   ["Налоговый режим", "УСН · малое предприятие"],
 ];
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [prepared, setPrepared] = useState(false);
-  const [form, setForm] = useState({ name: "", contact: "", object: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    contact: "",
+    object: "",
+    message: "",
+  });
 
   const body = useMemo(
     () =>
@@ -80,14 +100,18 @@ export default function Home() {
         `Телефон или e-mail: ${form.contact}`,
         `Тип объекта: ${form.object || "не указан"}`,
         "",
-        form.message || "Прошу связаться со мной для обсуждения охраны объекта.",
+        form.message ||
+          "Прошу связаться со мной для обсуждения охраны объекта.",
       ].join("\n"),
-    [form],
+    [form]
   );
 
   const mailto = useMemo(
-    () => `mailto:${EMAIL}?subject=${encodeURIComponent("Заявка на охрану объекта")}&body=${encodeURIComponent(body)}`,
-    [body],
+    () =>
+      `mailto:${EMAIL}?subject=${encodeURIComponent(
+        "Заявка на охрану объекта"
+      )}&body=${encodeURIComponent(body)}`,
+    [body]
   );
 
   useEffect(() => {
@@ -117,7 +141,10 @@ export default function Home() {
   };
 
   const update = (event) => {
-    setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+    setForm((current) => ({
+      ...current,
+      [event.target.name]: event.target.value,
+    }));
   };
 
   const submit = (event) => {
@@ -142,7 +169,10 @@ export default function Home() {
         <div className="container header-inner">
           <a className="logo" href="#top" aria-label="Респект-2 — на главную">
             <span className="logo-mark">Р2</span>
-            <span className="logo-text"><strong>РЕСПЕКТ-2</strong><small>Частная охранная организация</small></span>
+            <span className="logo-text">
+              <strong>РЕСПЕКТ-2</strong>
+              <small>Частная охранная организация</small>
+            </span>
           </a>
 
           <nav aria-label="Основная навигация">
@@ -152,7 +182,13 @@ export default function Home() {
             <a href="#contacts">Контакты</a>
           </nav>
 
-          <button className="button button-small" type="button" onClick={openForm}>Оставить заявку</button>
+          <button
+            className="button button-small"
+            type="button"
+            onClick={openForm}
+          >
+            Оставить заявку
+          </button>
         </div>
       </header>
 
@@ -160,17 +196,31 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">ООО «ЧОО Респект-2»</p>
-            <h1>Надёжная охрана объектов <span>в Санкт-Петербурге</span></h1>
-            <p className="hero-lead">Специализируемся на физической охране многоквартирных жилых комплексов, дворов и строительных объектов.</p>
+            <h1>
+              Надёжная охрана объектов <span>в Санкт-Петербурге</span>
+            </h1>
+            <p className="hero-lead">
+              Специализируемся на физической охране многоквартирных жилых
+              комплексов, дворов и строительных объектов.
+            </p>
             <div className="hero-actions">
-              <button className="button" type="button" onClick={openForm}>Получить консультацию</button>
-              <a className="phone-link" href="tel:+78122073738">Позвонить: {PHONE}</a>
+              <button className="button" type="button" onClick={openForm}>
+                Получить консультацию
+              </button>
+              <a className="phone-link" href="tel:+78122073738">
+                Позвонить: {PHONE}
+              </a>
             </div>
           </div>
 
           <aside className="hero-card" aria-label="Кратко о компании">
             <div className="radar-panel" aria-hidden="true">
-              <div className="radar-labels"><span>Периметр</span><span><i /> Контроль активен</span></div>
+              <div className="radar-labels">
+                <span>Периметр</span>
+                <span>
+                  <i /> Контроль активен
+                </span>
+              </div>
               <div className="radar-screen">
                 <div className="radar-sweep" />
                 <span className="radar-core">Р2</span>
@@ -178,7 +228,10 @@ export default function Home() {
                 <i className="radar-point point-two" />
                 <i className="radar-point point-three" />
               </div>
-              <div className="radar-status"><span>Санкт-Петербург</span><strong>24 / 7</strong></div>
+              <div className="radar-status">
+                <span>Санкт-Петербург</span>
+                <strong>24 / 7</strong>
+              </div>
             </div>
             <div className="hero-card-copy">
               <h2>Работаем с 2004 года</h2>
@@ -196,9 +249,18 @@ export default function Home() {
 
       <section className="stats-strip" aria-label="Компания в цифрах">
         <div className="container stats-grid">
-          <div><strong>100+</strong><span>постоянных сотрудников</span></div>
-          <div><strong>12</strong><span>жилых комплексов под охраной</span></div>
-          <div><strong>24 / 7</strong><span>связь с клиентами</span></div>
+          <div>
+            <strong>100+</strong>
+            <span>постоянных сотрудников</span>
+          </div>
+          <div>
+            <strong>12</strong>
+            <span>жилых комплексов под охраной</span>
+          </div>
+          <div>
+            <strong>24 / 7</strong>
+            <span>связь с клиентами</span>
+          </div>
         </div>
       </section>
 
@@ -207,7 +269,10 @@ export default function Home() {
           <div className="section-heading">
             <p className="eyebrow">Наши услуги</p>
             <h2>Что мы охраняем</h2>
-            <p>Подбираем состав охраны и режим работы с учётом задач конкретного объекта.</p>
+            <p>
+              Подбираем состав охраны и режим работы с учётом задач конкретного
+              объекта.
+            </p>
           </div>
 
           <div className="services-grid">
@@ -227,12 +292,26 @@ export default function Home() {
           <div>
             <p className="eyebrow">О компании</p>
             <h2>Охрана сложных объектов — наша специализация</h2>
-            <p className="large-text">ООО «ЧОО Респект-2» организует круглосуточную физическую охрану жилых комплексов, строительных объектов и прилегающих территорий.</p>
-            <p>Большие площади, открытые пространства, множество жильцов, обслуживающий персонал и дорогостоящие материалы требуют продуманной системы безопасности. Мы учитываем эти особенности, минимизируем риски хищений и заранее замечаем нюансы, способные повлиять на охрану объекта.</p>
+            <p className="large-text">
+              ООО «ЧОО Респект-2» организует круглосуточную физическую охрану
+              жилых комплексов, строительных объектов и прилегающих территорий.
+            </p>
+            <p>
+              Большие площади, открытые пространства, множество жильцов,
+              обслуживающий персонал и дорогостоящие материалы требуют
+              продуманной системы безопасности. Мы учитываем эти особенности,
+              минимизируем риски хищений и заранее замечаем нюансы, способные
+              повлиять на охрану объекта.
+            </p>
           </div>
 
           <div className="advantages">
-            {advantages.map((item) => <div key={item}><span aria-hidden="true">✓</span><p>{item}</p></div>)}
+            {advantages.map((item) => (
+              <div key={item}>
+                <span aria-hidden="true">✓</span>
+                <p>{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -242,7 +321,10 @@ export default function Home() {
           <div className="section-heading">
             <p className="eyebrow">Дом и двор</p>
             <h2>Обеспечиваем зону безопасности</h2>
-            <p>Охрана — это не только пост у входа, но и ежедневный порядок на всей территории жилого комплекса.</p>
+            <p>
+              Охрана — это не только пост у входа, но и ежедневный порядок на
+              всей территории жилого комплекса.
+            </p>
           </div>
 
           <div className="safety-grid">
@@ -275,7 +357,9 @@ export default function Home() {
           </div>
 
           <div className="center-action">
-            <button className="button" type="button" onClick={openForm}>Обсудить охрану объекта</button>
+            <button className="button" type="button" onClick={openForm}>
+              Обсудить охрану объекта
+            </button>
           </div>
         </div>
       </section>
@@ -285,17 +369,45 @@ export default function Home() {
           <div>
             <p className="eyebrow light">Свяжитесь с нами</p>
             <h2>Ответим на вопросы и обсудим ваш объект</h2>
-            <p>Позвоните, напишите на электронную почту или оставьте заявку через форму.</p>
-            <button className="button button-light" type="button" onClick={openForm}>Оставить заявку</button>
+            <p>
+              Позвоните, напишите на электронную почту или оставьте заявку через
+              форму.
+            </p>
+            <button
+              className="button button-light"
+              type="button"
+              onClick={openForm}
+            >
+              Оставить заявку
+            </button>
           </div>
 
           <address className="contact-card">
-            <div><span>Телефон</span><a href="tel:+78122073738">{PHONE}</a></div>
-            <div><span>Электронная почта</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></div>
+            <div>
+              <span>Телефон</span>
+              <a href="tel:+78122073738">{PHONE}</a>
+            </div>
+            <div>
+              <span>Электронная почта</span>
+              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+            </div>
             <div>
               <span>Адрес</span>
-              <p>196066, г. Санкт-Петербург,<br />Московский пр., д. 183-185,<br />литер Б, пом. 251-Н</p>
-              <a className="map-link" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20Московский%20проспект%2C%20183-185" target="_blank" rel="noreferrer">Открыть на карте →</a>
+              <p>
+                196066, г. Санкт-Петербург,
+                <br />
+                Московский пр., д. 183-185,
+                <br />
+                литер Б, пом. 251-Н
+              </p>
+              <a
+                className="map-link"
+                href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20Московский%20проспект%2C%20183-185"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Открыть на карте →
+              </a>
             </div>
           </address>
         </div>
@@ -309,7 +421,12 @@ export default function Home() {
           </div>
 
           <dl className="requisites">
-            {requisites.map(([term, value]) => <div key={term}><dt>{term}</dt><dd>{value}</dd></div>)}
+            {requisites.map(([term, value]) => (
+              <div key={term}>
+                <dt>{term}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
           </dl>
         </div>
       </section>
@@ -324,34 +441,109 @@ export default function Home() {
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </div>
         <div className="container registry-note">
-          <p>Обработка персональных данных начата 07.10.2004. Запись в реестре внесена на основании приказа № 403 от 25.06.2025. Условие прекращения обработки — ликвидация юридического лица.</p>
-          <p>© 2026 ООО «ЧОО Респект-2». Информация на сайте не является публичной офертой.</p>
+          <p>
+            Обработка персональных данных начата 07.10.2004. Запись в реестре
+            внесена на основании приказа № 403 от 25.06.2025. Условие
+            прекращения обработки — ликвидация юридического лица.
+          </p>
+          <p>
+            © 2026 ООО «ЧОО Респект-2». Информация на сайте не является
+            публичной офертой.
+          </p>
         </div>
       </footer>
 
       {isOpen && (
-        <div className="modal-backdrop" onMouseDown={closeForm} role="presentation">
-          <section className="request-modal" role="dialog" aria-modal="true" aria-labelledby="request-title" onMouseDown={(event) => event.stopPropagation()}>
-            <button className="modal-close" type="button" onClick={closeForm} aria-label="Закрыть форму">×</button>
+        <div
+          className="modal-backdrop"
+          onMouseDown={closeForm}
+          role="presentation"
+        >
+          <section
+            className="request-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="request-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              type="button"
+              onClick={closeForm}
+              aria-label="Закрыть форму"
+            >
+              ×
+            </button>
             {!prepared ? (
               <>
                 <h2 id="request-title">Оставить заявку</h2>
-                <p className="modal-note">Заполните форму. Мы подготовим письмо на адрес {EMAIL} и откроем его в вашей почтовой программе.</p>
+                <p className="modal-note">
+                  Заполните форму. Мы подготовим письмо на адрес {EMAIL} и
+                  откроем его в вашей почтовой программе.
+                </p>
                 <form onSubmit={submit}>
-                  <label>Ваше имя<input name="name" value={form.name} onChange={update} autoFocus required /></label>
-                  <label>Телефон или e-mail<input name="contact" value={form.contact} onChange={update} required /></label>
-                  <label>Тип объекта<select name="object" value={form.object} onChange={update}><option value="">Выберите вариант</option><option>Жилой комплекс</option><option>Строительный объект</option><option>Двор или парковка</option><option>Технические средства охраны</option><option>Другой объект</option></select></label>
-                  <label>Комментарий<textarea name="message" rows="4" value={form.message} onChange={update} /></label>
-                  <label className="consent"><input type="checkbox" required /><span>Согласен(на) на обработку указанных данных для ответа на обращение</span></label>
-                  <button className="button form-button" type="submit">Отправить по e-mail</button>
+                  <label>
+                    Ваше имя
+                    <input
+                      name="name"
+                      value={form.name}
+                      onChange={update}
+                      autoFocus
+                      required
+                    />
+                  </label>
+                  <label>
+                    Телефон или e-mail
+                    <input
+                      name="contact"
+                      value={form.contact}
+                      onChange={update}
+                      required
+                    />
+                  </label>
+                  <label>
+                    Тип объекта
+                    <select name="object" value={form.object} onChange={update}>
+                      <option value="">Выберите вариант</option>
+                      <option>Жилой комплекс</option>
+                      <option>Строительный объект</option>
+                      <option>Двор или парковка</option>
+                      <option>Технические средства охраны</option>
+                      <option>Другой объект</option>
+                    </select>
+                  </label>
+                  <label>
+                    Комментарий
+                    <textarea
+                      name="message"
+                      rows="4"
+                      value={form.message}
+                      onChange={update}
+                    />
+                  </label>
+                  <label className="consent">
+                    <input type="checkbox" required />
+                    <span>
+                      Согласен(на) на обработку указанных данных для ответа на
+                      обращение
+                    </span>
+                  </label>
+                  <button className="button form-button" type="submit">
+                    Отправить по e-mail
+                  </button>
                 </form>
               </>
             ) : (
               <div className="prepared-state">
                 <span className="prepared-icon">✓</span>
                 <h2 id="request-title">Письмо подготовлено</h2>
-                <p>Проверьте данные и нажмите «Отправить» в почтовой программе. Получатель — {EMAIL}.</p>
-                <a className="button form-button" href={mailto}>Открыть почту ещё раз</a>
+                <p>
+                  Проверьте данные и нажмите «Отправить» в почтовой программе.
+                  Получатель — {EMAIL}.
+                </p>
+                <a className="button form-button" href={mailto}>
+                  Открыть почту ещё раз
+                </a>
               </div>
             )}
           </section>
