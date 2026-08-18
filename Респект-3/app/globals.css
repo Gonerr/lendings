@@ -388,12 +388,31 @@ button { color: inherit; }
 
 .partner { padding: 145px 0; color: var(--paper); background: var(--blue); }
 .partner-shell { display: grid; grid-template-columns: 0.38fr 1fr; gap: 9vw; align-items: center; }
-.partner-mark { display: grid; min-height: 360px; place-items: center; border: 1px solid rgba(255, 255, 255, 0.42); }
-.partner-mark span { font-family: "Arial Narrow", "Segoe UI", sans-serif; font-size: clamp(130px, 17vw, 250px); font-weight: 900; line-height: 0.8; }
-.partner-mark i { color: rgba(255,255,255,0.65); font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; font-style: normal; letter-spacing: 0.14em; }
+.partner-mark {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  padding: 42px;
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: #fff;
+  box-shadow: 18px 18px 0 rgba(6, 39, 77, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.partner-mark:hover { box-shadow: 9px 9px 0 rgba(6, 39, 77, 0.22); transform: translate(9px, 9px); }
+.partner-mark > i { align-self: end; color: #407295; font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; font-style: normal; letter-spacing: 0.14em; }
+.kontinent-logo { display: flex; align-items: center; gap: 18px; }
+.kontinent-logo > img { width: 65px; height: 77px; object-fit: contain; }
+.kontinent-logo > span { display: flex; flex-direction: column; }
+.kontinent-logo strong { color: #242d33; font-size: clamp(29px, 3vw, 45px); font-weight: 500; letter-spacing: -0.04em; line-height: 1; }
+.kontinent-logo small { margin-top: 8px; color: #71808a; font-size: 11px; letter-spacing: 0.04em; }
 .partner .kicker { color: #fff; opacity: 0.7; }
 .partner h2 { max-width: 900px; font-size: clamp(54px, 6.2vw, 103px); }
-.partner-copy > p:last-child { max-width: 740px; margin: 42px 0 0; color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.75; }
+.partner-copy > p:not(.kicker) { max-width: 780px; margin: 42px 0 0; color: rgba(255,255,255,0.82); font-size: 16px; line-height: 1.75; }
+.partner-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.partner-facts span { padding: 10px 13px; color: #fff; border: 1px solid rgba(255,255,255,0.42); font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.partner-link { display: inline-flex; align-items: center; gap: 13px; margin-top: 34px; padding-bottom: 7px; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.72); font-size: 12px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
+.partner-link span { font-size: 18px; }
 
 .principles { display: grid; grid-template-columns: 0.9fr 1fr; gap: 8vw; padding-top: 150px; padding-bottom: 160px; }
 .principles-heading > span { color: #176fd0; font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -495,7 +514,10 @@ footer { padding: 70px 0 26px; color: var(--paper); background: var(--night); }
   .process-grid article { min-height: 260px; }
   .partner { padding: 95px 0; }
   .partner-shell { grid-template-columns: 1fr; gap: 55px; }
-  .partner-mark { min-height: 260px; }
+  .partner-mark { min-height: 260px; padding: 34px 24px; }
+  .kontinent-logo { gap: 13px; }
+  .kontinent-logo > img { width: 55px; height: 65px; }
+  .kontinent-logo small { font-size: 9px; }
   .partner h2 { font-size: 48px; }
   .principles { grid-template-columns: 1fr; gap: 60px; padding-top: 95px; padding-bottom: 100px; }
   .contacts { padding: 95px 0; }

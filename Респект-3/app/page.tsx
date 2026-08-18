@@ -227,11 +227,29 @@ export default function Home() {
 
       <section className="partner" id="partner">
         <div className="partner-shell section-shell">
-          <div className="partner-mark"><span>К</span><i>ПАРТНЁРСКИЙ КОНТУР</i></div>
+          <a
+            className="partner-mark"
+            href="https://www.kontinent.spb.ru/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Перейти на официальный сайт управляющей компании Континент"
+          >
+            <span className="kontinent-logo">
+              <img src="/partners/kontinent-logo.png" alt="" />
+              <span><strong>Континент</strong><small>Управляющая компания</small></span>
+            </span>
+            <i>ОФИЦИАЛЬНЫЙ САЙТ ↗</i>
+          </a>
           <div className="partner-copy">
             <p className="kicker">MANAGEMENT COMPANY SUPPORT</p>
             <h2>Работаем для управляющих компаний «Континент».</h2>
-            <p>Понимаем специфику жилых домов и ежедневной эксплуатации: большое количество параллельных заявок, разные профили работ и необходимость сохранять понятную коммуникацию между объектом, управляющей компанией и специалистом.</p>
+            <p>УК «Континент» управляет многоквартирными домами, обслуживает инженерные сети и оборудование жилых комплексов Санкт-Петербурга. В этом рабочем контуре «Респект-3» обеспечивает выполнение сантехнических, электротехнических и плотницких задач.</p>
+            <div className="partner-facts" aria-label="Задачи технического сопровождения">
+              <span>Инженерные системы</span>
+              <span>Общее имущество</span>
+              <span>Работы по заявкам</span>
+            </div>
+            <a className="partner-link" href="https://www.kontinent.spb.ru/" target="_blank" rel="noreferrer">Официальный сайт УК «Континент» <span>↗</span></a>
           </div>
         </div>
       </section>
