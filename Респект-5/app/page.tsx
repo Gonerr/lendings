@@ -61,6 +61,11 @@ const objects = [
     title: "Причальные объекты",
     text: "Организация присутствия персонала на объектах со своей территорией и особым внутренним порядком, включая причал на «Вулкане».",
   },
+  {
+    type: "Производство и логистика",
+    title: "Склады и территории",
+    text: "Диспетчерское сопровождение объектов, где особенно важны своевременные сигналы о затоплении, пожаре, вандализме и других нештатных ситуациях.",
+  },
 ];
 
 const requisites = [
@@ -151,6 +156,9 @@ export default function Home() {
           <a href="#approach" onClick={closeMenu}>
             Подход
           </a>
+          <a href="#dispatch" onClick={closeMenu}>
+            Диспетчерская
+          </a>
           <a href="#objects" onClick={closeMenu}>
             Объекты
           </a>
@@ -185,8 +193,9 @@ export default function Home() {
             Каждый день.
           </h1>
           <p className="hero-text">
-            Круглосуточное присутствие персонала, консьерж-сервис и
-            административное сопровождение объектов управляющих компаний.
+            Круглосуточное присутствие персонала, диспетчеризация МКД,
+            консьерж-сервис и административное сопровождение объектов
+            управляющих компаний.
           </p>
           <div className="hero-actions">
             <button
@@ -385,9 +394,130 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="dispatch" id="dispatch">
+        <div className="dispatch-head section-shell">
+          <div className="section-index">04 / Диспетчеризация</div>
+          <div className="dispatch-title">
+            <p className="eyebrow">Человек остаётся частью системы</p>
+            <h2>Диспетчерский контур многоквартирного дома</h2>
+          </div>
+          <p className="dispatch-lead">
+            Технические средства обнаруживают проблему, а сотрудник принимает
+            обращение, фиксирует его и передаёт профильной службе. Такой подход
+            помогает управляющей компании сохранять контроль, а жителям —
+            быстрее получать понятную обратную связь.
+          </p>
+        </div>
+
+        <div className="dispatch-layout section-shell">
+          <div className="dispatch-visual">
+            <div className="dispatch-visual-top">
+              <span>Контур объекта / МКД</span>
+              <span className="dispatch-online">
+                <i /> Связь установлена
+              </span>
+            </div>
+            <img
+              src="/security-building.svg"
+              alt="Схема защищённого жилого дома, инженерных систем и диспетчерского контроля"
+            />
+            <div className="dispatch-monitoring">
+              <div>
+                <small>Обращения</small>
+                <strong>приём и фиксация</strong>
+              </div>
+              <div>
+                <small>Инженерные системы</small>
+                <strong>контроль состояния</strong>
+              </div>
+              <div>
+                <small>Реакция</small>
+                <strong>передача в службу</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="dispatch-content">
+            <div className="dispatch-flow-head">
+              <span>Как проходит обращение</span>
+              <strong>01—04</strong>
+            </div>
+            <ol className="dispatch-flow">
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>Житель сообщает</h3>
+                  <p>
+                    По телефону, при личном визите или через переговорное
+                    устройство в подъезде и лифте.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>Диспетчер фиксирует</h3>
+                  <p>
+                    Обращение регистрируется в журнале или электронной системе
+                    учёта.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>Заявка уходит специалистам</h3>
+                  <p>
+                    Информация о неисправности передаётся профильной службе или
+                    управляющей компании.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>04</span>
+                <div>
+                  <h3>Результат остаётся под контролем</h3>
+                  <p>
+                    Сохраняется история обращения и подтверждается выполнение
+                    необходимых действий.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div className="dispatch-zones section-shell">
+          <div className="dispatch-zones-title">
+            <span>Зоны внимания</span>
+            <p>То, что сотрудник видит и контролирует каждый день</p>
+          </div>
+          <ul>
+            <li>
+              <span>01</span>
+              <p>
+                Общее имущество, инженерные коммуникации и оборудование дома
+              </p>
+            </li>
+            <li>
+              <span>02</span>
+              <p>Порядок в общих зонах и состояние придомовой территории</p>
+            </li>
+            <li>
+              <span>03</span>
+              <p>Доступ жителей, посетителей и автотранспорта на территорию</p>
+            </li>
+            <li>
+              <span>04</span>
+              <p>Оперативная реакция при аварии или угрозе её возникновения</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="objects" id="objects">
         <div className="objects-head section-shell">
-          <div className="section-index light">04 / Объекты</div>
+          <div className="section-index light">05 / Объекты</div>
           <p className="eyebrow light">Разные площадки — единый порядок</p>
           <h2>Там, где важно постоянное присутствие</h2>
         </div>
@@ -446,7 +576,7 @@ export default function Home() {
       </section>
 
       <section className="company section-shell" id="company">
-        <div className="section-index">05 / Компания</div>
+        <div className="section-index">06 / Компания</div>
         <div className="company-heading">
           <p className="eyebrow">Официальные сведения</p>
           <h2>ООО «Респект-5»</h2>
@@ -581,7 +711,9 @@ export default function Home() {
                 <select name="objectType" defaultValue="Бизнес-центр">
                   <option>Бизнес-центр</option>
                   <option>Жилой комплекс</option>
+                  <option>Диспетчеризация МКД</option>
                   <option>Причальный объект</option>
+                  <option>Складской объект</option>
                   <option>Другой объект</option>
                 </select>
               </label>

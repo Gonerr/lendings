@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" fill="none">
+  <defs>
+    <linearGradient id="panel" x1="80" y1="40" x2="650" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#314B5B"/>
+      <stop offset="1" stop-color="#1A2D3B"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" stroke="#F5F3EE" stroke-opacity=".075"/>
+    </pattern>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+
+  <rect width="720" height="600" fill="url(#panel)"/>
+  <rect width="720" height="600" fill="url(#grid)"/>
+
+  <g stroke="#D5C9B8" stroke-opacity=".28">
+    <path d="M72 478H648"/>
+    <path d="M114 478V198L282 102L450 198V478"/>
+    <path d="M450 258L558 198L624 236V478"/>
+    <path d="M282 102V478"/>
+  </g>
+
+  <g fill="#F5F3EE" fill-opacity=".13">
+    <rect x="145" y="239" width="45" height="38"/>
+    <rect x="211" y="239" width="45" height="38"/>
+    <rect x="309" y="239" width="45" height="38"/>
+    <rect x="375" y="239" width="45" height="38"/>
+    <rect x="145" y="305" width="45" height="38"/>
+    <rect x="211" y="305" width="45" height="38"/>
+    <rect x="309" y="305" width="45" height="38"/>
+    <rect x="375" y="305" width="45" height="38"/>
+    <rect x="145" y="371" width="45" height="38"/>
+    <rect x="211" y="371" width="45" height="38"/>
+    <rect x="309" y="371" width="45" height="38"/>
+    <rect x="375" y="371" width="45" height="38"/>
+    <rect x="480" y="286" width="42" height="36"/>
+    <rect x="542" y="286" width="42" height="36"/>
+    <rect x="480" y="350" width="42" height="36"/>
+    <rect x="542" y="350" width="42" height="36"/>
+  </g>
+
+  <g stroke="#AEBEC7" stroke-width="1.5" stroke-opacity=".6">
+    <path d="M144 154L82 102"/>
+    <path d="M548 230L640 148"/>
+    <path d="M548 404L650 468"/>
+    <path d="M178 438L74 510"/>
+  </g>
+
+  <g fill="#AEBEC7">
+    <circle cx="82" cy="102" r="5"/>
+    <circle cx="640" cy="148" r="5"/>
+    <circle cx="650" cy="468" r="5"/>
+    <circle cx="74" cy="510" r="5"/>
+  </g>
+  <g fill="#AEBEC7" opacity=".18">
+    <circle cx="82" cy="102" r="17"/>
+    <circle cx="640" cy="148" r="17"/>
+    <circle cx="650" cy="468" r="17"/>
+    <circle cx="74" cy="510" r="17"/>
+  </g>
+
+  <circle cx="360" cy="300" r="111" fill="#A67858" fill-opacity=".16" filter="url(#softGlow)"/>
+  <circle cx="360" cy="300" r="94" fill="#1A2D3B" stroke="#D5C9B8" stroke-opacity=".75"/>
+  <circle cx="360" cy="300" r="76" stroke="#F5F3EE" stroke-opacity=".16"/>
+  <path d="M360 245L408 263V298C408 335 387 361 360 374C333 361 312 335 312 298V263L360 245Z" fill="#D5C9B8" fill-opacity=".13" stroke="#D5C9B8" stroke-width="2"/>
+  <path d="M335 302L353 320L388 282" stroke="#F5F3EE" stroke-width="7" stroke-linecap="square" stroke-linejoin="round"/>
+
+  <g stroke="#F5F3EE" stroke-opacity=".28">
+    <circle cx="360" cy="300" r="137" stroke-dasharray="3 13"/>
+    <circle cx="360" cy="300" r="164" stroke-dasharray="1 24"/>
+  </g>
+</svg>
