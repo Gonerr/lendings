@@ -8,100 +8,68 @@ import {
   useState,
 } from "react";
 
-const PHONE = "+7 (812) 207-26-71";
-const EMAIL = "Vlihota@fnek.ru";
-
-const clients = [
-  "ЖК «Рубин»",
-  "ЖК «Топаз»",
-  "ЖК «Байрон»",
-  "ЖК «Гранит»",
-  "ЖК «Изумруд»",
-  "ЖК «Лондон парк»",
-  "Л1 Строительная компания №1",
-  "НПО «Пигмент»",
-  "Механический завод СПб",
-  "Знамя труда",
-  "Инвест Строй",
-  "Корпорация «ЛЭК»",
-  "Завод №3",
-  "Верона Менеджмент",
-];
-
-const directions = [
+const services = [
   {
-    code: "01 / SECURITY",
-    title: "Физическая охрана",
-    text: "Лицензированные сотрудники охраны, круглосуточные посты, патрулирование территории и оперативная реакция на угрозы.",
-    price: "от 150 ₽ / час",
+    code: "01 / WATER",
+    title: "Сантехнические работы",
+    text: "Обслуживание инженерных сетей, устранение неисправностей, замена элементов и плановые работы на объектах управляющих компаний.",
+    marker: "ВОДА / ТЕПЛО / СЕТИ",
   },
   {
-    code: "02 / SERVICE",
-    title: "Обслуживающий персонал",
-    text: "Администраторы и консьержи для жилых комплексов. Контроль посетителей, обращений жильцов и порядка во входных группах.",
-    price: "от 100 ₽ / час",
+    code: "02 / POWER",
+    title: "Электротехнические работы",
+    text: "Диагностика и обслуживание электрооборудования, освещения и общедомовых систем в пределах эксплуатационных задач.",
+    marker: "СВЕТ / ЩИТЫ / ЛИНИИ",
   },
   {
-    code: "03 / AUDIT",
-    title: "Аудит безопасности",
-    text: "Комплексная оценка уязвимостей, пропускного режима, постов и технических средств. При заключении договора — за наш счёт.",
-    price: "индивидуальный расчёт",
+    code: "03 / REPAIR",
+    title: "Плотницкие работы",
+    text: "Текущий ремонт дверей, фурнитуры, конструкций и элементов общего имущества жилых домов.",
+    marker: "ДВЕРИ / ФУРНИТУРА / РЕМОНТ",
   },
 ];
 
-const vacancies = [
-  {
-    title: "Лицензированный охранник",
-    tag: "SECURITY",
-    text: "Охрана жилых комплексов, строительных объектов и складских помещений.",
-  },
-  {
-    title: "Администратор",
-    tag: "SERVICE",
-    text: "Работа во входной группе жилого комплекса, взаимодействие с жильцами и посетителями.",
-  },
+const workflow = [
+  ["01", "Заявка", "Получаем задачу от управляющей компании и фиксируем исходные данные по объекту."],
+  ["02", "Распределение", "Определяем профиль работ и направляем подходящего технического специалиста."],
+  ["03", "Выполнение", "Проводим диагностику и выполняем согласованный объём работ на объекте."],
+  ["04", "Результат", "Передаём информацию о выполнении и необходимых дальнейших действиях."],
 ];
 
-const benefits = [
-  "Заработная плата дважды в месяц",
-  "Официальное оформление и социальный пакет",
-  "Доход от 22 000 до 43 000 рублей",
-  "Гибкие и плотные графики для подработки",
-  "Возможность выбрать объект рядом с домом",
-  "Перспективы карьерного роста",
+const principles = [
+  "Один технический контур для нескольких профилей работ",
+  "Понятное взаимодействие с управляющей компанией",
+  "Специалисты по конкретным эксплуатационным задачам",
+  "Последовательная работа от заявки до результата",
 ];
 
 const requisites = [
-  ["Полное наименование", "ООО «Респект-4»"],
-  ["Дата регистрации", "26 января 2007 года"],
-  ["ОГРН", "1079847051602"],
-  ["ИНН / КПП", "7842350400 / 781001001"],
-  ["Генеральный директор", "Березина Олеся Александровна"],
-  ["Юридический адрес", "196084, Санкт-Петербург, ул. Киевская, д. 3, литер А, пом. 33-Н, офис 2"],
-  ["Налоговый режим", "УСН · малое предприятие"],
+  ["Полное наименование", "ООО «Респект - 3»"],
+  ["Дата регистрации", "18 октября 2004 года"],
+  ["ОГРН", "1047855112502"],
+  ["ИНН / КПП", "7841304480 / 781001001"],
+  ["Генеральный директор", "Сидорова Наталья Петровна"],
+  ["Юридический адрес", "196084, Санкт-Петербург, ул. Киевская, д. 3, литера А, пом. 33-Н, офис 1"],
 ];
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [prepared, setPrepared] = useState(false);
-  const [form, setForm] = useState({ name: "", contact: "", topic: "", message: "" });
+  const [copied, setCopied] = useState(false);
+  const [form, setForm] = useState({ name: "", company: "", contact: "", topic: "", message: "" });
 
-  const emailBody = useMemo(
+  const requestText = useMemo(
     () => [
-      "Обращение с сайта ООО «Респект-4»",
+      "Заявка для ООО «Респект-3»",
       "",
-      `Имя: ${form.name}`,
+      `Контактное лицо: ${form.name}`,
+      `Организация / УК: ${form.company}`,
       `Телефон или e-mail: ${form.contact}`,
-      `Тема: ${form.topic || "не указана"}`,
+      `Направление: ${form.topic || "не указано"}`,
       "",
-      form.message || "Прошу связаться со мной для уточнения деталей.",
+      form.message || "Просим связаться для уточнения технической задачи.",
     ].join("\n"),
     [form],
-  );
-
-  const mailto = useMemo(
-    () => `mailto:${EMAIL}?subject=${encodeURIComponent("Обращение с сайта Респект-4")}&body=${encodeURIComponent(emailBody)}`,
-    [emailBody],
   );
 
   useEffect(() => {
@@ -122,12 +90,14 @@ export default function Home() {
 
   const openForm = () => {
     setPrepared(false);
+    setCopied(false);
     setIsOpen(true);
   };
 
   const closeForm = () => {
     setIsOpen(false);
     setPrepared(false);
+    setCopied(false);
   };
 
   const update = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -137,34 +107,38 @@ export default function Home() {
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setPrepared(true);
-    window.location.href = mailto;
+  };
+
+  const copyRequest = async () => {
+    await navigator.clipboard.writeText(requestText);
+    setCopied(true);
   };
 
   return (
     <main id="top">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Респект-4 — на главную">
-          <span className="brand-mark">R4</span>
-          <span className="brand-copy"><strong>РЕСПЕКТ-4</strong><small>Охрана &amp; сервис</small></span>
+        <a className="brand" href="#top" aria-label="Респект-3 — на главную">
+          <span className="brand-mark">R3</span>
+          <span className="brand-copy"><strong>РЕСПЕКТ-3</strong><small>Техническое сопровождение</small></span>
         </a>
 
         <nav aria-label="Основная навигация">
           <a href="#about">Компания</a>
-          <a href="#services">Услуги</a>
-          <a href="#clients">Клиенты</a>
-          <a href="#jobs">Вакансии</a>
+          <a href="#services">Направления</a>
+          <a href="#process">Как работаем</a>
+          <a href="#partner">Партнёрство</a>
           <a href="#contacts">Контакты</a>
         </nav>
 
-        <button className="header-action" type="button" onClick={openForm}>Связаться <span>↗</span></button>
+        <button className="header-action" type="button" onClick={openForm}>Оставить заявку <span>↗</span></button>
 
         <details className="mobile-menu">
           <summary>Меню</summary>
           <nav aria-label="Мобильная навигация">
             <a href="#about">Компания</a>
-            <a href="#services">Услуги</a>
-            <a href="#clients">Клиенты</a>
-            <a href="#jobs">Вакансии</a>
+            <a href="#services">Направления</a>
+            <a href="#process">Как работаем</a>
+            <a href="#partner">Партнёрство</a>
             <a href="#contacts">Контакты</a>
           </nav>
         </details>
@@ -172,48 +146,49 @@ export default function Home() {
 
       <section className="hero">
         <div className="hero-copy">
-          <div className="hero-meta"><span>Санкт-Петербург</span><span>На рынке с 2007 года</span></div>
-          <p className="kicker">PRIVATE SECURITY / FACILITY SERVICE</p>
-          <h1>Порядок —<br /><em>не случайность.</em></h1>
-          <p className="hero-lead">Охраняем и обслуживаем жилые комплексы, строительные объекты и складские помещения. Выстраиваем систему, в которой люди, режим и техника работают вместе.</p>
+          <div className="hero-meta"><span>Санкт-Петербург</span><span>Основано в 2004 году</span></div>
+          <p className="kicker">TECHNICAL FACILITY SUPPORT</p>
+          <h1>Дом должен<br /><em>работать.</em></h1>
+          <p className="hero-lead">ООО «Респект-3» обеспечивает техническое сопровождение объектов управляющих компаний «Континент»: сантехнические, электротехнические и плотницкие работы.</p>
           <div className="hero-actions">
-            <button className="primary-action" type="button" onClick={openForm}>Обсудить объект <span>↗</span></button>
-            <a href="#services">Смотреть услуги <span>↓</span></a>
+            <button className="primary-action" type="button" onClick={openForm}>Поставить задачу <span>↗</span></button>
+            <a href="#services">Наши направления <span>↓</span></a>
           </div>
         </div>
 
-        <div className="control-map" aria-hidden="true">
-          <div className="map-head"><span>OBJECT / CONTROL MAP</span><span>R4 · SPB</span></div>
-          <div className="map-stage">
-            <div className="route-line" />
-            <div className="route-node node-a"><i>01</i><span>Вход</span></div>
-            <div className="route-node node-b"><i>02</i><span>Двор</span></div>
-            <div className="route-node node-c"><i>03</i><span>Паркинг</span></div>
-            <div className="route-node node-d"><i>04</i><span>Персонал</span></div>
-            <div className="moving-guard">R4</div>
-            <span className="map-caption">Контроль маршрута / 24 часа</span>
+        <div className="system-board" aria-hidden="true">
+          <div className="board-head"><span>BUILDING / SERVICE BOARD</span><span>R3 · SPB</span></div>
+          <div className="building-scheme">
+            <div className="building-outline">
+              <div className="roof-line" />
+              <div className="floor floor-top"><span>03</span><b>Электрика</b><i>●</i></div>
+              <div className="floor"><span>02</span><b>Плотницкие работы</b><i>●</i></div>
+              <div className="floor"><span>01</span><b>Сантехника</b><i>●</i></div>
+              <div className="base-line"><span>Техническая служба</span><strong>R3</strong></div>
+            </div>
+            <div className="pulse-line"><span>ЗАЯВКА</span><i /><span>СПЕЦИАЛИСТ</span><i /><span>РЕЗУЛЬТАТ</span></div>
           </div>
-          <div className="map-foot"><span>Доступ</span><span>Территория</span><span>Реагирование</span></div>
+          <div className="board-foot"><span>Инженерные системы</span><span>Общее имущество</span><span>Эксплуатация</span></div>
         </div>
       </section>
 
       <div className="ticker" aria-label="Направления работы">
         <div>
-          <span>Жилые комплексы</span><i>◆</i><span>Строительные объекты</span><i>◆</i><span>Складские помещения</span><i>◆</i><span>Консьержи и администраторы</span><i>◆</i>
-          <span>Жилые комплексы</span><i>◆</i><span>Строительные объекты</span><i>◆</i><span>Складские помещения</span><i>◆</i><span>Консьержи и администраторы</span><i>◆</i>
+          <span>Сантехники</span><i>◆</i><span>Электрики</span><i>◆</i><span>Плотники</span><i>◆</i><span>Техническое сопровождение</span><i>◆</i>
+          <span>Сантехники</span><i>◆</i><span>Электрики</span><i>◆</i><span>Плотники</span><i>◆</i><span>Техническое сопровождение</span><i>◆</i>
         </div>
       </div>
 
       <section className="about section-shell" id="about">
         <div className="section-side"><span>01</span><p>О компании</p></div>
         <div className="about-content">
-          <p className="kicker dark">LONG-TERM SECURITY PARTNER</p>
-          <h2>Партнёрство,<br />рассчитанное <em>надолго.</em></h2>
+          <p className="kicker dark">EVERYDAY BUILDING OPERATIONS</p>
+          <h2>Техническая работа,<br />которую <em>видно по результату.</em></h2>
           <div className="about-grid">
-            <p className="about-lead">ООО «Респект-4» организует круглосуточную физическую охрану объектов и прилегающих территорий, внутриобъектовый и пропускной режим, контроль въезда и выезда транспорта.</p>
+            <p className="about-lead">Мы помогаем управляющим компаниям поддерживать общее имущество и инженерные системы жилых домов в рабочем состоянии.</p>
             <div>
-              <p>Мы специализируемся на объектах повышенной сложности: многоквартирных жилых комплексах, строительных площадках и складах. Большие площади, открытые пространства, жильцы, персонал и дорогостоящие материалы требуют не шаблонного поста, а продуманной системы.</p>
-              <p>Технические средства обнаруживают угрозу, но решение принимает человек. Поэтому надёжная охрана строится на сочетании регламентов, оборудования и подготовленных сотрудников.</p>
+              <p>Техническое сопровождение складывается из десятков регулярных и срочных задач. Для каждой из них нужен специалист нужного профиля, понятная постановка и контроль результата.</p>
+              <p>«Респект-3» объединяет сантехнические, электротехнические и плотницкие работы в единый рабочий контур для управляющих компаний «Континент».</p>
             </div>
           </div>
         </div>
@@ -221,84 +196,70 @@ export default function Home() {
 
       <section className="services" id="services">
         <div className="services-head section-shell">
-          <div className="section-side light"><span>02</span><p>Услуги</p></div>
-          <div><p className="kicker">SECURITY / SERVICE / AUDIT</p><h2>Три направления.<br />Одна система контроля.</h2></div>
+          <div className="section-side light"><span>02</span><p>Направления</p></div>
+          <div><p className="kicker">PLUMBING / ELECTRICAL / CARPENTRY</p><h2>Три профиля.<br />Одна техническая служба.</h2></div>
         </div>
 
         <div className="service-cards section-shell">
-          {directions.map((direction) => (
-            <article key={direction.code}>
-              <span className="service-code">{direction.code}</span>
-              <h3>{direction.title}</h3>
-              <p>{direction.text}</p>
-              <strong>{direction.price}</strong>
+          {services.map((service) => (
+            <article key={service.code}>
+              <span className="service-code">{service.code}</span>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+              <strong>{service.marker}</strong>
             </article>
           ))}
         </div>
-        <p className="price-note section-shell">Указана ориентировочная стоимость из первоисточника. Итоговые условия и стоимость определяются после обследования объекта. Информация не является публичной офертой.</p>
+        <p className="service-note section-shell">Конкретный состав, сроки и условия работ определяются договором с управляющей компанией и параметрами объекта.</p>
       </section>
 
-      <section className="specialization section-shell">
-        <div className="statement-card">
-          <span>NOT UNIVERSAL. SPECIALIZED.</span>
-          <h2>Мы не охраняем всё подряд.</h2>
-          <p>Наша специализация — объекты, где особенно важны дисциплина доступа, контроль больших территорий и постоянное присутствие сотрудников.</p>
+      <section className="process section-shell" id="process">
+        <div className="process-heading">
+          <p className="kicker dark">FROM REQUEST TO RESULT</p>
+          <h2>Понятный маршрут каждой задачи.</h2>
         </div>
-        <div className="object-list">
-          <div><span>01</span><h3>Жилые комплексы</h3><p>Входные группы, дворы, паркинги, работа с управляющими компаниями и жильцами.</p></div>
-          <div><span>02</span><h3>Строительные объекты</h3><p>Контроль подрядчиков, транспорта, материалов и дорогостоящей техники.</p></div>
-          <div><span>03</span><h3>Складские помещения</h3><p>Защита имущества, пропускной режим и соблюдение внутренних регламентов.</p></div>
-        </div>
-      </section>
-
-      <section className="clients" id="clients">
-        <div className="clients-heading section-shell">
-          <p className="kicker dark">TRUSTED BY / SELECTED CLIENTS</p>
-          <h2>Нам доверяли жилые комплексы, производства и застройщики.</h2>
-        </div>
-        <div className="client-grid section-shell">
-          {clients.map((client, index) => <div key={client}><span>{String(index + 1).padStart(2, "0")}</span><p>{client}</p></div>)}
+        <div className="process-grid">
+          {workflow.map(([number, title, text]) => (
+            <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>
+          ))}
         </div>
       </section>
 
-      <section className="jobs" id="jobs">
-        <div className="jobs-main section-shell">
-          <div className="jobs-heading">
-            <p className="kicker">CAREERS / RESPEKT-4</p>
-            <h2>Работа, где важны люди.</h2>
-            <p>Подбираем объект и график с учётом места проживания и возможностей сотрудника.</p>
-            <button className="acid-action" type="button" onClick={openForm}>Откликнуться <span>↗</span></button>
-          </div>
-          <div className="vacancy-list">
-            {vacancies.map((vacancy) => (
-              <article key={vacancy.title}>
-                <span>{vacancy.tag}</span><h3>{vacancy.title}</h3><p>{vacancy.text}</p>
-              </article>
-            ))}
+      <section className="partner" id="partner">
+        <div className="partner-shell section-shell">
+          <div className="partner-mark"><span>К</span><i>ПАРТНЁРСКИЙ КОНТУР</i></div>
+          <div className="partner-copy">
+            <p className="kicker">MANAGEMENT COMPANY SUPPORT</p>
+            <h2>Работаем для управляющих компаний «Континент».</h2>
+            <p>Понимаем специфику жилых домов и ежедневной эксплуатации: большое количество параллельных заявок, разные профили работ и необходимость сохранять понятную коммуникацию между объектом, управляющей компанией и специалистом.</p>
           </div>
         </div>
-        <div className="benefits section-shell">
-          {benefits.map((benefit, index) => <div key={benefit}><span>{String(index + 1).padStart(2, "0")}</span><p>{benefit}</p></div>)}
+      </section>
+
+      <section className="principles section-shell">
+        <div className="principles-heading"><span>04 / ПОДХОД</span><h2>Без лишнего шума.<br />По существу задачи.</h2></div>
+        <div className="principle-list">
+          {principles.map((principle, index) => <div key={principle}><span>{String(index + 1).padStart(2, "0")}</span><p>{principle}</p></div>)}
         </div>
       </section>
 
       <section className="contacts" id="contacts">
         <div className="contact-shell section-shell">
           <div>
-            <p className="kicker dark">CONTACT / START HERE</p>
-            <h2>Обсудим объект<br />или вакансию.</h2>
-            <button className="primary-action dark-action" type="button" onClick={openForm}>Написать нам <span>↗</span></button>
+            <p className="kicker">CONTACT / SERVICE REQUEST</p>
+            <h2>Есть техническая задача?</h2>
+            <button className="primary-action light-action" type="button" onClick={openForm}>Подготовить заявку <span>↗</span></button>
           </div>
           <address>
-            <div><span>Телефон отдела кадров</span><a href="tel:+78122072671">{PHONE}</a></div>
-            <div><span>Электронная почта</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></div>
-            <div><span>Юридический адрес</span><p>196084, Санкт-Петербург,<br />ул. Киевская, д. 3, литер А,<br />пом. 33-Н, офис 2</p></div>
+            <div><span>Организация</span><strong>ООО «Респект - 3»</strong></div>
+            <div><span>Юридический адрес</span><p>196084, Санкт-Петербург,<br />ул. Киевская, д. 3, литера А,<br />пом. 33-Н, офис 1</p></div>
+            <div className="contact-caveat"><span>Телефон и e-mail</span><p>Официальные публичные контакты не указаны. Заявки передаются через действующий канал управляющей компании.</p></div>
           </address>
         </div>
       </section>
 
       <section className="legal section-shell">
-        <div className="legal-heading"><span>LEGAL / 04</span><h2>Реквизиты компании</h2></div>
+        <div className="legal-heading"><span>LEGAL / 05</span><h2>Реквизиты компании</h2></div>
         <dl>
           {requisites.map(([term, value]) => <div key={term}><dt>{term}</dt><dd>{value}</dd></div>)}
         </dl>
@@ -306,12 +267,11 @@ export default function Home() {
 
       <footer>
         <div className="footer-main section-shell">
-          <a className="brand footer-brand" href="#top"><span className="brand-mark">R4</span><span className="brand-copy"><strong>РЕСПЕКТ-4</strong><small>Охрана &amp; сервис</small></span></a>
-          <a href="tel:+78122072671">{PHONE}</a>
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          <button type="button" onClick={openForm}>Связаться ↗</button>
+          <a className="brand footer-brand" href="#top"><span className="brand-mark">R3</span><span className="brand-copy"><strong>РЕСПЕКТ-3</strong><small>Техническое сопровождение</small></span></a>
+          <p>Сантехники · Электрики · Плотники</p>
+          <button type="button" onClick={openForm}>Подготовить заявку ↗</button>
         </div>
-        <div className="footer-bottom section-shell"><span>© 2026 ООО «Респект-4»</span><span>Информация на сайте не является публичной офертой</span></div>
+        <div className="footer-bottom section-shell"><span>© 2026 ООО «Респект-3»</span><span>Информация на сайте не является публичной офертой</span></div>
       </footer>
 
       {isOpen && (
@@ -320,24 +280,26 @@ export default function Home() {
             <button className="modal-close" type="button" onClick={closeForm} aria-label="Закрыть форму">×</button>
             {!prepared ? (
               <>
-                <p className="kicker dark">CONTACT / R4</p>
-                <h2 id="request-title">Начать разговор</h2>
-                <p className="modal-note">Заполните форму — мы подготовим письмо на {EMAIL} и откроем его в вашей почтовой программе.</p>
+                <p className="kicker dark">SERVICE REQUEST / R3</p>
+                <h2 id="request-title">Подготовить заявку</h2>
+                <p className="modal-note">Заполните поля — сайт сформирует текст обращения, который можно передать через рабочий канал управляющей компании.</p>
                 <form onSubmit={submit}>
-                  <label>Ваше имя<input name="name" value={form.name} onChange={update} autoFocus required /></label>
+                  <label>Контактное лицо<input name="name" value={form.name} onChange={update} autoFocus required /></label>
+                  <label>Организация / УК<input name="company" value={form.company} onChange={update} required /></label>
                   <label>Телефон или e-mail<input name="contact" value={form.contact} onChange={update} required /></label>
-                  <label>Тема обращения<select name="topic" value={form.topic} onChange={update} required><option value="">Выберите тему</option><option>Охрана объекта</option><option>Обслуживающий персонал</option><option>Аудит безопасности</option><option>Отклик на вакансию</option></select></label>
-                  <label>Комментарий<textarea name="message" rows={4} value={form.message} onChange={update} /></label>
-                  <label className="consent"><input type="checkbox" required /><span>Согласен(на) на обработку указанных данных для ответа на обращение</span></label>
-                  <button className="primary-action form-action" type="submit">Отправить по e-mail <span>↗</span></button>
+                  <label>Направление<select name="topic" value={form.topic} onChange={update} required><option value="">Выберите направление</option><option>Сантехнические работы</option><option>Электротехнические работы</option><option>Плотницкие работы</option><option>Комплексная техническая задача</option></select></label>
+                  <label className="full-field">Описание задачи<textarea name="message" rows={4} value={form.message} onChange={update} required /></label>
+                  <label className="consent"><input type="checkbox" required /><span>Согласен(на) на обработку указанных данных для подготовки обращения</span></label>
+                  <button className="primary-action form-action" type="submit">Сформировать текст <span>↗</span></button>
                 </form>
               </>
             ) : (
               <div className="prepared-state">
-                <span className="prepared-icon">✓</span>
-                <h2 id="request-title">Письмо подготовлено</h2>
-                <p>Проверьте данные и нажмите «Отправить» в почтовой программе. Получатель — {EMAIL}.</p>
-                <a className="primary-action form-action" href={mailto}>Открыть почту ещё раз <span>↗</span></a>
+                <span className="prepared-icon">R3</span>
+                <h2 id="request-title">Заявка готова</h2>
+                <p>Скопируйте текст и отправьте его через действующий канал связи с управляющей компанией.</p>
+                <pre>{requestText}</pre>
+                <button className="primary-action form-action" type="button" onClick={copyRequest}>{copied ? "Скопировано ✓" : "Скопировать заявку"}</button>
               </div>
             )}
           </section>
