@@ -834,7 +834,7 @@ footer button span {
 
 .contacts h2 {
     max-width: 800px;
-    font-size: clamp(64px, 7.5vw, 130px);
+    font-size: clamp(64px, 7vw, 130px);
 }
 
 .contact-main>p:not(.section-code) {
