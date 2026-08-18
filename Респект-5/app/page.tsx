@@ -228,15 +228,33 @@ export default function Home() {
           <p className="eyebrow light">В соответствии с договорными задачами</p>
           <h2>Понятная зона ответственности</h2>
         </div>
-        <div className="services-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <div className="card-top"><span>{service.number}</span><small>{service.tag}</small></div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-              <span className="card-line" aria-hidden="true" />
-            </article>
-          ))}
+        <div className="services-showcase">
+          <article className="service-focus">
+            <div className="service-focus-top">
+              <span>{services[0].number} / ключевая услуга</span>
+              <small>{services[0].tag}</small>
+            </div>
+            <strong className="service-focus-time">24/7</strong>
+            <h3>{services[0].title}</h3>
+            <p>{services[0].text}</p>
+            <div className="service-focus-status">
+              <i aria-hidden="true" />
+              <span>Непрерывный режим работы</span>
+            </div>
+          </article>
+
+          <div className="service-list">
+            {services.slice(1).map((service) => (
+              <article className="service-row" key={service.number}>
+                <span className="service-number">{service.number}</span>
+                <div>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                </div>
+                <small>{service.tag}</small>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -246,26 +264,46 @@ export default function Home() {
           <p className="eyebrow">Как строится работа</p>
           <h2>От задачи управляющей компании — до стабильного режима на объекте.</h2>
         </div>
-        <div className="workflow-steps">
+        <div className="workflow-route">
+          <div className="route-caption">
+            <span>Рабочий маршрут</span>
+            <strong>4 контрольные точки</strong>
+          </div>
           <article>
-            <span>01</span>
-            <h3>Изучаем объект</h3>
-            <p>Фиксируем режим, требования территории и круг текущих задач.</p>
+            <span className="route-number">01</span>
+            <div className="route-copy">
+              <small>Обследование</small>
+              <h3>Изучаем объект</h3>
+              <p>Фиксируем режим, требования территории и круг текущих задач.</p>
+            </div>
+            <span className="route-result">План работ</span>
           </article>
           <article>
-            <span>02</span>
-            <h3>Организуем персонал</h3>
-            <p>Формируем присутствие представителей, охранников или консьержей.</p>
+            <span className="route-number">02</span>
+            <div className="route-copy">
+              <small>Организация</small>
+              <h3>Выводим персонал</h3>
+              <p>Формируем присутствие представителей, охранников или консьержей.</p>
+            </div>
+            <span className="route-result">Старт смен</span>
           </article>
           <article>
-            <span>03</span>
-            <h3>Работаем по правилам</h3>
-            <p>Соблюдаем внутренний порядок, пропускной режим и требования безопасности.</p>
+            <span className="route-number">03</span>
+            <div className="route-copy">
+              <small>Ежедневная работа</small>
+              <h3>Поддерживаем режим</h3>
+              <p>Соблюдаем внутренний порядок, пропускной режим и требования безопасности.</p>
+            </div>
+            <span className="route-result">Стабильность</span>
           </article>
           <article>
-            <span>04</span>
-            <h3>Подтверждаем результат</h3>
-            <p>Ведём документооборот и оформляем результаты оказанных услуг.</p>
+            <span className="route-number">04</span>
+            <div className="route-copy">
+              <small>Контроль</small>
+              <h3>Подтверждаем результат</h3>
+              <p>Ведём документооборот и оформляем результаты оказанных услуг.</p>
+            </div>
+            <span className="route-result">Отчётность</span>
           </article>
         </div>
       </section>

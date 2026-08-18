@@ -128,7 +128,7 @@ a {
 
 .nav a {
   color: rgba(20, 33, 43, 0.72);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
   padding: 35px 0;
@@ -159,7 +159,7 @@ a {
   border: 0;
   cursor: pointer;
   display: flex;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   gap: 16px;
   justify-self: end;
@@ -204,7 +204,7 @@ a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.64);
   display: flex;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   justify-content: space-between;
   letter-spacing: 0.13em;
@@ -250,7 +250,7 @@ a {
   color: var(--ink);
   cursor: pointer;
   display: inline-flex;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 850;
   gap: 28px;
   justify-content: center;
@@ -268,7 +268,7 @@ a {
 
 .phone-link {
   border-bottom: 1px solid rgba(255, 255, 255, 0.38);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   padding-bottom: 6px;
 }
@@ -295,7 +295,7 @@ a {
   align-items: center;
   color: rgba(255, 255, 255, 0.62);
   display: flex;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   justify-content: space-between;
   letter-spacing: 0.13em;
@@ -367,7 +367,7 @@ a {
 
 .clock-center small {
   color: var(--sand);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.17em;
   margin-top: 8px;
@@ -376,7 +376,7 @@ a {
 
 .clock-hour {
   color: rgba(255, 255, 255, 0.48);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   position: absolute;
 }
@@ -430,13 +430,13 @@ a {
 
 .shift-grid span {
   color: rgba(255, 255, 255, 0.45);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .shift-grid strong {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 650;
 }
 
@@ -479,7 +479,7 @@ a {
 
 .facts-bar small {
   color: rgba(20, 33, 43, 0.54);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -493,7 +493,7 @@ a {
 
 .section-index {
   color: rgba(20, 33, 43, 0.48);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -505,7 +505,7 @@ a {
 
 .eyebrow {
   color: var(--blue);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.15em;
   margin: 0 0 25px;
@@ -558,7 +558,7 @@ a {
 
 .intro-body p {
   color: rgba(20, 33, 43, 0.7);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   margin: 0 0 22px;
 }
@@ -593,123 +593,260 @@ a {
   max-width: 950px;
 }
 
-.services-grid {
-  border-top: 1px solid rgba(255, 255, 255, 0.19);
+.services-showcase {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(42px, 6vw, 95px);
+  grid-template-columns: minmax(360px, 0.82fr) minmax(500px, 1.18fr);
 }
 
-.service-card {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.19);
-  min-height: 360px;
+.service-focus {
+  background: var(--navy-soft);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  min-height: 620px;
   overflow: hidden;
-  padding: clamp(28px, 3vw, 48px);
+  padding: clamp(32px, 4vw, 58px);
   position: relative;
 }
 
-.service-card:not(:nth-child(3n + 1)) {
-  border-left: 1px solid rgba(255, 255, 255, 0.19);
+.service-focus::after {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  content: "";
+  height: 430px;
+  position: absolute;
+  right: -215px;
+  top: 105px;
+  width: 430px;
 }
 
-.card-top {
+.service-focus-top {
   align-items: center;
   color: rgba(255, 255, 255, 0.45);
   display: flex;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 750;
   justify-content: space-between;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.card-top small {
+.service-focus-top small {
   border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 10px;
+  padding: 8px 10px;
+}
+
+.service-focus-time {
+  color: var(--sand);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(92px, 10vw, 165px);
+  font-weight: 400;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
+  margin: auto 0 36px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-focus h3 {
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  margin: 0 0 20px;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-focus p {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 15px;
+  line-height: 1.68;
+  margin: 0;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-focus-status {
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.72);
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 10px;
+  letter-spacing: 0.09em;
+  margin-top: 36px;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+
+.service-focus-status i {
+  background: #8ca88e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(140, 168, 142, 0.12);
+  height: 7px;
+  width: 7px;
+}
+
+.service-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.service-row {
+  align-items: start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.19);
+  display: grid;
+  gap: clamp(18px, 2.5vw, 38px);
+  grid-template-columns: 44px 1fr auto;
+  padding: clamp(25px, 3vw, 38px) 0;
+  transition: padding 180ms ease;
+}
+
+.service-row:hover {
+  padding-left: 12px;
+}
+
+.service-number,
+.service-row small {
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.service-row small {
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 7px 9px;
 }
 
-.service-card h3 {
-  font-size: clamp(27px, 2.35vw, 39px);
+.service-row h3 {
+  font-size: clamp(23px, 2vw, 32px);
   font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 1.08;
-  margin: 74px 0 22px;
-  max-width: 340px;
+  letter-spacing: -0.035em;
+  margin: -4px 0 10px;
 }
 
-.service-card p {
+.service-row p {
   color: rgba(255, 255, 255, 0.62);
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.62;
   margin: 0;
-  max-width: 350px;
-  position: relative;
-  z-index: 2;
-}
-
-.card-line {
-  background: var(--copper);
-  bottom: -60px;
-  height: 100px;
-  position: absolute;
-  right: -25px;
-  transform: rotate(-35deg);
-  transition: transform 250ms ease;
-  width: 180px;
-}
-
-.service-card:hover .card-line {
-  transform: rotate(-35deg) translateY(-12px);
+  max-width: 650px;
 }
 
 .workflow {
   display: grid;
   gap: clamp(35px, 6vw, 95px);
-  grid-template-columns: 0.2fr 1.8fr;
+  grid-template-columns: 0.18fr 0.7fr 1.12fr;
   padding-bottom: clamp(100px, 12vw, 180px);
   padding-top: clamp(100px, 12vw, 180px);
 }
 
 .workflow-heading {
-  max-width: 1100px;
+  max-width: 650px;
 }
 
-.workflow-steps {
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-column: 2;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 30px;
+.workflow-heading h2 {
+  font-size: clamp(42px, 4.8vw, 77px);
 }
 
-.workflow-steps article {
-  min-height: 275px;
-  padding: 28px 26px 28px 0;
+.workflow-route {
+  align-self: start;
+  background: var(--fog);
+  grid-column: 3;
+  margin-top: 3px;
+  padding: clamp(26px, 3.5vw, 52px);
 }
 
-.workflow-steps article + article {
-  border-left: 1px solid var(--line);
-  padding-left: 26px;
+.route-caption {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 22px;
 }
 
-.workflow-steps > article > span {
-  color: var(--copper);
+.route-caption span,
+.route-caption strong,
+.route-copy small,
+.route-result {
   font-size: 10px;
-  font-weight: 850;
+  font-weight: 800;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.workflow-steps h3 {
-  font-size: 22px;
+.route-caption span {
+  color: rgba(20, 33, 43, 0.48);
+}
+
+.route-caption strong {
+  color: var(--blue);
+}
+
+.workflow-route article {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: clamp(20px, 3vw, 42px);
+  grid-template-columns: 68px 1fr auto;
+  min-height: 158px;
+  position: relative;
+}
+
+.route-number {
+  align-items: center;
+  background: var(--navy);
+  border-radius: 50%;
+  color: var(--white);
+  display: flex;
+  font-size: 11px;
+  font-weight: 800;
+  height: 46px;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  position: relative;
+  width: 46px;
+}
+
+.workflow-route article:not(:last-child) .route-number::after {
+  background: rgba(20, 33, 43, 0.22);
+  content: "";
+  height: 112px;
+  left: 22px;
+  position: absolute;
+  top: 46px;
+  width: 1px;
+}
+
+.route-copy small {
+  color: var(--copper);
+}
+
+.route-copy h3 {
+  font-size: clamp(23px, 2vw, 31px);
   font-weight: 600;
-  letter-spacing: -0.03em;
-  margin: 70px 0 15px;
+  letter-spacing: -0.035em;
+  margin: 7px 0 8px;
 }
 
-.workflow-steps p {
-  color: rgba(20, 33, 43, 0.65);
-  font-size: 13px;
-  line-height: 1.6;
+.route-copy p {
+  color: rgba(20, 33, 43, 0.66);
+  font-size: 15px;
+  line-height: 1.58;
   margin: 0;
+  max-width: 560px;
+}
+
+.route-result {
+  color: rgba(20, 33, 43, 0.52);
+  text-align: right;
 }
 
 .objects {
@@ -764,7 +901,7 @@ a {
 .object-number,
 .object-card small {
   color: rgba(255, 255, 255, 0.48);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -779,7 +916,7 @@ a {
 
 .object-card p {
   color: rgba(255, 255, 255, 0.68);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
   margin: 0;
   max-width: 620px;
@@ -850,7 +987,7 @@ a {
 
 .visual-caption span {
   color: rgba(20, 33, 43, 0.56);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   margin-top: 5px;
   text-transform: uppercase;
@@ -885,13 +1022,13 @@ a {
 
 .commitment-copy li > span {
   color: var(--copper);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
 }
 
 .commitment-copy li p {
   color: rgba(20, 33, 43, 0.68);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   margin: 0;
 }
@@ -916,7 +1053,7 @@ a {
 
 .company-heading > p:last-child {
   color: rgba(20, 33, 43, 0.62);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   margin: 28px 0 0;
   max-width: 390px;
@@ -940,14 +1077,14 @@ a {
 
 .requisites dt {
   color: rgba(20, 33, 43, 0.48);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .requisites dd {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.45;
   margin: 0;
@@ -1014,7 +1151,7 @@ a {
 
 .contacts-data small {
   color: rgba(255, 255, 255, 0.43);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.13em;
   margin-bottom: 12px;
@@ -1038,7 +1175,7 @@ a {
   align-items: center;
   color: var(--sand);
   display: inline-flex;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   gap: 14px;
   letter-spacing: 0.09em;
@@ -1064,7 +1201,7 @@ a {
 
 .footer-copy {
   color: rgba(255, 255, 255, 0.42);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
 }
 
@@ -1133,7 +1270,7 @@ a {
 
 .modal-intro {
   color: rgba(20, 33, 43, 0.58);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
   margin: 20px 0 32px;
 }
@@ -1151,7 +1288,7 @@ a {
 }
 
 .contact-modal label > span {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1199,7 +1336,7 @@ a {
 
 .contact-modal .consent span {
   color: rgba(20, 33, 43, 0.62);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.4;
@@ -1281,17 +1418,21 @@ a {
     grid-template-columns: 0.15fr 1.1fr 0.75fr;
   }
 
-  .workflow-steps {
-    grid-template-columns: 1fr 1fr;
+  .services-showcase {
+    grid-template-columns: 1fr;
   }
 
-  .workflow-steps article:nth-child(3) {
-    border-left: 0;
-    border-top: 1px solid var(--line);
+  .service-focus {
+    min-height: 560px;
   }
 
-  .workflow-steps article:nth-child(4) {
-    border-top: 1px solid var(--line);
+  .workflow {
+    grid-template-columns: 0.15fr 1.85fr;
+  }
+
+  .workflow-route {
+    grid-column: 2;
+    margin-top: 0;
   }
 
   .company {
@@ -1365,20 +1506,8 @@ a {
   .services-title h2,
   .objects-head .eyebrow,
   .objects-head h2,
-  .workflow-steps {
+  .workflow-route {
     grid-column: 1;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .service-card:not(:nth-child(3n + 1)) {
-    border-left: 0;
-  }
-
-  .service-card:nth-child(even) {
-    border-left: 1px solid rgba(255, 255, 255, 0.19);
   }
 
   .object-card {
@@ -1495,30 +1624,51 @@ a {
     font-size: 43px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-focus {
+    min-height: 500px;
   }
 
-  .service-card {
-    min-height: 320px;
+  .service-row {
+    grid-template-columns: 32px 1fr;
   }
 
-  .service-card:nth-child(even) {
-    border-left: 0;
+  .service-row small {
+    grid-column: 2;
+    justify-self: start;
   }
 
-  .workflow-steps {
-    grid-template-columns: 1fr;
+  .workflow-route {
+    padding: 22px 18px;
   }
 
-  .workflow-steps article {
-    border-top: 1px solid var(--line);
-    min-height: 235px;
-    padding-left: 0 !important;
+  .route-caption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .workflow-steps article + article {
-    border-left: 0;
+  .workflow-route article {
+    align-items: start;
+    gap: 16px;
+    grid-template-columns: 52px 1fr;
+    min-height: 0;
+    padding: 25px 0;
+  }
+
+  .route-number {
+    height: 42px;
+    width: 42px;
+  }
+
+  .workflow-route article:not(:last-child) .route-number::after {
+    height: calc(100% + 48px);
+    left: 20px;
+    top: 42px;
+  }
+
+  .route-result {
+    grid-column: 2;
+    text-align: left;
   }
 
   .object-card {
