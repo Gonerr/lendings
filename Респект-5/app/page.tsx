@@ -64,13 +64,16 @@ const objects = [
 ];
 
 const requisites = [
-  ["Полное наименование", "Общество с ограниченной ответственностью «Респект-5»"],
+  [
+    "Полное наименование",
+    "Общество с ограниченной ответственностью «Респект-5»",
+  ],
   ["Дата регистрации", "13 сентября 2021 года"],
   ["ОГРН", "1217800140623"],
   ["ИНН", "7810928181"],
   ["КПП", "781001001"],
   ["Генеральный директор", "Гумеров Вячеслав Гарифович"],
-  ["Категория", "УСН / микропредприятие"],
+  //   ["Категория", "УСН / микропредприятие"],
 ];
 
 function Arrow() {
@@ -97,7 +100,7 @@ export default function Home() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const subject = encodeURIComponent(
-      `Запрос с сайта Респект-5: ${String(data.get("objectType") || "объект")}`,
+      `Запрос с сайта Респект-5: ${String(data.get("objectType") || "объект")}`
     );
     const body = encodeURIComponent(
       [
@@ -108,7 +111,7 @@ export default function Home() {
         "",
         "Сообщение:",
         String(data.get("message") || ""),
-      ].join("\n"),
+      ].join("\n")
     );
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setFormOpen(false);
@@ -120,7 +123,10 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Респект-5 — на главную">
-          <span className="brand-sign"><b>R</b><i>5</i></span>
+          <span className="brand-sign">
+            <b>R</b>
+            <i>5</i>
+          </span>
           <span className="brand-name">РЕСПЕКТ—5</span>
         </a>
 
@@ -135,15 +141,32 @@ export default function Home() {
           <span />
         </button>
 
-        <nav className={menuOpen ? "nav nav-open" : "nav"} aria-label="Основная навигация">
-          <a href="#services" onClick={closeMenu}>Услуги</a>
-          <a href="#approach" onClick={closeMenu}>Подход</a>
-          <a href="#objects" onClick={closeMenu}>Объекты</a>
-          <a href="#company" onClick={closeMenu}>Компания</a>
-          <a href="#contacts" onClick={closeMenu}>Контакты</a>
+        <nav
+          className={menuOpen ? "nav nav-open" : "nav"}
+          aria-label="Основная навигация"
+        >
+          <a href="#services" onClick={closeMenu}>
+            Услуги
+          </a>
+          <a href="#approach" onClick={closeMenu}>
+            Подход
+          </a>
+          <a href="#objects" onClick={closeMenu}>
+            Объекты
+          </a>
+          <a href="#company" onClick={closeMenu}>
+            Компания
+          </a>
+          <a href="#contacts" onClick={closeMenu}>
+            Контакты
+          </a>
         </nav>
 
-        <button className="header-action" type="button" onClick={() => setFormOpen(true)}>
+        <button
+          className="header-action"
+          type="button"
+          onClick={() => setFormOpen(true)}
+        >
           Обсудить объект <Arrow />
         </button>
       </header>
@@ -155,51 +178,93 @@ export default function Home() {
             <span>Сопровождение объектов</span>
           </div>
           <h1>
-            Объект под<br />
-            <em>контролем.</em><br />
+            Объект под
+            <br />
+            <em>контролем.</em>
+            <br />
             Каждый день.
           </h1>
           <p className="hero-text">
-            Круглосуточное присутствие персонала, консьерж-сервис и административное
-            сопровождение объектов управляющих компаний.
+            Круглосуточное присутствие персонала, консьерж-сервис и
+            административное сопровождение объектов управляющих компаний.
           </p>
           <div className="hero-actions">
-            <button className="primary-button" type="button" onClick={() => setFormOpen(true)}>
+            <button
+              className="primary-button"
+              type="button"
+              onClick={() => setFormOpen(true)}
+            >
               Получить консультацию <Arrow />
             </button>
-            <a className="phone-link" href={PHONE_LINK}>{PHONE_DISPLAY}</a>
+            <a className="phone-link" href={PHONE_LINK}>
+              {PHONE_DISPLAY}
+            </a>
           </div>
         </div>
 
-        <div className="hero-system" aria-label="Система круглосуточного присутствия на объекте">
+        <div
+          className="hero-system"
+          aria-label="Система круглосуточного присутствия на объекте"
+        >
           <div className="system-topline">
             <span>Режим присутствия</span>
-            <span className="status"><i /> Активен</span>
+            <span className="status">
+              <i /> Активен
+            </span>
           </div>
           <div className="clock">
             <span className="clock-hour hour-00">00</span>
             <span className="clock-hour hour-06">06</span>
             <span className="clock-hour hour-12">12</span>
             <span className="clock-hour hour-18">18</span>
-            <div className="clock-center"><strong>24/7</strong><small>на объекте</small></div>
+            <div className="clock-center">
+              <strong>24/7</strong>
+              <small>на объекте</small>
+            </div>
             <div className="clock-hand" />
           </div>
           <div className="shift-grid">
-            <div><span>Присутствие</span><strong>Непрерывно</strong></div>
-            <div><span>Коммуникация</span><strong>На месте</strong></div>
-            <div><span>Документы</span><strong>По регламенту</strong></div>
+            <div>
+              <span>Присутствие</span>
+              <strong>Непрерывно</strong>
+            </div>
+            <div>
+              <span>Коммуникация</span>
+              <strong>На месте</strong>
+            </div>
+            <div>
+              <span>Документы</span>
+              <strong>По регламенту</strong>
+            </div>
           </div>
           <div className="building-lines" aria-hidden="true">
-            <span /><span /><span /><span /><span /><span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
         </div>
       </section>
 
       <section className="facts-bar" aria-label="Ключевые факты">
-        <div><small>Работаем</small><strong>с 2021 года</strong></div>
-        <div><small>Формат</small><strong>24 часа / 7 дней</strong></div>
-        <div><small>Партнёры</small><strong>управляющие компании</strong></div>
-        <div><small>География</small><strong>Санкт-Петербург</strong></div>
+        <div>
+          <small>Работаем</small>
+          <strong>с 2021 года</strong>
+        </div>
+        <div>
+          <small>Формат</small>
+          <strong>24 часа / 7 дней</strong>
+        </div>
+        <div>
+          <small>Партнёры</small>
+          <strong>управляющие компании</strong>
+        </div>
+        <div>
+          <small>География</small>
+          <strong>Санкт-Петербург</strong>
+        </div>
       </section>
 
       <section className="intro section-shell" id="approach">
@@ -210,14 +275,15 @@ export default function Home() {
         </div>
         <div className="intro-body">
           <p className="lead">
-            «Респект-5» работает по договорам с управляющими компаниями и обеспечивает
-            организованную работу персонала на территории жилых, коммерческих и
-            специализированных объектов.
+            «Респект-5» работает по договорам с управляющими компаниями и
+            обеспечивает организованную работу персонала на территории жилых,
+            коммерческих и специализированных объектов.
           </p>
           <p>
-            В основе услуги — не абстрактное обещание безопасности, а конкретный рабочий
-            процесс: представитель находится на объекте, соблюдает действующий режим,
-            ведёт документацию, решает административные вопросы и поддерживает связь с заказчиком.
+            В основе услуги — не абстрактное обещание безопасности, а конкретный
+            рабочий процесс: представитель находится на объекте, соблюдает
+            действующий режим, ведёт документацию, решает административные
+            вопросы и поддерживает связь с заказчиком.
           </p>
         </div>
       </section>
@@ -262,7 +328,9 @@ export default function Home() {
         <div className="section-index">03 / Процесс</div>
         <div className="workflow-heading">
           <p className="eyebrow">Как строится работа</p>
-          <h2>От задачи управляющей компании — до стабильного режима на объекте.</h2>
+          <h2>
+            От задачи управляющей компании — до стабильного режима на объекте.
+          </h2>
         </div>
         <div className="workflow-route">
           <div className="route-caption">
@@ -274,7 +342,9 @@ export default function Home() {
             <div className="route-copy">
               <small>Обследование</small>
               <h3>Изучаем объект</h3>
-              <p>Фиксируем режим, требования территории и круг текущих задач.</p>
+              <p>
+                Фиксируем режим, требования территории и круг текущих задач.
+              </p>
             </div>
             <span className="route-result">План работ</span>
           </article>
@@ -283,7 +353,9 @@ export default function Home() {
             <div className="route-copy">
               <small>Организация</small>
               <h3>Выводим персонал</h3>
-              <p>Формируем присутствие представителей, охранников или консьержей.</p>
+              <p>
+                Формируем присутствие представителей, охранников или консьержей.
+              </p>
             </div>
             <span className="route-result">Старт смен</span>
           </article>
@@ -292,7 +364,10 @@ export default function Home() {
             <div className="route-copy">
               <small>Ежедневная работа</small>
               <h3>Поддерживаем режим</h3>
-              <p>Соблюдаем внутренний порядок, пропускной режим и требования безопасности.</p>
+              <p>
+                Соблюдаем внутренний порядок, пропускной режим и требования
+                безопасности.
+              </p>
             </div>
             <span className="route-result">Стабильность</span>
           </article>
@@ -301,7 +376,9 @@ export default function Home() {
             <div className="route-copy">
               <small>Контроль</small>
               <h3>Подтверждаем результат</h3>
-              <p>Ведём документооборот и оформляем результаты оказанных услуг.</p>
+              <p>
+                Ведём документооборот и оформляем результаты оказанных услуг.
+              </p>
             </div>
             <span className="route-result">Отчётность</span>
           </article>
@@ -323,7 +400,9 @@ export default function Home() {
                 <h3>{object.title}</h3>
               </div>
               <p>{object.text}</p>
-              <span className="object-arrow" aria-hidden="true">→</span>
+              <span className="object-arrow" aria-hidden="true">
+                →
+              </span>
             </article>
           ))}
         </div>
@@ -332,15 +411,36 @@ export default function Home() {
       <section className="commitment section-shell">
         <div className="commitment-visual" aria-hidden="true">
           <span className="big-five">5</span>
-          <div className="visual-caption"><b>Респект</b><span>сопровождение объектов</span></div>
+          <div className="visual-caption">
+            <b>Респект</b>
+            <span>сопровождение объектов</span>
+          </div>
         </div>
         <div className="commitment-copy">
           <p className="eyebrow">Рабочие принципы</p>
           <h2>Не пропадаем после подписания договора.</h2>
           <ul>
-            <li><span>01</span><p><b>Непрерывность.</b> Не приостанавливаем оказание согласованных услуг без предварительного согласования.</p></li>
-            <li><span>02</span><p><b>Ответственность.</b> Работаем в пределах закреплённой договором зоны и требований законодательства.</p></li>
-            <li><span>03</span><p><b>Прозрачность.</b> Поддерживаем документацию и регулярное подтверждение оказанных услуг.</p></li>
+            <li>
+              <span>01</span>
+              <p>
+                <b>Непрерывность.</b> Не приостанавливаем оказание согласованных
+                услуг без предварительного согласования.
+              </p>
+            </li>
+            <li>
+              <span>02</span>
+              <p>
+                <b>Ответственность.</b> Работаем в пределах закреплённой
+                договором зоны и требований законодательства.
+              </p>
+            </li>
+            <li>
+              <span>03</span>
+              <p>
+                <b>Прозрачность.</b> Поддерживаем документацию и регулярное
+                подтверждение оказанных услуг.
+              </p>
+            </li>
           </ul>
         </div>
       </section>
@@ -354,7 +454,10 @@ export default function Home() {
         </div>
         <dl className="requisites">
           {requisites.map(([term, description]) => (
-            <div key={term}><dt>{term}</dt><dd>{description}</dd></div>
+            <div key={term}>
+              <dt>{term}</dt>
+              <dd>{description}</dd>
+            </div>
           ))}
         </dl>
       </section>
@@ -364,9 +467,14 @@ export default function Home() {
           <p className="eyebrow light">Связаться</p>
           <h2>Обсудим задачи вашего объекта</h2>
           <p>
-            Расскажите о площадке и нужном формате присутствия — подготовим предметное предложение.
+            Расскажите о площадке и нужном формате присутствия — подготовим
+            предметное предложение.
           </p>
-          <button className="primary-button warm" type="button" onClick={() => setFormOpen(true)}>
+          <button
+            className="primary-button warm"
+            type="button"
+            onClick={() => setFormOpen(true)}
+          >
             Оставить обращение <Arrow />
           </button>
         </div>
@@ -382,7 +490,8 @@ export default function Home() {
           <div>
             <small>Адрес</small>
             <address>
-              196084, г. Санкт-Петербург, МО Московская Застава,<br />
+              196084, г. Санкт-Петербург, МО Московская Застава,
+              <br />
               ул. Киевская, д. 3, литера А, помещ. 33-Н, офис 2А
             </address>
             <a
@@ -399,18 +508,27 @@ export default function Home() {
 
       <footer className="footer">
         <a className="brand footer-brand" href="#top">
-          <span className="brand-sign"><b>R</b><i>5</i></span>
+          <span className="brand-sign">
+            <b>R</b>
+            <i>5</i>
+          </span>
           <span className="brand-name">РЕСПЕКТ—5</span>
         </a>
         <div className="footer-copy">
           <p>© {new Date().getFullYear()} ООО «Респект-5»</p>
           <p>Информация на сайте не является публичной офертой.</p>
         </div>
-        <a className="to-top" href="#top" aria-label="Наверх">↑</a>
+        <a className="to-top" href="#top" aria-label="Наверх">
+          ↑
+        </a>
       </footer>
 
       {formOpen && (
-        <div className="modal-backdrop" role="presentation" onMouseDown={() => setFormOpen(false)}>
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onMouseDown={() => setFormOpen(false)}
+        >
           <section
             className="contact-modal"
             role="dialog"
@@ -418,16 +536,46 @@ export default function Home() {
             aria-labelledby="form-title"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <button className="modal-close" type="button" onClick={() => setFormOpen(false)} aria-label="Закрыть форму">×</button>
+            <button
+              className="modal-close"
+              type="button"
+              onClick={() => setFormOpen(false)}
+              aria-label="Закрыть форму"
+            >
+              ×
+            </button>
             <p className="eyebrow">Обсудить объект</p>
             <h2 id="form-title">Расскажите о вашей задаче</h2>
             <p className="modal-intro">
-              После отправки откроется почтовое приложение с готовым письмом на {EMAIL}.
+              После отправки откроется почтовое приложение с готовым письмом на{" "}
+              {EMAIL}.
             </p>
             <form onSubmit={handleSubmit}>
-              <label><span>Ваше имя</span><input name="name" required autoComplete="name" placeholder="Как к вам обращаться" /></label>
-              <label><span>Организация</span><input name="company" autoComplete="organization" placeholder="Название компании" /></label>
-              <label><span>Телефон или e-mail</span><input name="contact" required placeholder="Контакт для ответа" /></label>
+              <label>
+                <span>Ваше имя</span>
+                <input
+                  name="name"
+                  required
+                  autoComplete="name"
+                  placeholder="Как к вам обращаться"
+                />
+              </label>
+              <label>
+                <span>Организация</span>
+                <input
+                  name="company"
+                  autoComplete="organization"
+                  placeholder="Название компании"
+                />
+              </label>
+              <label>
+                <span>Телефон или e-mail</span>
+                <input
+                  name="contact"
+                  required
+                  placeholder="Контакт для ответа"
+                />
+              </label>
               <label>
                 <span>Тип объекта</span>
                 <select name="objectType" defaultValue="Бизнес-центр">
@@ -437,9 +585,24 @@ export default function Home() {
                   <option>Другой объект</option>
                 </select>
               </label>
-              <label className="wide"><span>Сообщение</span><textarea name="message" rows={4} required placeholder="Коротко опишите объект и необходимые задачи" /></label>
-              <label className="consent wide"><input type="checkbox" required /><span>Согласен на обработку данных, указанных в обращении.</span></label>
-              <button className="primary-button wide" type="submit">Подготовить письмо <Arrow /></button>
+              <label className="wide">
+                <span>Сообщение</span>
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Коротко опишите объект и необходимые задачи"
+                />
+              </label>
+              <label className="consent wide">
+                <input type="checkbox" required />
+                <span>
+                  Согласен на обработку данных, указанных в обращении.
+                </span>
+              </label>
+              <button className="primary-button wide" type="submit">
+                Подготовить письмо <Arrow />
+              </button>
             </form>
           </section>
         </div>
