@@ -167,10 +167,13 @@ export default function Home() {
             <a className="text-link" href="#details">Смотреть реквизиты <Arrow /></a>
           </div>
         </div>
-        <aside className="hero__note">
-          <span>Коротко</span>
-          <strong>Участник жилищно-строительного кооператива</strong>
-          <p>Организация зарегистрирована 24 июля 2006 года.</p>
+        <aside className="hero__summary" aria-label="Краткие сведения об организации">
+          <p>Статус организации</p>
+          <dl>
+            <div><dt>Участие</dt><dd>Член ЖСК</dd></div>
+            <div><dt>Дата регистрации</dt><dd>24 июля 2006 года</dd></div>
+            <div><dt>Место регистрации</dt><dd>Санкт-Петербург</dd></div>
+          </dl>
         </aside>
       </section>
 
@@ -254,6 +257,14 @@ export default function Home() {
             <h2>Адрес для корреспонденции</h2>
           </div>
           <address>{ADDRESS}</address>
+          <div className="contact__map">
+            <iframe
+              title="ООО УСПС на Яндекс Картах"
+              src="https://yandex.ru/map-widget/v1/?mode=search&text=196233%2C%20%D0%B3.%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB.%20%D0%9E%D1%80%D0%B4%D0%B6%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8%D0%B4%D0%B7%D0%B5%2C%20%D0%B4.%2052"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
           <div className="contact__actions">
             <a className="button" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052" target="_blank" rel="noreferrer">Открыть на карте</a>
             <button className="button button--outline" type="button" onClick={copyAddress}>{copied ? "Адрес скопирован" : "Скопировать адрес"}</button>
