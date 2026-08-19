@@ -1,124 +1,117 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 const ADDRESS =
   "196233, г. Санкт-Петербург, ул. Орджоникидзе, д. 52, литер А, пом. 92-Н, офис 1";
 
+// Добавьте подтверждённый email организации, чтобы он автоматически
+// подставлялся в поле «Кому» при открытии почтовой программы.
+const SITE_EMAIL = "";
+
 const facts = [
   {
-    index: "01",
-    eyebrow: "Юридическая основа",
-    title: "Организация зарегистрирована в 2006 году",
-    text: "ООО «Управление сопровождения проектов строительства» зарегистрировано 24 июля 2006 года. На сайте собраны основные сведения о компании и её участии в жилищно-строительной кооперации.",
-    tone: "paper",
-    mark: "24·07·06",
+    title: "Участие в ЖСК",
+    text: "Компания является участником жилищно-строительного кооператива и действует в рамках установленных правил кооперативного взаимодействия.",
   },
   {
-    index: "02",
-    eyebrow: "Документы",
-    title: "Порядок в информации и документах",
-    text: "Для кооперативного взаимодействия важны точные сведения, понятные основания и доступность официальной информации. На этой странице всё необходимое собрано в одном месте.",
-    tone: "ink",
-    mark: "ПОРЯДОК",
+    title: "Официальные сведения",
+    text: "На странице собраны регистрационные данные организации, сведения о руководителе и адрес для письменных обращений.",
   },
   {
-    index: "03",
-    eyebrow: "Участие",
-    title: "Участие в жилищно-строительном кооперативе",
-    text: "Компания является членом ЖСК. Такой формат объединяет участников вокруг общих организационных и имущественных вопросов на основе установленных правил.",
-    tone: "blue",
-    mark: "ЖСК",
-  },
-  {
-    index: "04",
-    eyebrow: "Официальная связь",
-    title: "Корреспонденция — по юридическому адресу",
-    text: "Для письменных обращений и официальной корреспонденции используйте юридический адрес организации в Санкт-Петербурге.",
-    tone: "clay",
-    mark: "196233",
+    title: "Понятная связь",
+    text: "Для обращения достаточно указать свои контактные данные, адрес или объект вопроса и кратко описать ситуацию.",
   },
 ];
 
-const Arrow = ({ direction = "right" }: { direction?: "left" | "right" }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" className={direction === "left" ? "arrow arrow--left" : "arrow"}>
+const articles = [
+  {
+    id: "away",
+    label: "Памятка",
+    title: "Если вы уезжаете",
+    summary:
+      "Короткий список дел перед поездкой: проверить начисления, передать показания и оставить контакт для экстренной связи.",
+    content: [
+      "Перед длительным отъездом полезно проверить последние начисления и убедиться, что обязательные платежи внесены. Если для помещения предусмотрена передача показаний приборов учёта, сделайте это в установленный срок.",
+      "Перекройте воду, отключите ненужные электроприборы и оставьте близкому человеку или соседу контакт для экстренной связи. Если порядок действий по вашему дому неизвестен, заранее направьте письменный вопрос.",
+    ],
+  },
+  {
+    id: "debt",
+    label: "Важно знать",
+    title: "Долги за ЖКУ перед поездкой: что проверить заранее",
+    summary:
+      "Само наличие начисления не означает автоматического запрета на выезд, но задолженность в рамках исполнительного производства может привести к ограничениям.",
+    content: [
+      "Перед поездкой стоит проверить не только квитанции, но и наличие исполнительных производств. Временное ограничение на выезд устанавливается уполномоченным органом в предусмотренных законом случаях — оно не возникает автоматически из-за любой неоплаченной квитанции.",
+      "Если задолженность обнаружена, уточните её основание, сумму и порядок погашения. После оплаты сохраните подтверждающие документы и проверьте обновление сведений в официальных сервисах.",
+    ],
+    source: "https://www.gosuslugi.ru/help/faq/bailiff/1022088",
+  },
+  {
+    id: "appeal",
+    label: "Обращения",
+    title: "Как подготовить понятное обращение",
+    summary:
+      "Чем точнее описан вопрос, тем проще зарегистрировать его и подготовить содержательный ответ.",
+    content: [
+      "Укажите фамилию и имя, удобный способ связи, адрес или объект, к которому относится вопрос. Кратко опишите ситуацию, важные даты и ожидаемый результат.",
+      "Если вопрос связан с документами или начислениями, перечислите их реквизиты. Не отправляйте через обычную электронную почту лишние персональные данные и сведения, которые не нужны для рассмотрения обращения.",
+    ],
+  },
+];
+
+const questions = [
+  {
+    question: "Как направить официальное обращение?",
+    answer:
+      "Письменную корреспонденцию можно направить по юридическому адресу организации. В обращении укажите имя, обратный контакт, адрес или объект вопроса и краткое описание ситуации.",
+  },
+  {
+    question: "Какие данные лучше указать в сообщении?",
+    answer:
+      "Достаточно номера телефона, электронной почты и комментария. Если вопрос относится к конкретному помещению или документу, добавьте адрес и реквизиты без передачи избыточных персональных данных.",
+  },
+  {
+    question: "Где посмотреть реквизиты организации?",
+    answer:
+      "ОГРН, ИНН, КПП, дату регистрации, сведения о руководителе и юридический адрес можно посмотреть ниже, в разделе «Реквизиты».",
+  },
+  {
+    question: "Что проверить перед длительным отъездом?",
+    answer:
+      "Проверьте начисления, передайте показания приборов учёта в установленный срок, отключите ненужные приборы и оставьте контакт для экстренной связи.",
+  },
+];
+
+type Article = (typeof articles)[number];
+
+const Arrow = () => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="arrow">
     <path d="M5 12h14M14 6l6 6-6 6" />
   </svg>
 );
 
 export default function Home() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
+  const [activeArticle, setActiveArticle] = useState<Article | null>(null);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const onWheel = (event: WheelEvent) => {
-      if (window.innerWidth <= 820 || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-      const atStart = track.scrollLeft <= 2 && event.deltaY < 0;
-      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2 && event.deltaY > 0;
-      if (atStart || atEnd) return;
-      event.preventDefault();
-      track.scrollLeft += event.deltaY;
+    if (!activeArticle) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveArticle(null);
     };
-
-    const onScroll = () => {
-      const cards = Array.from(track.querySelectorAll<HTMLElement>("[data-story]"));
-      if (!cards.length) return;
-      const center = track.scrollLeft + track.clientWidth / 2;
-      let nearest = 0;
-      let distance = Number.POSITIVE_INFINITY;
-      cards.forEach((card, index) => {
-        const currentDistance = Math.abs(center - (card.offsetLeft + card.offsetWidth / 2));
-        if (currentDistance < distance) {
-          nearest = index;
-          distance = currentDistance;
-        }
-      });
-      setActive(nearest);
-    };
-
-    track.addEventListener("wheel", onWheel, { passive: false });
-    track.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    document.body.classList.add("modal-open");
+    window.addEventListener("keydown", closeOnEscape);
     return () => {
-      track.removeEventListener("wheel", onWheel);
-      track.removeEventListener("scroll", onScroll);
+      document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", closeOnEscape);
     };
-  }, []);
-
-  const move = (direction: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector<HTMLElement>("[data-story]");
-    track.scrollBy({ left: direction * ((card?.offsetWidth ?? track.clientWidth) + 18), behavior: "smooth" });
-  };
+  }, [activeArticle]);
 
   const copyAddress = async () => {
     try {
-      let copiedWithApi = false;
-      if (navigator.clipboard?.writeText) {
-        try {
-          await navigator.clipboard.writeText(ADDRESS);
-          copiedWithApi = true;
-        } catch {
-          copiedWithApi = false;
-        }
-      }
-      if (!copiedWithApi) {
-        const field = document.createElement("textarea");
-        field.value = ADDRESS;
-        field.setAttribute("readonly", "");
-        field.style.position = "fixed";
-        field.style.opacity = "0";
-        document.body.appendChild(field);
-        field.select();
-        const succeeded = document.execCommand("copy");
-        field.remove();
-        if (!succeeded) throw new Error("Copy is unavailable");
-      }
+      await navigator.clipboard.writeText(ADDRESS);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1800);
     } catch {
@@ -126,124 +119,179 @@ export default function Home() {
     }
   };
 
+  const sendByEmail = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!activeArticle) return;
+    const data = new FormData(event.currentTarget);
+    const phone = String(data.get("phone") ?? "");
+    const email = String(data.get("email") ?? "");
+    const comment = String(data.get("comment") ?? "");
+    const subject = `Обращение с сайта УСПС: ${activeArticle.title}`;
+    const body = [
+      `Тема: ${activeArticle.title}`,
+      `Телефон: ${phone}`,
+      `Email: ${email}`,
+      "",
+      "Комментарий:",
+      comment,
+    ].join("\n");
+    window.location.href = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="УСПС — на главную">
           <span className="brand__mark">У</span>
-          <span className="brand__name">Управление сопровождения<br />проектов строительства</span>
+          <span className="brand__name">Управление сопровождения проектов строительства</span>
         </a>
         <nav className="nav" aria-label="Основная навигация">
-          <a href="#status">О компании</a><a href="#facts">Основное</a><a href="#details">Реквизиты</a>
+          <a href="#about">О компании</a>
+          <a href="#useful">Полезное</a>
+          <a href="#faq">Вопросы</a>
+          <a href="#details">Реквизиты</a>
         </nav>
-        <a className="header-link" href="#contacts">Адрес для связи <Arrow /></a>
+        <a className="button button--small" href="#contacts">Контакты</a>
       </header>
 
       <section className="hero" id="top">
-        <div className="hero__grid" aria-hidden="true">
-          <span className="hero__axis hero__axis--x" /><span className="hero__axis hero__axis--y" />
-          <span className="hero__square hero__square--one" /><span className="hero__square hero__square--two" />
-          <span className="hero__dot" />
-        </div>
-        <div className="hero__status"><span className="status-dot" />Участник жилищно-строительного кооператива</div>
-        <h1>Участие.<br /><span>Порядок.</span><br />Диалог.</h1>
-        <div className="hero__bottom">
-          <p>ООО «Управление сопровождения проектов строительства» — член ЖСК. Здесь собраны основные сведения об организации и данные для официальной связи.</p>
-          <a className="circle-link" href="#facts" aria-label="Перейти к информации"><span>Подробнее</span><Arrow /></a>
-        </div>
-        <div className="hero__ticker" aria-label="Краткий статус">
-          <span>Санкт-Петербург</span><span>·</span><span>с 2006 года</span><span>·</span><span>член ЖСК</span><span>·</span><strong>официальная информация</strong>
-        </div>
-      </section>
-
-      <section className="statement" id="status">
-        <p className="section-kicker">01 / О компании</p>
-        <div className="statement__content">
-          <h2>Участие в ЖСК — это понятный порядок и общая ответственность.</h2>
-          <div className="statement__copy">
-            <p>Жилищно-строительная кооперация объединяет участников для решения общих организационных и имущественных вопросов в рамках установленных правил.</p>
-            <p>На сайте представлены сведения об ООО «Управление сопровождения проектов строительства», руководителе, участии в ЖСК и адресе для обращений.</p>
+        <div className="hero__content">
+          <p className="eyebrow">ООО «УСПС» · Санкт-Петербург</p>
+          <h1>Информация об организации и участии в ЖСК</h1>
+          <p className="hero__lead">
+            Основные сведения, полезные памятки и понятный порядок связи с ООО
+            «Управление сопровождения проектов строительства».
+          </p>
+          <div className="hero__actions">
+            <a className="button" href="#useful">Полезная информация</a>
+            <a className="text-link" href="#details">Смотреть реквизиты <Arrow /></a>
           </div>
         </div>
+        <aside className="hero__note">
+          <span>Коротко</span>
+          <strong>Участник жилищно-строительного кооператива</strong>
+          <p>Организация зарегистрирована 24 июля 2006 года.</p>
+        </aside>
       </section>
 
-      <section className="stories" id="facts">
-        <div className="stories__head">
-          <div><p className="section-kicker section-kicker--light">02 / Коротко о главном</p><h2>Основное<br />о компании.</h2></div>
-          <div className="stories__tools">
-            <p>Листайте карточки или используйте стрелки</p>
-            <div className="stories__counter" aria-live="polite"><strong>{String(active + 1).padStart(2, "0")}</strong><span>/ {String(facts.length).padStart(2, "0")}</span></div>
-            <div className="stories__buttons">
-              <button onClick={() => move(-1)} aria-label="Предыдущий факт"><Arrow direction="left" /></button>
-              <button onClick={() => move(1)} aria-label="Следующий факт"><Arrow /></button>
-            </div>
-          </div>
+      <section className="about section" id="about">
+        <div className="section-heading">
+          <p className="eyebrow">О компании</p>
+          <h2>Главное — в одном месте</h2>
+          <p>Страница помогает быстро найти основные сведения и подготовить обращение без поиска по разным источникам.</p>
         </div>
-        <div className="story-track" ref={trackRef} tabIndex={0}>
-          {facts.map((fact) => (
-            <article className={`story-card story-card--${fact.tone}`} data-story key={fact.index}>
-              <div className="story-card__meta"><span>{fact.index}</span><span>{fact.eyebrow}</span></div>
-              <div className="story-card__body"><h3>{fact.title}</h3><p>{fact.text}</p></div>
-              <div className="story-card__visual" aria-hidden="true">
-                <span className="story-card__mark">{fact.mark}</span>
-                <span className="building building--a" /><span className="building building--b" /><span className="building building--c" />
-              </div>
+        <div className="fact-grid">
+          {facts.map((fact, index) => (
+            <article className="fact-card" key={fact.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{fact.title}</h3>
+              <p>{fact.text}</p>
             </article>
           ))}
-          <div className="track-end" aria-hidden="true"><span>Дальше — реквизиты</span><Arrow /></div>
         </div>
       </section>
 
-      <section className="details" id="details">
-        <div className="details__title">
-          <p className="section-kicker">03 / Реквизиты</p>
-          <h2>Карточка<br />организации</h2>
-          <p>Основные регистрационные сведения в компактном и привычном формате.</p>
-        </div>
-        <div className="details__document">
-          <div className="details__document-head"><span>ООО · Санкт-Петербург</span><span>Регистрационные сведения</span></div>
-          <h3>Управление сопровождения<br />проектов строительства</h3>
-          <dl className="details__grid">
-            <div className="details__wide"><dt>Полное наименование</dt><dd>ООО «Управление сопровождения проектов строительства»</dd></div>
-            <div><dt>ОГРН</dt><dd>5067847173906</dd></div>
-            <div><dt>ИНН</dt><dd>7842339446</dd></div>
-            <div><dt>КПП</dt><dd>781001001</dd></div>
-            <div><dt>Дата регистрации</dt><dd>24.07.2006</dd></div>
-            <div className="details__wide"><dt>Генеральный директор</dt><dd>Штеллер Дмитрий Эрнестович</dd></div>
-            <div><dt>Участие</dt><dd>Член ЖСК</dd></div>
-            <div><dt>Категория</dt><dd>Микропредприятие</dd></div>
-            <div><dt>Налоговый режим</dt><dd>УСН</dd></div>
-          </dl>
-        </div>
-      </section>
-
-      <section className="contact" id="contacts">
-        <div className="contact__inner">
-          <div className="contact__heading">
-            <p className="section-kicker">04 / Контакты</p>
-            <h2>Связаться<br />с организацией</h2>
-            <p>Для официальной корреспонденции используйте юридический адрес компании.</p>
+      <section className="useful section" id="useful">
+        <div className="section-heading section-heading--row">
+          <div>
+            <p className="eyebrow">Полезная информация</p>
+            <h2>Памятки на каждый день</h2>
           </div>
-          <div className="contact__card">
-            <div className="contact__pin" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Z" /><circle cx="12" cy="9" r="2.5" /></svg>
-            </div>
-            <div className="contact__address">
-              <span>Юридический адрес</span>
-              <address>196233, г. Санкт-Петербург,<br />ул. Орджоникидзе, д. 52, литер А,<br />пом. 92-Н, офис 1</address>
-            </div>
-            <div className="contact__actions">
-              <a href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052" target="_blank" rel="noreferrer">Открыть на карте <Arrow /></a>
-              <button onClick={copyAddress}>{copied ? "Адрес скопирован" : "Скопировать адрес"}</button>
-            </div>
+          <p>Короткие материалы о бытовых вопросах, обращениях и подготовке к поездке.</p>
+        </div>
+        <div className="article-grid">
+          {articles.map((article) => (
+            <article className="article-card" key={article.id}>
+              <span className="article-card__label">{article.label}</span>
+              <h3>{article.title}</h3>
+              <p>{article.summary}</p>
+              <button type="button" onClick={() => setActiveArticle(article)}>
+                Подробнее <Arrow />
+              </button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="faq section" id="faq">
+        <div className="section-heading">
+          <p className="eyebrow">Часто задаваемые вопросы</p>
+          <h2>Коротко и по делу</h2>
+        </div>
+        <div className="faq-list">
+          {questions.map((item, index) => (
+            <details key={item.question} open={index === 0}>
+              <summary>{item.question}<span aria-hidden="true">+</span></summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="details section" id="details">
+        <div className="section-heading">
+          <p className="eyebrow">Реквизиты</p>
+          <h2>Карточка организации</h2>
+          <p>Официальные регистрационные сведения ООО «УСПС».</p>
+        </div>
+        <dl className="details__list">
+          <div className="details__wide"><dt>Полное наименование</dt><dd>ООО «Управление сопровождения проектов строительства»</dd></div>
+          <div><dt>ОГРН</dt><dd>5067847173906</dd></div>
+          <div><dt>ИНН</dt><dd>7842339446</dd></div>
+          <div><dt>КПП</dt><dd>781001001</dd></div>
+          <div><dt>Дата регистрации</dt><dd>24.07.2006</dd></div>
+          <div className="details__wide"><dt>Генеральный директор</dt><dd>Штеллер Дмитрий Эрнестович</dd></div>
+          <div><dt>Участие</dt><dd>Член ЖСК</dd></div>
+          <div><dt>Категория</dt><dd>Микропредприятие</dd></div>
+          <div><dt>Налоговый режим</dt><dd>УСН</dd></div>
+        </dl>
+      </section>
+
+      <section className="contact section" id="contacts">
+        <div className="contact__box">
+          <div>
+            <p className="eyebrow">Контакты</p>
+            <h2>Адрес для корреспонденции</h2>
+          </div>
+          <address>{ADDRESS}</address>
+          <div className="contact__actions">
+            <a className="button" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052" target="_blank" rel="noreferrer">Открыть на карте</a>
+            <button className="button button--outline" type="button" onClick={copyAddress}>{copied ? "Адрес скопирован" : "Скопировать адрес"}</button>
           </div>
         </div>
       </section>
 
       <footer>
-        <a className="brand brand--footer" href="#top"><span className="brand__mark">У</span><span className="brand__name">Управление сопровождения<br />проектов строительства</span></a>
-        <p>Информация на сайте не является публичной офертой.</p><p>© 2006–2026</p>
+        <a className="brand" href="#top"><span className="brand__mark">У</span><span className="brand__name">Управление сопровождения проектов строительства</span></a>
+        <p>Информация на сайте носит справочный характер и не является публичной офертой.</p>
+        <p>© 2006–2026</p>
       </footer>
+
+      {activeArticle && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) setActiveArticle(null);
+        }}>
+          <section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button className="modal__close" type="button" onClick={() => setActiveArticle(null)} aria-label="Закрыть окно">×</button>
+            <div className="modal__article">
+              <p className="eyebrow">{activeArticle.label}</p>
+              <h2 id="modal-title">{activeArticle.title}</h2>
+              {activeArticle.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {activeArticle.source && (
+                <a className="source-link" href={activeArticle.source} target="_blank" rel="noreferrer">Официальная информация на Госуслугах <Arrow /></a>
+              )}
+            </div>
+            <form className="request-form" onSubmit={sendByEmail}>
+              <h3>Задать вопрос по теме</h3>
+              <p>После нажатия «Отправить» откроется ваша почтовая программа с готовым письмом.</p>
+              <label>Номер телефона<input type="tel" name="phone" placeholder="+7 900 000-00-00" required /></label>
+              <label>Email<input type="email" name="email" placeholder="name@example.ru" required /></label>
+              <label>Комментарий<textarea name="comment" rows={4} placeholder="Опишите ваш вопрос" required /></label>
+              <button className="button" type="submit">Отправить</button>
+            </form>
+          </section>
+        </div>
+      )}
     </main>
   );
 }
