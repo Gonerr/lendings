@@ -1,85 +1,15 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-
-const PHONE_DISPLAY = "+7 (921) 393-22-99";
-const PHONE_LINK = "tel:+79213932299";
-const EMAIL = "orespekt5@yandex.ru";
-
-const services = [
-  {
-    number: "01",
-    title: "Круглосуточное присутствие",
-    text: "Организуем постоянное присутствие представителя на объекте и непрерывность оказания услуг.",
-    tag: "24 / 7",
-  },
-  {
-    number: "02",
-    title: "Пропускной режим",
-    text: "Работаем по внутренним правилам объекта, контролируем установленный порядок доступа и коммуникацию на входной группе.",
-    tag: "Режим",
-  },
-  {
-    number: "03",
-    title: "Консьерж-сервис",
-    text: "Представители, охранники и консьержи для жилых и коммерческих объектов — в соответствии с задачами управляющей компании.",
-    tag: "Команда",
-  },
-  {
-    number: "04",
-    title: "Административное сопровождение",
-    text: "Решаем текущие вопросы на объекте и представляем интересы заказчика в ситуациях, связанных с его имуществом.",
-    tag: "На месте",
-  },
-  {
-    number: "05",
-    title: "Документооборот",
-    text: "Ведём необходимую документацию и обеспечиваем регулярное оформление результатов оказанных услуг.",
-    tag: "Отчётность",
-  },
-  {
-    number: "06",
-    title: "Соблюдение требований",
-    text: "Учитываем правила охраны труда, промышленной и пожарной безопасности, действующие на территории объекта.",
-    tag: "Порядок",
-  },
-];
-
-const objects = [
-  {
-    type: "Коммерческая недвижимость",
-    title: "Бизнес-центры",
-    text: "Присутствие представителя, внутренний режим и решение повседневных административных вопросов.",
-  },
-  {
-    type: "Жилая недвижимость",
-    title: "Дома и комплексы",
-    text: "Консьерж-сервис и персонал для взаимодействия с жителями, гостями и управляющей компанией.",
-  },
-  {
-    type: "Специализированные площадки",
-    title: "Причальные объекты",
-    text: "Организация присутствия персонала на объектах со своей территорией и особым внутренним порядком, включая причал на «Вулкане».",
-  },
-  {
-    type: "Производство и логистика",
-    title: "Склады и территории",
-    text: "Диспетчерское сопровождение объектов, где особенно важны своевременные сигналы о затоплении, пожаре, вандализме и других нештатных ситуациях.",
-  },
-];
-
-const requisites = [
-  [
-    "Полное наименование",
-    "Общество с ограниченной ответственностью «Респект-5»",
-  ],
-  ["Дата регистрации", "13 сентября 2021 года"],
-  ["ОГРН", "1217800140623"],
-  ["ИНН", "7810928181"],
-  ["КПП", "781001001"],
-  ["Генеральный директор", "Гумеров Вячеслав Гарифович"],
-  //   ["Категория", "УСН / микропредприятие"],
-];
+import {
+  EMAIL,
+  objectLocations,
+  objectTypes,
+  PHONE_DISPLAY,
+  PHONE_LINK,
+  requisites,
+  services,
+} from "./data";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -522,7 +452,7 @@ export default function Home() {
           <h2>Там, где важно постоянное присутствие</h2>
         </div>
         <div className="objects-list section-shell">
-          {objects.map((object, index) => (
+          {objectTypes.map((object, index) => (
             <article className="object-card" key={object.title}>
               <span className="object-number">0{index + 1}</span>
               <div>
@@ -535,6 +465,57 @@ export default function Home() {
               </span>
             </article>
           ))}
+        </div>
+
+        <div className="object-locations section-shell">
+          <div className="object-locations-heading">
+            <div>
+              <p className="eyebrow light">География работы</p>
+              <h3>Объекты Респект-5</h3>
+            </div>
+
+            <p>
+              Жилые комплексы, коммерческие объекты, паркинги и социальная
+              инфраструктура в Сантк-Петербурге и Ленинградской области.
+            </p>
+          </div>
+
+          <div className="object-locations-layout">
+            <div className="locations-list">
+              {objectLocations.map((location) => (
+                <a
+                  className="location-row"
+                  key={location.number}
+                  href={`https://yandex.ru/maps/?text=${encodeURIComponent(
+                    location.address
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="location-number">{location.number}</span>
+                  <div className="location-info">
+                    <h4>{location.title}</h4>
+                    <address>{location.address}</address>
+                  </div>
+
+                  <span className="location-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div className="locations-map">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A93c52669c1b883708bbdb59709ca2363a73dc590f976a50df5bd51da7654ba7c&amp;source=constructor"
+                width="100%"
+                height="100%"
+                title="Объекты Респект-5 на карте"
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
+          </div>
         </div>
       </section>
 

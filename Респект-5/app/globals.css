@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 :root {
   --ink: #14212b;
   --navy: #1a2d3b;
@@ -285,7 +284,11 @@ a {
 }
 
 .hero-system::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 70%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    transparent 70%
+  );
   content: "";
   inset: 0;
   position: absolute;
@@ -344,7 +347,11 @@ a {
 }
 
 .clock::after {
-  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.35) 0deg 0.5deg, transparent 0.5deg 15deg);
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.35) 0deg 0.5deg,
+    transparent 0.5deg 15deg
+  );
   inset: -4px;
   mask: radial-gradient(circle, transparent 68%, #000 69%);
   opacity: 0.5;
@@ -381,10 +388,29 @@ a {
   position: absolute;
 }
 
-.hour-00 { left: 50%; top: 7%; transform: translateX(-50%); }
-.hour-06 { right: 7%; top: 50%; transform: translateY(-50%); }
-.hour-12 { bottom: 7%; left: 50%; transform: translateX(-50%); }
-.hour-18 { left: 7%; top: 50%; transform: translateY(-50%); }
+.hour-00 {
+  left: 50%;
+  top: 7%;
+  transform: translateX(-50%);
+}
+
+.hour-06 {
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hour-12 {
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hour-18 {
+  left: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 .clock-hand {
   background: var(--copper);
@@ -467,9 +493,9 @@ a {
 .facts-bar div {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-height: 122px;
-  padding: 33px 24px 28px 0;
+  gap: 7px;
+  min-height: 105px;
+  padding: 27px 24px 24px 0;
 }
 
 .facts-bar div + div {
@@ -508,7 +534,7 @@ a {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.15em;
-  margin: 0 0 25px;
+  margin: 0 0 18px;
   text-transform: uppercase;
 }
 
@@ -527,10 +553,10 @@ a {
 
 .intro {
   display: grid;
-  gap: clamp(35px, 6vw, 95px);
+  gap: clamp(30px, 4.5vw, 70px);
   grid-template-columns: 0.2fr 1.2fr 0.8fr;
-  padding-bottom: clamp(100px, 12vw, 190px);
-  padding-top: clamp(100px, 12vw, 190px);
+  padding-bottom: clamp(65px, 7vw, 105px);
+  padding-top: clamp(65px, 7vw, 105px);
 }
 
 .intro-heading h2,
@@ -573,15 +599,15 @@ a {
 .services {
   background: var(--navy);
   color: var(--white);
-  padding-bottom: clamp(90px, 10vw, 160px);
-  padding-top: clamp(80px, 9vw, 135px);
+  padding-bottom: clamp(70px, 7vw, 110px);
+  padding-top: clamp(65px, 7vw, 105px);
 }
 
 .services-title {
   display: grid;
-  gap: 35px;
+  gap: 24px;
   grid-template-columns: 0.2fr 1.8fr;
-  margin-bottom: clamp(65px, 8vw, 120px);
+  margin-bottom: clamp(42px, 5vw, 70px);
 }
 
 .services-title .eyebrow {
@@ -596,7 +622,7 @@ a {
 
 .services-showcase {
   display: grid;
-  gap: clamp(42px, 6vw, 95px);
+  gap: clamp(32px, 4vw, 64px);
   grid-template-columns: minmax(360px, 0.82fr) minmax(500px, 1.18fr);
 }
 
@@ -605,9 +631,9 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
-  min-height: 620px;
+  min-height: 500px;
   overflow: hidden;
-  padding: clamp(32px, 4vw, 58px);
+  padding: clamp(28px, 3.2vw, 46px);
   position: relative;
 }
 
@@ -702,9 +728,9 @@ a {
   align-items: start;
   border-bottom: 1px solid rgba(255, 255, 255, 0.19);
   display: grid;
-  gap: clamp(18px, 2.5vw, 38px);
+  gap: clamp(16px, 2vw, 30px);
   grid-template-columns: 44px 1fr auto;
-  padding: clamp(25px, 3vw, 38px) 0;
+  padding: clamp(20px, 2.2vw, 29px) 0;
   transition: padding 180ms ease;
 }
 
@@ -743,10 +769,10 @@ a {
 
 .workflow {
   display: grid;
-  gap: clamp(35px, 6vw, 95px);
+  gap: clamp(30px, 4.5vw, 70px);
   grid-template-columns: 0.18fr 0.7fr 1.12fr;
-  padding-bottom: clamp(100px, 12vw, 180px);
-  padding-top: clamp(100px, 12vw, 180px);
+  padding-bottom: clamp(65px, 7vw, 105px);
+  padding-top: clamp(65px, 7vw, 105px);
 }
 
 .workflow-heading {
@@ -762,7 +788,7 @@ a {
   background: var(--fog);
   grid-column: 3;
   margin-top: 3px;
-  padding: clamp(26px, 3.5vw, 52px);
+  padding: clamp(24px, 3vw, 42px);
 }
 
 .route-caption {
@@ -795,9 +821,9 @@ a {
   align-items: center;
   border-bottom: 1px solid var(--line);
   display: grid;
-  gap: clamp(20px, 3vw, 42px);
-  grid-template-columns: 68px 1fr auto;
-  min-height: 158px;
+  gap: clamp(18px, 2.5vw, 34px);
+  grid-template-columns: 60px 1fr auto;
+  min-height: 125px;
   position: relative;
 }
 
@@ -853,13 +879,13 @@ a {
 .dispatch {
   background: var(--white);
   border-top: 1px solid var(--line);
-  padding-bottom: clamp(95px, 11vw, 175px);
-  padding-top: clamp(90px, 10vw, 155px);
+  padding-bottom: clamp(70px, 7vw, 110px);
+  padding-top: clamp(65px, 7vw, 105px);
 }
 
 .dispatch-head {
   display: grid;
-  gap: clamp(35px, 6vw, 95px);
+  gap: clamp(30px, 4.5vw, 70px);
   grid-template-columns: 0.2fr 1.1fr 0.7fr;
 }
 
@@ -880,12 +906,12 @@ a {
 .dispatch-layout {
   display: grid;
   grid-template-columns: 1.04fr 0.96fr;
-  margin-top: clamp(70px, 8vw, 120px);
+  margin-top: clamp(42px, 5vw, 70px);
 }
 
 .dispatch-visual {
   background: var(--navy-soft);
-  min-height: 710px;
+  min-height: 560px;
   overflow: hidden;
   position: relative;
 }
@@ -946,9 +972,9 @@ a {
 .dispatch-monitoring div {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-height: 118px;
-  padding: 25px clamp(18px, 2.3vw, 35px);
+  gap: 7px;
+  min-height: 95px;
+  padding: 20px clamp(16px, 2vw, 28px);
 }
 
 .dispatch-monitoring div + div {
@@ -971,7 +997,7 @@ a {
 
 .dispatch-content {
   background: var(--fog);
-  padding: clamp(34px, 5vw, 75px);
+  padding: clamp(30px, 4vw, 58px);
 }
 
 .dispatch-flow-head {
@@ -1000,9 +1026,9 @@ a {
 .dispatch-flow li {
   border-bottom: 1px solid var(--line);
   display: grid;
-  gap: clamp(22px, 3vw, 42px);
-  grid-template-columns: 45px 1fr;
-  padding: clamp(25px, 3vw, 36px) 0;
+  gap: clamp(18px, 2.4vw, 32px);
+  grid-template-columns: 40px 1fr;
+  padding: clamp(20px, 2.2vw, 28px) 0;
 }
 
 .dispatch-flow li > span {
@@ -1028,9 +1054,9 @@ a {
 
 .dispatch-zones {
   display: grid;
-  gap: clamp(45px, 7vw, 110px);
+  gap: clamp(35px, 5vw, 75px);
   grid-template-columns: 0.62fr 1.38fr;
-  margin-top: clamp(65px, 7vw, 105px);
+  margin-top: clamp(45px, 5vw, 70px);
 }
 
 .dispatch-zones-title > span {
@@ -1062,10 +1088,10 @@ a {
 .dispatch-zones li {
   border-bottom: 1px solid var(--line);
   display: grid;
-  gap: 22px;
+  gap: 20px;
   grid-template-columns: 35px 1fr;
-  min-height: 145px;
-  padding: 27px 28px 27px 0;
+  min-height: 115px;
+  padding: 22px 24px 22px 0;
 }
 
 .dispatch-zones li:nth-child(even) {
@@ -1089,13 +1115,13 @@ a {
 .objects {
   background: var(--blue);
   color: var(--white);
-  padding-bottom: clamp(90px, 10vw, 155px);
-  padding-top: clamp(85px, 9vw, 140px);
+  padding-bottom: 0;
+  padding-top: clamp(60px, 6vw, 95px);
 }
 
 .objects-head {
   display: grid;
-  gap: 35px;
+  gap: 24px;
   grid-template-columns: 0.2fr 1.8fr;
 }
 
@@ -1113,26 +1139,31 @@ a {
 }
 
 .objects-list {
-  margin-top: clamp(65px, 8vw, 115px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(38px, 4vw, 58px);
 }
 
 .object-card {
-  align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
-  display: grid;
-  gap: 28px;
-  grid-template-columns: 70px 0.7fr 1fr 40px;
-  min-height: 165px;
-  transition: background 180ms ease, padding 180ms ease;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-height: 230px;
+  padding: 22px;
+  position: relative;
+  transition: background 180ms ease, transform 180ms ease;
 }
 
 .object-card:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .object-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  padding-left: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  padding-left: 22px;
+  transform: translateY(-2px);
 }
 
 .object-number,
@@ -1145,31 +1176,195 @@ a {
 }
 
 .object-card h3 {
-  font-size: clamp(27px, 3vw, 47px);
+  font-size: clamp(21px, 1.8vw, 30px);
   font-weight: 500;
-  letter-spacing: -0.045em;
-  margin: 10px 0 0;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 5px 0 0;
 }
 
 .object-card p {
   color: rgba(255, 255, 255, 0.68);
-  font-size: 15px;
-  line-height: 1.65;
-  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: auto 0 0;
   max-width: 620px;
 }
 
 .object-arrow {
-  font-size: 26px;
+  font-size: 18px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
+.object-locations {
+  padding-bottom: clamp(55px, 6vw, 80px);
+  padding-top: clamp(52px, 5vw, 72px);
+}
+
+.object-locations-heading {
+  align-items: end;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  margin-bottom: 26px;
+}
+
+.object-locations-heading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.object-locations-heading h3 {
+  font-size: clamp(34px, 3.2vw, 54px);
+  font-weight: 550;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.object-locations-heading > p {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.object-locations-layout {
+  align-items: stretch;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(520px, 1fr) minmax(420px, 1.05fr);
+}
+
+.locations-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.location-row {
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  color: inherit;
+  display: grid;
+  gap: 9px;
+  grid-template-columns: 26px minmax(0, 1fr) 16px;
+  min-height: 72px;
+  padding: 10px 9px;
+  text-decoration: none;
+  transition: background-color 180ms ease, padding 180ms ease;
+}
+
+.location-row:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.location-row:hover {
+  background: rgba(255, 255, 255, 0.07);
+  padding-left: 13px;
+}
+
+.location-number {
+  font-size: 10px;
+  opacity: 0.42;
+}
+
+.location-info {
+  min-width: 0;
+}
+
+.location-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.22;
+  margin: 0 0 3px;
+}
+
+.location-info address {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 11px;
+  font-style: normal;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.location-arrow {
+  font-size: 14px;
+  opacity: 0.48;
+  transition: transform 180ms ease;
+}
+
+.location-row:hover .location-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Поддерживаются оба className: location-map и locations-map */
+
+.location-map,
+.locations-map {
+  background: rgba(255, 255, 255, 0.06);
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.location-map iframe,
+.locations-map iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  min-height: 390px;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .objects-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .object-card {
+    min-height: 190px;
+  }
+  .object-locations-layout {
+    grid-template-columns: 1fr;
+  }
+  .location-map,
+  .locations-map,
+  .location-map iframe,
+  .locations-map iframe {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+  .object-locations {
+    padding-bottom: 48px;
+    padding-top: 44px;
+  }
+  .object-locations-heading {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  .locations-list {
+    grid-template-columns: 1fr;
+  }
+  .location-row:nth-child(odd) {
+    border-right: 0;
+  }
+  .location-map,
+  .locations-map,
+  .location-map iframe,
+  .locations-map iframe {
+    min-height: 340px;
+  }
 }
 
 .commitment {
   background: var(--paper);
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
-  min-height: 760px;
-  padding-bottom: clamp(100px, 11vw, 175px);
-  padding-top: clamp(100px, 11vw, 175px);
+  min-height: 0;
+  padding-bottom: clamp(70px, 7vw, 110px);
+  padding-top: clamp(70px, 7vw, 110px);
 }
 
 .commitment-visual {
@@ -1177,7 +1372,7 @@ a {
   background: var(--fog);
   display: flex;
   justify-content: center;
-  min-height: 560px;
+  min-height: 450px;
   overflow: hidden;
   position: relative;
 }
@@ -1241,7 +1436,7 @@ a {
 
 .commitment-copy ul {
   list-style: none;
-  margin: 65px 0 0;
+  margin: 42px 0 0;
   padding: 0;
 }
 
@@ -1278,10 +1473,10 @@ a {
   background: var(--white);
   border-top: 1px solid var(--line);
   display: grid;
-  gap: clamp(35px, 6vw, 95px);
+  gap: clamp(30px, 4.5vw, 70px);
   grid-template-columns: 0.2fr 0.7fr 1.1fr;
-  padding-bottom: clamp(100px, 11vw, 170px);
-  padding-top: clamp(90px, 10vw, 145px);
+  padding-bottom: clamp(65px, 7vw, 105px);
+  padding-top: clamp(65px, 7vw, 105px);
 }
 
 .company-heading h2 {
@@ -1332,7 +1527,7 @@ a {
   color: var(--white);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  min-height: 700px;
+  min-height: 0;
 }
 
 .contacts-copy,
@@ -1340,7 +1535,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(65px, 8vw, 135px) var(--pad);
+  padding: clamp(60px, 6vw, 95px) var(--pad);
 }
 
 .contacts-copy {
@@ -1428,8 +1623,8 @@ a {
   display: grid;
   gap: 35px;
   grid-template-columns: auto 1fr auto;
-  min-height: 150px;
-  padding: 35px var(--pad);
+  min-height: 115px;
+  padding: 26px var(--pad);
 }
 
 .footer .brand-sign {
@@ -1588,15 +1783,12 @@ a {
   .site-header {
     grid-template-columns: 1fr auto;
   }
-
   .nav {
     display: none;
   }
-
   .header-action {
     margin-right: 58px;
   }
-
   .menu-button {
     background: transparent;
     border: 0;
@@ -1609,13 +1801,11 @@ a {
     right: var(--pad);
     top: 25px;
   }
-
   .menu-button span {
     background: var(--ink);
     height: 2px;
     width: 28px;
   }
-
   .nav-open {
     align-items: flex-start;
     background: var(--paper);
@@ -1629,57 +1819,44 @@ a {
     right: 0;
     top: 88px;
   }
-
   .nav-open a {
     padding: 12px 0;
   }
-
   .nav-open a::after {
     bottom: 8px;
   }
-
   .hero {
     grid-template-columns: 55% 45%;
   }
-
   .hero h1 {
     font-size: clamp(60px, 7vw, 88px);
   }
-
   .clock {
     height: clamp(260px, 33vw, 400px);
     width: clamp(260px, 33vw, 400px);
   }
-
   .intro {
     grid-template-columns: 0.15fr 1.1fr 0.75fr;
   }
-
   .services-showcase {
     grid-template-columns: 1fr;
   }
-
   .service-focus {
     min-height: 560px;
   }
-
   .workflow {
     grid-template-columns: 0.15fr 1.85fr;
   }
-
   .workflow-route {
     grid-column: 2;
     margin-top: 0;
   }
-
   .dispatch-head {
     grid-template-columns: 0.15fr 1.05fr 0.8fr;
   }
-
   .dispatch-layout {
     grid-template-columns: 0.92fr 1.08fr;
   }
-
   .company {
     grid-template-columns: 0.15fr 0.75fr 1.1fr;
   }
@@ -1689,65 +1866,51 @@ a {
   .site-header {
     min-height: 76px;
   }
-
   .header-action {
     display: none;
   }
-
   .menu-button {
     top: 18px;
   }
-
   .nav-open {
     top: 76px;
   }
-
   .hero {
     grid-template-columns: 1fr;
   }
-
   .hero-copy {
     min-height: 700px;
   }
-
   .hero h1 {
     font-size: clamp(66px, 13vw, 110px);
   }
-
   .hero-system {
     min-height: 680px;
   }
-
   .clock {
     height: min(66vw, 470px);
     width: min(66vw, 470px);
   }
-
   .facts-bar {
     grid-template-columns: 1fr 1fr;
   }
-
   .facts-bar div:nth-child(3) {
     border-left: 0;
     border-top: 1px solid rgba(20, 33, 43, 0.18);
   }
-
   .facts-bar div:nth-child(4) {
     border-top: 1px solid rgba(20, 33, 43, 0.18);
   }
-
   .intro,
   .workflow,
   .dispatch-head,
   .company {
     grid-template-columns: 1fr;
   }
-
   .services-title,
   .objects-head {
     grid-template-columns: 1fr;
   }
-
   .services-title .eyebrow,
   .services-title h2,
   .objects-head .eyebrow,
@@ -1755,40 +1918,31 @@ a {
   .workflow-route {
     grid-column: 1;
   }
-
   .object-card {
     grid-template-columns: 45px 0.8fr 1.2fr 30px;
   }
-
   .dispatch-layout,
   .dispatch-zones {
     grid-template-columns: 1fr;
   }
-
   .dispatch-visual {
     min-height: 640px;
   }
-
   .commitment {
     grid-template-columns: 1fr;
   }
-
   .commitment-visual {
     min-height: 560px;
   }
-
   .commitment-copy {
     padding: 90px 0 0;
   }
-
   .company {
     gap: 45px;
   }
-
   .contacts {
     grid-template-columns: 1fr;
   }
-
   .contacts-copy {
     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     border-right: 0;
@@ -1799,76 +1953,61 @@ a {
   :root {
     --pad: 20px;
   }
-
   .brand-sign {
     height: 37px;
     width: 37px;
   }
-
   .brand-name {
     font-size: 13px;
   }
-
   .hero-copy {
     min-height: 660px;
     padding-bottom: 76px;
     padding-top: 75px;
   }
-
   .hero-kicker {
     align-items: flex-start;
     flex-direction: column;
     gap: 7px;
     margin-bottom: 62px;
   }
-
   .hero h1 {
     font-size: 15.2vw;
   }
-
   .hero-text {
     font-size: 15px;
   }
-
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;
   }
-
   .hero-system {
     min-height: 580px;
     padding: 28px 20px;
   }
-
   .clock {
     height: 83vw;
     width: 83vw;
   }
-
   .shift-grid strong {
     font-size: 8px;
   }
-
   .shift-grid span {
     font-size: 7px;
   }
-
   .facts-bar {
     grid-template-columns: 1fr;
   }
-
   .facts-bar div {
     border-top: 1px solid rgba(20, 33, 43, 0.18);
     min-height: 95px;
     padding: 24px 0;
   }
-
   .facts-bar div + div {
     border-left: 0;
     padding-left: 0;
   }
-
   .intro-heading h2,
   .services-title h2,
   .workflow-heading h2,
@@ -1879,30 +2018,24 @@ a {
   .contacts-copy h2 {
     font-size: 43px;
   }
-
   .service-focus {
     min-height: 500px;
   }
-
   .service-row {
     grid-template-columns: 32px 1fr;
   }
-
   .service-row small {
     grid-column: 2;
     justify-self: start;
   }
-
   .workflow-route {
     padding: 22px 18px;
   }
-
   .route-caption {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
   }
-
   .workflow-route article {
     align-items: start;
     gap: 16px;
@@ -1910,146 +2043,117 @@ a {
     min-height: 0;
     padding: 25px 0;
   }
-
   .route-number {
     height: 42px;
     width: 42px;
   }
-
   .workflow-route article:not(:last-child) .route-number::after {
     height: calc(100% + 48px);
     left: 20px;
     top: 42px;
   }
-
   .route-result {
     grid-column: 2;
     text-align: left;
   }
-
   .dispatch-visual {
     min-height: 550px;
   }
-
   .dispatch-visual-top {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
   }
-
   .dispatch-monitoring {
     grid-template-columns: 1fr;
   }
-
   .dispatch-monitoring div {
     gap: 4px;
     min-height: 0;
     padding: 13px 18px;
   }
-
   .dispatch-monitoring div + div {
     border-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.16);
   }
-
   .dispatch-content {
     padding: 35px 20px;
   }
-
   .dispatch-flow li {
     gap: 13px;
     grid-template-columns: 30px 1fr;
   }
-
   .dispatch-zones ul {
     grid-template-columns: 1fr;
   }
-
   .dispatch-zones li,
   .dispatch-zones li:nth-child(even) {
     border-left: 0;
     min-height: 0;
     padding: 24px 0;
   }
-
   .object-card {
     align-items: start;
     gap: 18px;
     grid-template-columns: 32px 1fr 22px;
     padding: 30px 0;
   }
-
   .object-card p {
     grid-column: 2 / -1;
   }
-
   .object-arrow {
     grid-column: 3;
     grid-row: 1;
   }
-
   .commitment-visual {
     min-height: 430px;
   }
-
   .big-five {
     font-size: 300px;
   }
-
   .commitment-copy li {
     gap: 16px;
     grid-template-columns: 30px 1fr;
   }
-
   .requisites > div {
     gap: 7px;
     grid-template-columns: 1fr;
   }
-
   .contacts-copy,
   .contacts-data {
     padding-bottom: 75px;
     padding-top: 75px;
   }
-
   .contacts-data > div > a:not(.map-link) {
     font-size: 25px;
   }
-
   .contacts-data address {
     font-size: 14px;
   }
-
   .footer {
     align-items: start;
     grid-template-columns: 1fr auto;
   }
-
   .footer-copy {
     grid-column: 1 / -1;
     grid-row: 2;
   }
-
   .contact-modal {
     padding: 58px 22px 28px;
   }
-
   .modal-close {
     height: 39px;
     right: 14px;
     top: 14px;
     width: 39px;
   }
-
   .contact-modal h2 {
     font-size: 39px;
     padding-right: 0;
   }
-
   .contact-modal form {
     grid-template-columns: 1fr;
   }
-
   .contact-modal .wide {
     grid-column: 1;
   }
@@ -2059,10 +2163,84 @@ a {
   html {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   Финальные компактные адаптивные переопределения
+   ========================================================= */
+
+@media (max-width: 880px) {
+  .object-card {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 185px;
+    padding: 20px;
+  }
+  .object-card p {
+    margin-top: auto;
+  }
+  .object-card .object-arrow {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+  }
+  .dispatch-visual {
+    min-height: 520px;
+  }
+  .commitment-visual {
+    min-height: 430px;
+  }
+  .commitment-copy {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 580px) {
+  .intro,
+  .workflow,
+  .company {
+    padding-bottom: 58px;
+    padding-top: 58px;
+  }
+  .services,
+  .dispatch {
+    padding-bottom: 62px;
+    padding-top: 58px;
+  }
+  .objects {
+    padding-top: 58px;
+  }
+  .objects-list {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+  .object-card {
+    min-height: 0;
+    padding: 20px;
+  }
+  .object-card:hover {
+    padding-left: 20px;
+  }
+  .object-card p {
+    margin-top: 12px;
+  }
+  .commitment {
+    padding-bottom: 62px;
+    padding-top: 62px;
+  }
+  .commitment-copy {
+    padding-top: 48px;
+  }
+  .contacts-copy,
+  .contacts-data {
+    padding-bottom: 62px;
+    padding-top: 62px;
   }
 }

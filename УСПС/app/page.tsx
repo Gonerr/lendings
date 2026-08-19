@@ -135,7 +135,9 @@ export default function Home() {
       "Комментарий:",
       comment,
     ].join("\n");
-    window.location.href = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -143,7 +145,9 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="УСПС — на главную">
           <span className="brand__mark">У</span>
-          <span className="brand__name">Управление сопровождения проектов строительства</span>
+          <span className="brand__name">
+            Управление сопровождения проектов строительства
+          </span>
         </a>
         <nav className="nav" aria-label="Основная навигация">
           <a href="#about">О компании</a>
@@ -151,7 +155,9 @@ export default function Home() {
           <a href="#faq">Вопросы</a>
           <a href="#details">Реквизиты</a>
         </nav>
-        <a className="button button--small" href="#contacts">Контакты</a>
+        <a className="button button--small" href="#contacts">
+          Контакты
+        </a>
       </header>
 
       <section className="hero" id="top">
@@ -163,16 +169,32 @@ export default function Home() {
             «Управление сопровождения проектов строительства».
           </p>
           <div className="hero__actions">
-            <a className="button" href="#useful">Полезная информация</a>
-            <a className="text-link" href="#details">Смотреть реквизиты <Arrow /></a>
+            <a className="button" href="#useful">
+              Полезная информация
+            </a>
+            <a className="text-link" href="#details">
+              Смотреть реквизиты <Arrow />
+            </a>
           </div>
         </div>
-        <aside className="hero__summary" aria-label="Краткие сведения об организации">
+        <aside
+          className="hero__summary"
+          aria-label="Краткие сведения об организации"
+        >
           <p>Статус организации</p>
           <dl>
-            <div><dt>Участие</dt><dd>Член ЖСК</dd></div>
-            <div><dt>Дата регистрации</dt><dd>24 июля 2006 года</dd></div>
-            <div><dt>Место регистрации</dt><dd>Санкт-Петербург</dd></div>
+            <div>
+              <dt>Участие</dt>
+              <dd>Член ЖСК</dd>
+            </div>
+            <div>
+              <dt>Дата регистрации</dt>
+              <dd>24 июля 2006 года</dd>
+            </div>
+            <div>
+              <dt>Место регистрации</dt>
+              <dd>Санкт-Петербург</dd>
+            </div>
           </dl>
         </aside>
       </section>
@@ -181,7 +203,10 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow">О компании</p>
           <h2>Главное — в одном месте</h2>
-          <p>Страница помогает быстро найти основные сведения и подготовить обращение без поиска по разным источникам.</p>
+          <p>
+            Страница помогает быстро найти основные сведения и подготовить
+            обращение без поиска по разным источникам.
+          </p>
         </div>
         <div className="fact-grid">
           {facts.map((fact, index) => (
@@ -200,7 +225,10 @@ export default function Home() {
             <p className="eyebrow">Полезная информация</p>
             <h2>Памятки на каждый день</h2>
           </div>
-          <p>Короткие материалы о бытовых вопросах, обращениях и подготовке к поездке.</p>
+          <p>
+            Короткие материалы о бытовых вопросах, обращениях и подготовке к
+            поездке.
+          </p>
         </div>
         <div className="article-grid">
           {articles.map((article) => (
@@ -224,7 +252,10 @@ export default function Home() {
         <div className="faq-list">
           {questions.map((item, index) => (
             <details key={item.question} open={index === 0}>
-              <summary>{item.question}<span aria-hidden="true">+</span></summary>
+              <summary>
+                {item.question}
+                <span aria-hidden="true">+</span>
+              </summary>
               <p>{item.answer}</p>
             </details>
           ))}
@@ -238,15 +269,34 @@ export default function Home() {
           <p>Официальные регистрационные сведения ООО «УСПС».</p>
         </div>
         <dl className="details__list">
-          <div className="details__wide"><dt>Полное наименование</dt><dd>ООО «Управление сопровождения проектов строительства»</dd></div>
-          <div><dt>ОГРН</dt><dd>5067847173906</dd></div>
-          <div><dt>ИНН</dt><dd>7842339446</dd></div>
-          <div><dt>КПП</dt><dd>781001001</dd></div>
-          <div><dt>Дата регистрации</dt><dd>24.07.2006</dd></div>
-          <div className="details__wide"><dt>Генеральный директор</dt><dd>Штеллер Дмитрий Эрнестович</dd></div>
-          <div><dt>Участие</dt><dd>Член ЖСК</dd></div>
-          <div><dt>Категория</dt><dd>Микропредприятие</dd></div>
-          <div><dt>Налоговый режим</dt><dd>УСН</dd></div>
+          <div className="details__wide">
+            <dt>Полное наименование</dt>
+            <dd>ООО «Управление сопровождения проектов строительства»</dd>
+          </div>
+          <div>
+            <dt>ОГРН</dt>
+            <dd>5067847173906</dd>
+          </div>
+          <div>
+            <dt>ИНН</dt>
+            <dd>7842339446</dd>
+          </div>
+          <div>
+            <dt>КПП</dt>
+            <dd>781001001</dd>
+          </div>
+          <div>
+            <dt>Дата регистрации</dt>
+            <dd>24.07.2006</dd>
+          </div>
+          <div className="details__wide">
+            <dt>Генеральный директор</dt>
+            <dd>Штеллер Дмитрий Эрнестович</dd>
+          </div>
+          <div>
+            <dt>Участие</dt>
+            <dd>Член ЖСК</dd>
+          </div>
         </dl>
       </section>
 
@@ -266,39 +316,114 @@ export default function Home() {
             />
           </div>
           <div className="contact__actions">
-            <a className="button" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052" target="_blank" rel="noreferrer">Открыть на карте</a>
-            <button className="button button--outline" type="button" onClick={copyAddress}>{copied ? "Адрес скопирован" : "Скопировать адрес"}</button>
+            <a
+              className="button"
+              href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Открыть на карте
+            </a>
+            <button
+              className="button button--outline"
+              type="button"
+              onClick={copyAddress}
+            >
+              {copied ? "Адрес скопирован" : "Скопировать адрес"}
+            </button>
           </div>
         </div>
       </section>
 
       <footer>
-        <a className="brand" href="#top"><span className="brand__mark">У</span><span className="brand__name">Управление сопровождения проектов строительства</span></a>
-        <p>Информация на сайте носит справочный характер и не является публичной офертой.</p>
+        <a className="brand" href="#top">
+          <span className="brand__mark">У</span>
+          <span className="brand__name">
+            Управление сопровождения проектов строительства
+          </span>
+        </a>
+        <p>
+          Информация на сайте носит справочный характер и не является публичной
+          офертой.
+        </p>
         <p>© 2006–2026</p>
       </footer>
 
       {activeArticle && (
-        <div className="modal-backdrop" role="presentation" onMouseDown={(event) => {
-          if (event.target === event.currentTarget) setActiveArticle(null);
-        }}>
-          <section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button className="modal__close" type="button" onClick={() => setActiveArticle(null)} aria-label="Закрыть окно">×</button>
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setActiveArticle(null);
+          }}
+        >
+          <section
+            className="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+          >
+            <button
+              className="modal__close"
+              type="button"
+              onClick={() => setActiveArticle(null)}
+              aria-label="Закрыть окно"
+            >
+              ×
+            </button>
             <div className="modal__article">
               <p className="eyebrow">{activeArticle.label}</p>
               <h2 id="modal-title">{activeArticle.title}</h2>
-              {activeArticle.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {activeArticle.content.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
               {activeArticle.source && (
-                <a className="source-link" href={activeArticle.source} target="_blank" rel="noreferrer">Официальная информация на Госуслугах <Arrow /></a>
+                <a
+                  className="source-link"
+                  href={activeArticle.source}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Официальная информация на Госуслугах <Arrow />
+                </a>
               )}
             </div>
             <form className="request-form" onSubmit={sendByEmail}>
               <h3>Задать вопрос по теме</h3>
-              <p>После нажатия «Отправить» откроется ваша почтовая программа с готовым письмом.</p>
-              <label>Номер телефона<input type="tel" name="phone" placeholder="+7 900 000-00-00" required /></label>
-              <label>Email<input type="email" name="email" placeholder="name@example.ru" required /></label>
-              <label>Комментарий<textarea name="comment" rows={4} placeholder="Опишите ваш вопрос" required /></label>
-              <button className="button" type="submit">Отправить</button>
+              <p>
+                После нажатия «Отправить» откроется ваша почтовая программа с
+                готовым письмом.
+              </p>
+              <label>
+                Номер телефона
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+7 900 000-00-00"
+                  required
+                />
+              </label>
+              <label>
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="name@example.ru"
+                  required
+                />
+              </label>
+              <label>
+                Комментарий
+                <textarea
+                  name="comment"
+                  rows={4}
+                  placeholder="Опишите ваш вопрос"
+                  required
+                />
+              </label>
+              <button className="button" type="submit">
+                Отправить
+              </button>
             </form>
           </section>
         </div>
