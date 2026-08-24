@@ -11,16 +11,43 @@ const SITE_EMAIL = "";
 
 const facts = [
   {
+    number: "01",
     title: "Участие в ЖСК",
     text: "Компания является участником жилищно-строительного кооператива и действует в рамках установленных правил кооперативного взаимодействия.",
   },
   {
-    title: "Официальные сведения",
+    number: "02",
+    title: "Сведения об организации",
     text: "На странице собраны регистрационные данные организации, сведения о руководителе и адрес для письменных обращений.",
   },
   {
-    title: "Понятная связь",
-    text: "Для обращения достаточно указать свои контактные данные, адрес или объект вопроса и кратко описать ситуацию.",
+    number: "03",
+    title: "Обращения",
+    text: "По вопросам, связанным с деятельностью организации и участием в ЖСК, можно направить письменное обращение.",
+  },
+];
+
+const visuals = [
+  {
+    src: "/images/l1-hero.jpg",
+    alt: "Современный жилой комплекс компании Л1",
+    title: "Жилая среда",
+    text: "Архитектура и благоустройство жилых проектов Л1 в Санкт-Петербурге и Ленинградской области.",
+    className: "visual-card visual-card--large",
+  },
+  {
+    src: "/images/l1-courtyard.webp",
+    alt: "Благоустроенный двор жилого комплекса Л1",
+    title: "Благоустройство",
+    text: "Дворовые пространства, озеленение и инфраструктура рядом с домом.",
+    className: "visual-card",
+  },
+  {
+    src: "/images/l1-lobby.webp",
+    alt: "Интерьер парадной жилого комплекса Твой Космос компании Л1",
+    title: "Общие пространства",
+    text: "Парадные и входные группы как часть повседневной среды жильцов.",
+    className: "visual-card",
   },
 ];
 
@@ -98,11 +125,14 @@ export default function Home() {
 
   useEffect(() => {
     if (!activeArticle) return;
+
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActiveArticle(null);
     };
+
     document.body.classList.add("modal-open");
     window.addEventListener("keydown", closeOnEscape);
+
     return () => {
       document.body.classList.remove("modal-open");
       window.removeEventListener("keydown", closeOnEscape);
@@ -122,6 +152,7 @@ export default function Home() {
   const sendByEmail = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!activeArticle) return;
+
     const data = new FormData(event.currentTarget);
     const phone = String(data.get("phone") ?? "");
     const email = String(data.get("email") ?? "");
@@ -135,6 +166,7 @@ export default function Home() {
       "Комментарий:",
       comment,
     ].join("\n");
+
     window.location.href = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
@@ -149,69 +181,108 @@ export default function Home() {
             Управление сопровождения проектов строительства
           </span>
         </a>
+
         <nav className="nav" aria-label="Основная навигация">
           <a href="#about">О компании</a>
+          <a href="#environment">Среда Л1</a>
           <a href="#useful">Полезное</a>
-          <a href="#faq">Вопросы</a>
           <a href="#details">Реквизиты</a>
         </nav>
+
         <a className="button button--small" href="#contacts">
-          Контакты
+          Связаться
         </a>
       </header>
 
       <section className="hero" id="top">
-        <div className="hero__content">
-          <p className="eyebrow">ООО «УСПС» · Санкт-Петербург</p>
-          <h1>Информация об организации и участии в ЖСК</h1>
+        <div className="hero__copy">
+          <p className="eyebrow eyebrow--light">ООО «УСПС» · Санкт-Петербург</p>
+          <h1>
+            ООО «Управление сопровождения <span>проектов строительства</span>»
+          </h1>
           <p className="hero__lead">
-            Основные сведения, полезные памятки и понятный порядок связи с ООО
-            «Управление сопровождения проектов строительства».
+            Информация об участии организации в ЖСК, официальные сведения,
+            реквизиты и материалы для участников кооператива.
           </p>
+
           <div className="hero__actions">
-            <a className="button" href="#useful">
+            <a className="button button--accent" href="#useful">
               Полезная информация
             </a>
-            <a className="text-link" href="#details">
+            <a className="text-link text-link--light" href="#details">
               Смотреть реквизиты <Arrow />
             </a>
           </div>
+
+          <div className="hero__meta" aria-label="Краткие сведения">
+            <div>
+              <strong>2006</strong>
+              <span>год регистрации</span>
+            </div>
+            <div>
+              <strong>ЖСК</strong>
+              <span>участие организации</span>
+            </div>
+            <div>
+              <strong>СПб</strong>
+              <span>место регистрации</span>
+            </div>
+          </div>
         </div>
-        <aside
-          className="hero__summary"
-          aria-label="Краткие сведения об организации"
-        >
-          <p>Статус организации</p>
-          <dl>
-            <div>
-              <dt>Участие</dt>
-              <dd>Член ЖСК</dd>
-            </div>
-            <div>
-              <dt>Дата регистрации</dt>
-              <dd>24 июля 2006 года</dd>
-            </div>
-            <div>
-              <dt>Место регистрации</dt>
-              <dd>Санкт-Петербург</dd>
-            </div>
-          </dl>
-        </aside>
+
+        <div className="hero__visual">
+          <img
+            src="/images/l1-hero.jpg"
+            alt="Жилой комплекс компании Л1"
+            className="hero__image"
+          />
+          <div className="hero__shade" />
+          <div className="hero__floating-card">
+            <span>ООО «УСПС»</span>
+            <p>Участник жилищно-строительного кооператива</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="quick-strip" aria-label="Быстрый переход">
+        <a href="#about">
+          <span>01</span>О компании
+        </a>
+        <a href="#useful">
+          <span>02</span>
+          Памятки
+        </a>
+        <a href="#details">
+          <span>03</span>
+          Реквизиты
+        </a>
+        <a href="#contacts">
+          <span>04</span>
+          Адрес и карта
+        </a>
       </section>
 
       <section className="about section" id="about">
-        <div className="section-heading">
-          <p className="eyebrow">О компании</p>
-          <h2>Главное — в одном месте</h2>
+        <div className="section-heading section-heading--split">
+          <div>
+            <p className="eyebrow">О компании</p>
+            <h2>Об организации</h2>
+          </div>
           <p>
-            Страница помогает быстро найти основные сведения и подготовить
-            обращение без поиска по разным источникам.
+            ООО «Управление сопровождения проектов строительства» является
+            участником жилищно-строительного кооператива. В этом разделе
+            представлены основные сведения об организации и порядке
+            взаимодействия.
           </p>
         </div>
+
         <div className="fact-grid">
-          {facts.map((fact, index) => (
+          {facts.map((fact) => (
             <article className="fact-card" key={fact.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div className="fact-card__top">
+                <span>{fact.number}</span>
+                <i aria-hidden="true" />
+              </div>
               <h3>{fact.title}</h3>
               <p>{fact.text}</p>
             </article>
@@ -219,21 +290,53 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="useful section" id="useful">
-        <div className="section-heading section-heading--row">
+      <section className="environment section" id="environment">
+        <div className="section-heading section-heading--split section-heading--light">
           <div>
-            <p className="eyebrow">Полезная информация</p>
-            <h2>Памятки на каждый день</h2>
+            <p className="eyebrow eyebrow--light">Жилая среда · Л1</p>
+            <h2>Жилые комплексы и благоустройство</h2>
           </div>
           <p>
-            Короткие материалы о бытовых вопросах, обращениях и подготовке к
-            поездке.
+            Жилые дома, дворовые территории и общественные пространства проектов
+            компании Л1 в Санкт-Петербурге.
           </p>
         </div>
+
+        <div className="visual-grid">
+          {visuals.map((item) => (
+            <article className={item.className} key={item.title}>
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              <div className="visual-card__overlay" />
+              <div className="visual-card__caption">
+                <span>{item.title}</span>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="useful section" id="useful">
+        <div className="section-heading section-heading--split">
+          <div>
+            <p className="eyebrow">Полезная информация</p>
+            <h2>Короткие памятки для повседневных вопросов</h2>
+          </div>
+          <p>
+            Ответы и памятки по вопросам начислений, обращений, передачи
+            показаний и другим вопросам, связанным с проживанием.
+          </p>
+        </div>
+
         <div className="article-grid">
-          {articles.map((article) => (
+          {articles.map((article, index) => (
             <article className="article-card" key={article.id}>
-              <span className="article-card__label">{article.label}</span>
+              <div className="article-card__head">
+                <span className="article-card__label">{article.label}</span>
+                <span className="article-card__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
               <h3>{article.title}</h3>
               <p>{article.summary}</p>
               <button type="button" onClick={() => setActiveArticle(article)}>
@@ -245,16 +348,26 @@ export default function Home() {
       </section>
 
       <section className="faq section" id="faq">
-        <div className="section-heading">
+        <div className="faq__intro">
           <p className="eyebrow">Часто задаваемые вопросы</p>
-          <h2>Коротко и по делу</h2>
+          <h2>Ответы на частые вопросы</h2>
+          <p>
+            Информация о направлении обращений, реквизитах организации и других
+            вопросах, связанных с участием в ЖСК.
+          </p>
         </div>
+
         <div className="faq-list">
           {questions.map((item, index) => (
             <details key={item.question} open={index === 0}>
               <summary>
-                {item.question}
-                <span aria-hidden="true">+</span>
+                <span className="faq-list__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <strong>{item.question}</strong>
+                <span className="faq-list__plus" aria-hidden="true">
+                  +
+                </span>
               </summary>
               <p>{item.answer}</p>
             </details>
@@ -263,11 +376,18 @@ export default function Home() {
       </section>
 
       <section className="details section" id="details">
-        <div className="section-heading">
-          <p className="eyebrow">Реквизиты</p>
+        <div className="details__intro">
+          <p className="eyebrow eyebrow--light">Реквизиты</p>
           <h2>Карточка организации</h2>
-          <p>Официальные регистрационные сведения ООО «УСПС».</p>
+          <p>
+            Основные регистрационные сведения ООО «Управление сопровождения
+            проектов строительства».
+          </p>
+          <a className="text-link text-link--light" href="#contacts">
+            Перейти к адресу <Arrow />
+          </a>
         </div>
+
         <dl className="details__list">
           <div className="details__wide">
             <dt>Полное наименование</dt>
@@ -293,50 +413,60 @@ export default function Home() {
             <dt>Генеральный директор</dt>
             <dd>Штеллер Дмитрий Эрнестович</dd>
           </div>
-          <div>
-            <dt>Участие</dt>
-            <dd>Член ЖСК</dd>
-          </div>
         </dl>
       </section>
 
       <section className="contact section" id="contacts">
-        <div className="contact__box">
-          <div>
+        <div className="contact__shell">
+          <div className="contact__info">
             <p className="eyebrow">Контакты</p>
             <h2>Адрес для корреспонденции</h2>
+            <address>{ADDRESS}</address>
+
+            <div className="contact__note">
+              <span>Перед обращением</span>
+              <p>
+                Укажите имя, удобный способ связи и кратко опишите вопрос. Для
+                конкретного помещения добавьте адрес или реквизиты документа.
+              </p>
+            </div>
+
+            <div className="contact__actions">
+              <a
+                className="button"
+                href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Открыть маршрут
+              </a>
+              <button
+                className="button button--outline"
+                type="button"
+                onClick={copyAddress}
+              >
+                {copied ? "Адрес скопирован" : "Скопировать адрес"}
+              </button>
+            </div>
           </div>
-          <address>{ADDRESS}</address>
+
           <div className="contact__map">
             <iframe
               title="ООО УСПС на Яндекс Картах"
-              src="https://yandex.ru/map-widget/v1/?mode=search&text=196233%2C%20%D0%B3.%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB.%20%D0%9E%D1%80%D0%B4%D0%B6%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8%D0%B4%D0%B7%D0%B5%2C%20%D0%B4.%2052"
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Abcc43538b81f6fae9de96a52cd48b9acbeea435c236512fc5647b876b5f0eb4a&amp;source=constructor"
               loading="lazy"
               allowFullScreen
             />
-          </div>
-          <div className="contact__actions">
-            <a
-              className="button"
-              href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Орджоникидзе%2C%2052"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Открыть на карте
-            </a>
-            <button
-              className="button button--outline"
-              type="button"
-              onClick={copyAddress}
-            >
-              {copied ? "Адрес скопирован" : "Скопировать адрес"}
-            </button>
+            <div className="contact__map-label">
+              <span>Санкт-Петербург</span>
+              <strong>ул. Орджоникидзе, 52</strong>
+            </div>
           </div>
         </div>
       </section>
 
       <footer>
-        <a className="brand" href="#top">
+        <a className="brand brand--footer" href="#top">
           <span className="brand__mark">У</span>
           <span className="brand__name">
             Управление сопровождения проектов строительства
@@ -371,6 +501,7 @@ export default function Home() {
             >
               ×
             </button>
+
             <div className="modal__article">
               <p className="eyebrow">{activeArticle.label}</p>
               <h2 id="modal-title">{activeArticle.title}</h2>
@@ -388,12 +519,14 @@ export default function Home() {
                 </a>
               )}
             </div>
+
             <form className="request-form" onSubmit={sendByEmail}>
               <h3>Задать вопрос по теме</h3>
               <p>
                 После нажатия «Отправить» откроется ваша почтовая программа с
                 готовым письмом.
               </p>
+
               <label>
                 Номер телефона
                 <input
@@ -403,6 +536,7 @@ export default function Home() {
                   required
                 />
               </label>
+
               <label>
                 Email
                 <input
@@ -412,6 +546,7 @@ export default function Home() {
                   required
                 />
               </label>
+
               <label>
                 Комментарий
                 <textarea
@@ -421,6 +556,7 @@ export default function Home() {
                   required
                 />
               </label>
+
               <button className="button" type="submit">
                 Отправить
               </button>

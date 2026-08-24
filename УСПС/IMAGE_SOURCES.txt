@@ -1,0 +1,13 @@
+Images included in public/images:
+
+1) l1-hero.jpg
+Source: RBC+ article/image about L1 residential complex «Загляденье»
+https://s0.rbk.ru/rbcplus_pics/media/img/9/93/297617425042939.jpg
+
+2) l1-courtyard.webp
+Source: official L1 website, London Park / improvement materials
+https://www.l1-stroy.ru/images/content/complexInfo/improvement/big/20210419111016.webp
+
+3) l1-lobby.webp
+Source: official L1 website, «Твой Космос» gallery
+https://www.l1-stroy.ru/Images/Content/complex/tvoi-kosmos/gallery/10.webp
