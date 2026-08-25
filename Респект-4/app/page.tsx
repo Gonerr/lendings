@@ -6,6 +6,11 @@ import { ADDRESS, EMAIL, PHONE, PHONE_LINK, services, steps } from "./data";
 export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    kind: "success" | "error";
+    text: string;
+  } | null>(null);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -15,21 +20,52 @@ export default function Home() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
 
-  const submitRequest = (event: FormEvent<HTMLFormElement>) => {
+  const submitRequest = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const body = [
-      `Имя: ${data.get("name")}`,
-      `Телефон: ${data.get("phone")}`,
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const message = [
       `Объект: ${data.get("object") || "не указан"}`,
       "",
       `${data.get("message") || "Прошу связаться со мной."}`,
     ].join("\n");
 
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
-      "Заявка с сайта ООО «Респект-4»"
-    )}&body=${encodeURIComponent(body)}`;
-    setPhone("");
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: String(data.get("name") || ""),
+          phone: String(data.get("phone") || ""),
+          message,
+          website: "",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Contact request failed");
+
+      form.reset();
+      setPhone("");
+      setSubmitStatus({
+        kind: "success",
+        text: "Спасибо! Заявка отправлена, мы свяжемся с вами.",
+      });
+    } catch {
+      setSubmitStatus({
+        kind: "error",
+        text: "Не удалось отправить заявку. Попробуйте ещё раз.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const openForm = () => {
+    setSubmitStatus(null);
+    setIsFormOpen(true);
   };
 
   const formatPhone = (value: string) => {
@@ -97,7 +133,7 @@ export default function Home() {
         <button
           className="button button--small"
           type="button"
-          onClick={() => setIsFormOpen(true)}
+          onClick={openForm}
         >
           Обратная связь
         </button>
@@ -123,7 +159,7 @@ export default function Home() {
               <button
                 className="button button--accent"
                 type="button"
-                onClick={() => setIsFormOpen(true)}
+                onClick={openForm}
               >
                 Обсудить объект
               </button>
@@ -212,7 +248,7 @@ export default function Home() {
             <button
               className="button button--white"
               type="button"
-              onClick={() => setIsFormOpen(true)}
+              onClick={openForm}
             >
               Оставить заявку
             </button>
@@ -313,7 +349,7 @@ export default function Home() {
             <button
               className="button button--accent"
               type="button"
-              onClick={() => setIsFormOpen(true)}
+              onClick={openForm}
             >
               Заказать обратный звонок
             </button>
@@ -353,9 +389,13 @@ export default function Home() {
             <p className="eyebrow">Обратная связь</p>
             <h2 id="request-title">Оставьте заявку</h2>
             <p>
-              Заполните форму — откроется ваше почтовое приложение с готовым
-              письмом.
+              Заполните форму — заявка сразу поступит нашей команде.
             </p>
+            {submitStatus && (
+              <p role={submitStatus.kind === "error" ? "alert" : "status"}>
+                {submitStatus.text}
+              </p>
+            )}
             <form onSubmit={submitRequest}>
               <label>
                 Ваше имя
@@ -398,8 +438,9 @@ export default function Home() {
               <button
                 className="button button--accent button--full"
                 type="submit"
+                disabled={isSubmitting}
               >
-                Подготовить письмо
+                {isSubmitting ? "Отправляем…" : "Отправить заявку"}
               </button>
             </form>
           </div>

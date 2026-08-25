@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { company } from "./data.js";
 
 const initial = {
   name: "",
@@ -11,6 +10,8 @@ const initial = {
 export function RequestModal({ onClose }) {
   const [form, setForm] = useState(initial);
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     const onKey = (event) => {
@@ -33,21 +34,37 @@ export function RequestModal({ onClose }) {
     }));
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
     const topic = form.topic === "email" ? "Письмо с сайта" : "Обратный звонок";
-    const body = [
-      `Имя: ${form.name}`,
-      `Контакт: ${form.contact}`,
-      `Тема: ${topic}`,
-      "",
-      form.message || "Комментарий не указан.",
-    ].join("\n");
-    const href = `mailto:${company.email}?subject=${encodeURIComponent(
-      topic + " — " + company.name
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-    setSent(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.contact,
+          message: [
+            `Тема: ${topic}`,
+            "",
+            form.message || "Комментарий не указан.",
+          ].join("\n"),
+          website: "",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Contact request failed");
+
+      setForm(initial);
+      setSent(true);
+    } catch {
+      setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatPhone = (value) => {
@@ -101,15 +118,14 @@ export function RequestModal({ onClose }) {
       >
         <h2 id="request-title">Связаться с нами</h2>
         <p>
-          Выберите обратный звонок или письмо на почту. Серверной части нет:
-          заявка откроется в вашем почтовом клиенте.
+          Выберите удобный способ ответа — заявка сразу поступит нашей команде.
         </p>
         {sent ? (
           <div className="success">
-            Заявка сформирована. Если клиент не открылся, напишите на{" "}
-            {company.email}.
+            Спасибо! Заявка отправлена, мы свяжемся с вами.
           </div>
         ) : null}
+        {submitError ? <div className="success" role="alert">{submitError}</div> : null}
         <form onSubmit={submit}>
           <label className="field">
             <span>Как к вам обращаться</span>
@@ -160,12 +176,9 @@ export function RequestModal({ onClose }) {
             />
           </label>
           <div className="modal-actions">
-            <button className="btn btn-primary" type="submit">
-              Отправить заявку
+            <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Отправляем…" : "Отправить заявку"}
             </button>
-            <a className="btn btn-ghost" href={`mailto:${company.email}`}>
-              Сразу на почту
-            </a>
             <button className="btn btn-ghost" type="button" onClick={onClose}>
               Закрыть
             </button>
