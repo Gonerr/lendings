@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { company } from "./data.js";
 
 const initial = { name: "", phone: "" };
 
@@ -43,9 +42,26 @@ const formatPhone = (value) => {
   return result;
 };
 
+const sendCallbackRequest = async (form) => {
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: form.name,
+      phone: form.phone,
+      message: "Заявка на обратный звонок с сайта ПРАЙМ.",
+      website: "",
+    }),
+  });
+
+  if (!response.ok) throw new Error("Contact request failed");
+};
+
 export function CallbackModal({ onClose }) {
   const [form, setForm] = useState(initial);
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     const onKey = (event) => {
@@ -68,19 +84,20 @@ export function CallbackModal({ onClose }) {
     }));
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    const body = [
-      `Имя: ${form.name}`,
-      `Телефон: ${form.phone}`,
-      "",
-      "Заявка на обратный звонок с сайта ПРАЙМ.",
-    ].join("\n");
-    const href = `mailto:${company.email}?subject=${encodeURIComponent(
-      "Обратный звонок — ПРАЙМ"
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-    setSent(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      await sendCallbackRequest(form);
+      setForm(initial);
+      setSent(true);
+    } catch {
+      setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -107,10 +124,10 @@ export function CallbackModal({ onClose }) {
         </p>
         {sent ? (
           <div className="success">
-            Заявка сформирована. Если почтовый клиент не открылся, напишите на{" "}
-            {company.email}.
+            Спасибо! Заявка отправлена, мы свяжемся с вами.
           </div>
         ) : null}
+        {submitError ? <div className="success" role="alert">{submitError}</div> : null}
         <form onSubmit={submit}>
           <label className="field">
             <span>Имя</span>
@@ -140,8 +157,8 @@ export function CallbackModal({ onClose }) {
           <p className="form-note">
             Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
           </p>
-          <button className="btn btn-solid" type="submit">
-            Перезвоните мне
+          <button className="btn btn-solid" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Отправляем…" : "Перезвоните мне"}
           </button>
         </form>
       </div>
@@ -152,6 +169,8 @@ export function CallbackModal({ onClose }) {
 export function CallbackForm({ id, compact = false }) {
   const [form, setForm] = useState(initial);
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const update = (field) => (event) => {
     const { name, value } = event.target;
@@ -162,19 +181,20 @@ export function CallbackForm({ id, compact = false }) {
     }));
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    const body = [
-      `Имя: ${form.name}`,
-      `Телефон: ${form.phone}`,
-      "",
-      "Заявка на обратный звонок с сайта ПРАЙМ.",
-    ].join("\n");
-    const href = `mailto:${company.email}?subject=${encodeURIComponent(
-      "Обратный звонок — ПРАЙМ"
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-    setSent(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      await sendCallbackRequest(form);
+      setForm(initial);
+      setSent(true);
+    } catch {
+      setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -186,6 +206,7 @@ export function CallbackForm({ id, compact = false }) {
       onSubmit={submit}
     >
       <h3>Заказать обратный звонок</h3>
+      {submitError ? <div className="success" role="alert">{submitError}</div> : null}
       {sent ? (
         <div className="success">
           Заявка отправлена. Мы свяжемся с вами в ближайшее время.
@@ -217,8 +238,8 @@ export function CallbackForm({ id, compact = false }) {
               title="Введите телефон в формате +7 (900) 000 00 00"
             />
           </label>
-          <button className="btn btn-solid" type="submit">
-            Перезвоните мне
+          <button className="btn btn-solid" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Отправляем…" : "Перезвоните мне"}
           </button>
           <p className="form-note">
             Нажимая кнопку, вы соглашаетесь на обработку персональных данных.

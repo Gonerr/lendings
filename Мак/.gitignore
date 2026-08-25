@@ -40,3 +40,11 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# ASP.NET Core / IIS
+/backend/**/bin/
+/backend/**/obj/
+/backend/LandingContact.Api/appsettings.Production.json
+/backend/LandingContact.Api/wwwroot/*
+!/backend/LandingContact.Api/wwwroot/.gitkeep
+/publish-iis/

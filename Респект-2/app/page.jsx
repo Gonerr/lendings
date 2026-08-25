@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const PHONE = "+7 (812) 207-37-38";
 const EMAIL = "orespekt5@yandex.ru";
@@ -84,35 +84,14 @@ const requisites = [
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [prepared, setPrepared] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
     object: "",
     message: "",
   });
-
-  const body = useMemo(
-    () =>
-      [
-        "Заявка с сайта ООО «ЧОО Респект-2»",
-        "",
-        `Имя: ${form.name}`,
-        `Телефон или e-mail: ${form.phone}`,
-        `Тип объекта: ${form.object || "не указан"}`,
-        "",
-        form.message ||
-          "Прошу связаться со мной для обсуждения охраны объекта.",
-      ].join("\n"),
-    [form]
-  );
-
-  const mailto = useMemo(
-    () =>
-      `mailto:${EMAIL}?subject=${encodeURIComponent(
-        "Заявка на охрану объекта"
-      )}&body=${encodeURIComponent(body)}`,
-    [body]
-  );
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -132,12 +111,14 @@ export default function Home() {
 
   const openForm = () => {
     setPrepared(false);
+    setSubmitError("");
     setIsOpen(true);
   };
 
   const closeForm = () => {
     setIsOpen(false);
     setPrepared(false);
+    setSubmitError("");
   };
 
   const update = (event) => {
@@ -149,10 +130,37 @@ export default function Home() {
     }));
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    setPrepared(true);
-    window.location.href = mailto;
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          message: [
+            `Тип объекта: ${form.object || "не указан"}`,
+            "",
+            form.message ||
+              "Прошу связаться со мной для обсуждения охраны объекта.",
+          ].join("\n"),
+          website: "",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Contact request failed");
+
+      setPrepared(true);
+      setForm({ name: "", phone: "", object: "", message: "" });
+    } catch {
+      setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatPhone = (value) => {
@@ -520,9 +528,9 @@ export default function Home() {
               <>
                 <h2 id="request-title">Оставить заявку</h2>
                 <p className="modal-note">
-                  Заполните форму. Мы подготовим письмо на адрес {EMAIL} и
-                  откроем его в вашей почтовой программе.
+                  Заполните форму — заявка сразу поступит нашей команде.
                 </p>
+                {submitError && <p role="alert">{submitError}</p>}
                 <form onSubmit={submit}>
                   <label>
                     Ваше имя
@@ -583,22 +591,26 @@ export default function Home() {
                       обращение
                     </span>
                   </label>
-                  <button className="button form-button" type="submit">
-                    Отправить по e-mail
+                  <button
+                    className="button form-button"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Отправляем…" : "Отправить заявку"}
                   </button>
                 </form>
               </>
             ) : (
               <div className="prepared-state">
                 <span className="prepared-icon">✓</span>
-                <h2 id="request-title">Письмо подготовлено</h2>
+                <h2 id="request-title">Заявка отправлена</h2>
                 <p>
-                  Проверьте данные и нажмите «Отправить» в почтовой программе.
-                  Получатель — {EMAIL}.
+                  Спасибо! Мы получили обращение и свяжемся с вами по указанному
+                  телефону.
                 </p>
-                <a className="button form-button" href={mailto}>
-                  Открыть почту ещё раз
-                </a>
+                <button className="button form-button" type="button" onClick={closeForm}>
+                  Закрыть
+                </button>
               </div>
             )}
           </section>

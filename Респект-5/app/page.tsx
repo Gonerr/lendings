@@ -20,6 +20,11 @@ export default function Home() {
   const [formOpen, setFormOpen] = useState(false);
 
   const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    kind: "success" | "error";
+    text: string;
+  } | null>(null);
 
   useEffect(() => {
     document.body.classList.toggle("no-scroll", formOpen);
@@ -33,26 +38,54 @@ export default function Home() {
     };
   }, [formOpen]);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(
-      `Запрос с сайта Респект-5: ${String(data.get("objectType") || "объект")}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Имя: ${String(data.get("name") || "")}`,
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const message = [
         `Организация: ${String(data.get("company") || "не указана")}`,
-        `Контакт: ${String(data.get("contact") || "")}`,
         `Тип объекта: ${String(data.get("objectType") || "")}`,
         "",
         "Сообщение:",
         String(data.get("message") || ""),
-      ].join("\n")
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setFormOpen(false);
-    setPhone("");
+      ].join("\n");
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: String(data.get("name") || ""),
+          phone: String(data.get("contact") || ""),
+          message,
+          website: "",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Contact request failed");
+
+      form.reset();
+      setPhone("");
+      setSubmitStatus({
+        kind: "success",
+        text: "Спасибо! Обращение отправлено, мы свяжемся с вами.",
+      });
+    } catch {
+      setSubmitStatus({
+        kind: "error",
+        text: "Не удалось отправить обращение. Попробуйте ещё раз.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const openForm = () => {
+    setSubmitStatus(null);
+    setFormOpen(true);
   };
 
   const closeMenu = () => setMenuOpen(false);
@@ -146,7 +179,7 @@ export default function Home() {
         <button
           className="header-action"
           type="button"
-          onClick={() => setFormOpen(true)}
+          onClick={openForm}
         >
           Обсудить объект <Arrow />
         </button>
@@ -174,7 +207,7 @@ export default function Home() {
             <button
               className="primary-button"
               type="button"
-              onClick={() => setFormOpen(true)}
+              onClick={openForm}
             >
               Получить консультацию <Arrow />
             </button>
@@ -627,7 +660,7 @@ export default function Home() {
           <button
             className="primary-button warm"
             type="button"
-            onClick={() => setFormOpen(true)}
+            onClick={openForm}
           >
             Оставить обращение <Arrow />
           </button>
@@ -701,9 +734,13 @@ export default function Home() {
             <p className="eyebrow">Обсудить объект</p>
             <h2 id="form-title">Расскажите о вашей задаче</h2>
             <p className="modal-intro">
-              После отправки откроется почтовое приложение с готовым письмом на{" "}
-              {EMAIL}.
+              Заполните форму — обращение сразу поступит нашей команде.
             </p>
+            {submitStatus && (
+              <p role={submitStatus.kind === "error" ? "alert" : "status"}>
+                {submitStatus.text}
+              </p>
+            )}
             <form onSubmit={handleSubmit}>
               <label>
                 <span>Ваше имя</span>
@@ -770,8 +807,12 @@ export default function Home() {
                   Согласен на обработку данных, указанных в обращении.
                 </span>
               </label>
-              <button className="primary-button wide" type="submit">
-                Подготовить письмо <Arrow />
+              <button
+                className="primary-button wide"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Отправляем…" : "Отправить обращение"} <Arrow />
               </button>
             </form>
           </section>

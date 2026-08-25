@@ -75,6 +75,8 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [prepared, setPrepared] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -117,6 +119,7 @@ export default function Home() {
   const openForm = () => {
     setPrepared(false);
     setCopied(false);
+    setSubmitError("");
     setIsOpen(true);
   };
 
@@ -124,6 +127,7 @@ export default function Home() {
     setIsOpen(false);
     setPrepared(false);
     setCopied(false);
+    setSubmitError("");
   };
 
   const update = (
@@ -139,9 +143,36 @@ export default function Home() {
     }));
   };
 
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setPrepared(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          message: [
+            `Организация / УК: ${form.company}`,
+            `Направление: ${form.topic || "не указано"}`,
+            "",
+            form.message || "Просим связаться для уточнения технической задачи.",
+          ].join("\n"),
+          website: "",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Contact request failed");
+
+      setPrepared(true);
+    } catch {
+      setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const copyRequest = async () => {
@@ -561,11 +592,11 @@ export default function Home() {
             {!prepared ? (
               <>
                 <p className="kicker dark">SERVICE REQUEST / R3</p>
-                <h2 id="request-title">Подготовить заявку</h2>
+                <h2 id="request-title">Отправить заявку</h2>
                 <p className="modal-note">
-                  Заполните поля — сайт сформирует текст обращения, который
-                  можно передать через рабочий канал управляющей компании.
+                  Заполните поля — заявка сразу поступит нашей команде.
                 </p>
+                {submitError && <p role="alert">{submitError}</p>}
                 <form onSubmit={submit}>
                   <label>
                     Контактное лицо
@@ -640,18 +671,22 @@ export default function Home() {
                       обращения
                     </span>
                   </label>
-                  <button className="primary-action form-action" type="submit">
-                    Сформировать текст <span>↗</span>
+                  <button
+                    className="primary-action form-action"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Отправляем…" : "Отправить заявку"} <span>↗</span>
                   </button>
                 </form>
               </>
             ) : (
               <div className="prepared-state">
                 <span className="prepared-icon">R3</span>
-                <h2 id="request-title">Заявка готова</h2>
+                <h2 id="request-title">Заявка отправлена</h2>
                 <p>
-                  Скопируйте текст и отправьте его через действующий канал связи
-                  с управляющей компанией.
+                  Спасибо! Мы получили обращение и свяжемся с вами. Ниже можно
+                  сохранить копию отправленных данных.
                 </p>
                 <pre>{requestText}</pre>
                 <button
