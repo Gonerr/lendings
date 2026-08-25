@@ -40,3 +40,11 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# ASP.NET Core / IIS
+/backend/**/bin/
+/backend/**/obj/
+/backend/FirstCompany.Api/appsettings.Production.json
+/backend/FirstCompany.Api/wwwroot/*
+!/backend/FirstCompany.Api/wwwroot/.gitkeep
+/publish-iis/
