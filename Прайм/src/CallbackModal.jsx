@@ -1,40 +1,87 @@
-import { useEffect, useState } from 'react'
-import { company } from './data.js'
+import { useEffect, useState } from "react";
+import { company } from "./data.js";
 
-const initial = { name: '', phone: '' }
+const initial = { name: "", phone: "" };
+
+const formatPhone = (value) => {
+  let digits = value.replace(/\D/g, "");
+
+  if (digits.startsWith("8")) {
+    digits = "7" + digits.slice(1);
+  }
+
+  if (!digits.startsWith("7")) {
+    digits = "7" + digits;
+  }
+
+  digits = digits.slice(0, 11);
+
+  const number = digits.slice(1);
+
+  let result = "+7";
+
+  if (number.length > 0) {
+    result += ` (${number.slice(0, 3)}`;
+  }
+
+  if (number.length >= 3) {
+    result += ")";
+  }
+
+  if (number.length > 3) {
+    result += ` ${number.slice(3, 6)}`;
+  }
+
+  if (number.length > 6) {
+    result += ` ${number.slice(6, 8)}`;
+  }
+
+  if (number.length > 8) {
+    result += ` ${number.slice(8, 10)}`;
+  }
+
+  return result;
+};
 
 export function CallbackModal({ onClose }) {
-  const [form, setForm] = useState(initial)
-  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState(initial);
+  const [sent, setSent] = useState(false);
 
   useEffect(() => {
     const onKey = (event) => {
-      if (event.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    document.body.style.overflow = 'hidden'
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
     return () => {
-      window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
-    }
-  }, [onClose])
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
 
   const update = (field) => (event) => {
-    setForm((prev) => ({ ...prev, [field]: event.target.value }))
-  }
+    const { name, value } = event.target;
+
+    setForm((current) => ({
+      ...current,
+      [name]: name === "phone" ? formatPhone(value) : value,
+    }));
+  };
 
   const submit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const body = [
       `Имя: ${form.name}`,
       `Телефон: ${form.phone}`,
-      '',
-      'Заявка на обратный звонок с сайта ПРАЙМ.',
-    ].join('\n')
-    const href = `mailto:${company.email}?subject=${encodeURIComponent('Обратный звонок — ПРАЙМ')}&body=${encodeURIComponent(body)}`
-    window.location.href = href
-    setSent(true)
-  }
+      "",
+      "Заявка на обратный звонок с сайта ПРАЙМ.",
+    ].join("\n");
+    const href = `mailto:${company.email}?subject=${encodeURIComponent(
+      "Обратный звонок — ПРАЙМ"
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+    setSent(true);
+  };
 
   return (
     <div className="overlay" role="presentation" onClick={onClose}>
@@ -45,14 +92,23 @@ export function CallbackModal({ onClose }) {
         aria-labelledby="callback-title"
         onClick={(event) => event.stopPropagation()}
       >
-        <button className="modal-close" type="button" aria-label="Закрыть" onClick={onClose}>
+        <button
+          className="modal-close"
+          type="button"
+          aria-label="Закрыть"
+          onClick={onClose}
+        >
           ×
         </button>
         <h2 id="callback-title">Обратный звонок</h2>
-        <p>Оставьте номер — перезвоним и ответим на вопросы о зале, расписании и абонементах.</p>
+        <p>
+          Оставьте номер — перезвоним и ответим на вопросы о зале, расписании и
+          абонементах.
+        </p>
         {sent ? (
           <div className="success">
-            Заявка сформирована. Если почтовый клиент не открылся, напишите на {company.email}.
+            Заявка сформирована. Если почтовый клиент не открылся, напишите на{" "}
+            {company.email}.
           </div>
         ) : null}
         <form onSubmit={submit}>
@@ -61,7 +117,7 @@ export function CallbackModal({ onClose }) {
             <input
               required
               value={form.name}
-              onChange={update('name')}
+              onChange={update("name")}
               name="name"
               autoComplete="name"
               placeholder="Как к вам обращаться"
@@ -73,7 +129,7 @@ export function CallbackModal({ onClose }) {
               required
               type="tel"
               value={form.phone}
-              onChange={update('phone')}
+              onChange={update("phone")}
               name="phone"
               autoComplete="tel"
               placeholder="+7 (___) ___-__-__"
@@ -90,34 +146,43 @@ export function CallbackModal({ onClose }) {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
 export function CallbackForm({ id, compact = false }) {
-  const [form, setForm] = useState(initial)
-  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState(initial);
+  const [sent, setSent] = useState(false);
 
   const update = (field) => (event) => {
-    setForm((prev) => ({ ...prev, [field]: event.target.value }))
-  }
+    const { name, value } = event.target;
+
+    setForm((current) => ({
+      ...current,
+      [name]: name === "phone" ? formatPhone(value) : value,
+    }));
+  };
 
   const submit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const body = [
       `Имя: ${form.name}`,
       `Телефон: ${form.phone}`,
-      '',
-      'Заявка на обратный звонок с сайта ПРАЙМ.',
-    ].join('\n')
-    const href = `mailto:${company.email}?subject=${encodeURIComponent('Обратный звонок — ПРАЙМ')}&body=${encodeURIComponent(body)}`
-    window.location.href = href
-    setSent(true)
-  }
+      "",
+      "Заявка на обратный звонок с сайта ПРАЙМ.",
+    ].join("\n");
+    const href = `mailto:${company.email}?subject=${encodeURIComponent(
+      "Обратный звонок — ПРАЙМ"
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+    setSent(true);
+  };
 
   return (
     <form
       id={id}
-      className={compact ? 'callback-form callback-form--compact' : 'callback-form'}
+      className={
+        compact ? "callback-form callback-form--compact" : "callback-form"
+      }
       onSubmit={submit}
     >
       <h3>Заказать обратный звонок</h3>
@@ -132,7 +197,7 @@ export function CallbackForm({ id, compact = false }) {
             <input
               required
               value={form.name}
-              onChange={update('name')}
+              onChange={update("name")}
               name="name"
               autoComplete="name"
             />
@@ -143,12 +208,13 @@ export function CallbackForm({ id, compact = false }) {
               required
               type="tel"
               value={form.phone}
-              onChange={update('phone')}
+              onChange={update("phone")}
               name="phone"
               autoComplete="tel"
-              placeholder="+7"
-              pattern="^\+7.*"
-              title="Номер должен начинаться с +7"
+              placeholder="+7 (900) 000 00 00"
+              pattern="\+7 \(\d{3}\) \d{3} \d{2} \d{2}"
+              maxLength={18}
+              title="Введите телефон в формате +7 (900) 000 00 00"
             />
           </label>
           <button className="btn btn-solid" type="submit">
@@ -160,5 +226,5 @@ export function CallbackForm({ id, compact = false }) {
         </>
       )}
     </form>
-  )
+  );
 }

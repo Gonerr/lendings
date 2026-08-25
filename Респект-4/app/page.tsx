@@ -5,6 +5,7 @@ import { ADDRESS, EMAIL, PHONE, PHONE_LINK, services, steps } from "./data";
 
 export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [phone, setPhone] = useState("");
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -28,6 +29,47 @@ export default function Home() {
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
       "Заявка с сайта ООО «Респект-4»"
     )}&body=${encodeURIComponent(body)}`;
+    setPhone("");
+  };
+
+  const formatPhone = (value: string) => {
+    let digits = value.replace(/\D/g, "");
+
+    if (digits.startsWith("8")) {
+      digits = "7" + digits.slice(1);
+    }
+
+    if (!digits.startsWith("7")) {
+      digits = "7" + digits;
+    }
+
+    digits = digits.slice(0, 11);
+
+    const number = digits.slice(1);
+
+    let result = "+7";
+
+    if (number.length > 0) {
+      result += ` (${number.slice(0, 3)}`;
+    }
+
+    if (number.length >= 3) {
+      result += ")";
+    }
+
+    if (number.length > 3) {
+      result += ` ${number.slice(3, 6)}`;
+    }
+
+    if (number.length > 6) {
+      result += ` ${number.slice(6, 8)}`;
+    }
+
+    if (number.length > 8) {
+      result += ` ${number.slice(8, 10)}`;
+    }
+
+    return result;
   };
 
   return (
@@ -321,7 +363,25 @@ export default function Home() {
               </label>
               <label>
                 Телефон
-                <input name="phone" type="tel" autoComplete="tel" required />
+                <input
+                  name="phone"
+                  type="tel"
+                  value={phone}
+                  onChange={(event) =>
+                    setPhone(formatPhone(event.target.value))
+                  }
+                  onFocus={() => {
+                    if (!phone) {
+                      setPhone("+7 (");
+                    }
+                  }}
+                  required
+                  autoComplete="tel"
+                  placeholder="+7 (900) 000 00 00"
+                  maxLength={18}
+                  pattern="\+7 \(\d{3}\) \d{3} \d{2} \d{2}"
+                  title="Введите телефон в формате +7 (900) 000 00 00"
+                />
               </label>
               <label>
                 Объект
