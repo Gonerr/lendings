@@ -468,7 +468,7 @@ export default function Home() {
                 <p className="eyebrow">Обратная связь</p>
                 <h2 id="request-title">Расскажите, чем помочь</h2>
                 <p className="modal-copy">
-                  Заполните форму — обращение будет отправлено на {CONTACT_EMAIL}.
+                  Заполните форму — обращение будет отправлено нашей команде.
                 </p>
                 <form onSubmit={submitRequest}>
                   <label className="request-honeypot" aria-hidden="true">
@@ -548,8 +548,8 @@ export default function Home() {
                 <p className="eyebrow">Готово</p>
                 <h2 id="request-title">Обращение отправлено</h2>
                 <p>
-                  Спасибо! Письмо уже поступило на {CONTACT_EMAIL}. Мы свяжемся
-                  с вами по указанным контактам.
+                  Спасибо! Обращение уже поступило нашей команде. Мы свяжемся с
+                  вами по указанным контактам.
                 </p>
                 <button className="button button-dark" type="button" onClick={closeForm}>
                   Закрыть <Arrow />

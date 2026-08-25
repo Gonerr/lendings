@@ -23,7 +23,7 @@ public sealed class SmtpEmailSender(IOptions<SmtpOptions> options) : IEmailSende
             Subject = $"Обращение с сайта ООО «Первый»: {SanitizeHeader(request.Name)}",
             SubjectEncoding = Encoding.UTF8,
             BodyEncoding = Encoding.UTF8,
-            IsBodyHtml = false,
+            IsBodyHtml = true,
             Body = BuildBody(request),
         };
 
@@ -38,9 +38,15 @@ public sealed class SmtpEmailSender(IOptions<SmtpOptions> options) : IEmailSende
         {
             EnableSsl = _options.EnableSsl,
             UseDefaultCredentials = false,
-            Credentials = new NetworkCredential(_options.Username, _options.Password),
             DeliveryMethod = SmtpDeliveryMethod.Network,
         };
+
+        if (!string.IsNullOrWhiteSpace(_options.Username))
+        {
+            smtpClient.Credentials = new NetworkCredential(
+                _options.Username,
+                _options.Password);
+        }
 
         await smtpClient.SendMailAsync(message, cancellationToken);
     }
@@ -48,29 +54,35 @@ public sealed class SmtpEmailSender(IOptions<SmtpOptions> options) : IEmailSende
     private void EnsureConfigured()
     {
         if (string.IsNullOrWhiteSpace(_options.Host)
-            || string.IsNullOrWhiteSpace(_options.Username)
-            || string.IsNullOrWhiteSpace(_options.Password)
             || string.IsNullOrWhiteSpace(_options.FromEmail)
-            || string.IsNullOrWhiteSpace(_options.RecipientEmail))
+            || string.IsNullOrWhiteSpace(_options.RecipientEmail)
+            || _options.Port is < 1 or > 65535)
         {
             throw new InvalidOperationException(
-                "SMTP is not configured. Set the Smtp__* environment variables.");
+                "SMTP relay is not configured correctly.");
         }
     }
 
     private static string BuildBody(ContactRequest request) =>
         $"""
-        Новое обращение с сайта ООО «Первый»
-
-        Имя: {request.Name.Trim()}
-        Телефон: {request.Phone.Trim()}
-        E-mail: {request.Email?.Trim() ?? "не указан"}
-
-        Комментарий:
-        {request.Message?.Trim() ?? "Прошу связаться со мной."}
-
-        Получено: {DateTimeOffset.UtcNow:dd.MM.yyyy HH:mm} UTC
+        <h2>Новое обращение с сайта ООО «Первый»</h2>
+        <p><b>Имя:</b> {WebUtility.HtmlEncode(request.Name.Trim())}</p>
+        <p><b>Телефон:</b> {WebUtility.HtmlEncode(request.Phone.Trim())}</p>
+        <p><b>E-mail:</b> {WebUtility.HtmlEncode(request.Email?.Trim() ?? "не указан")}</p>
+        <p><b>Комментарий:</b><br/>{HtmlEncodeWithBreaks(request.Message)}</p>
+        <p><small>Получено: {DateTimeOffset.Now:dd.MM.yyyy HH:mm}</small></p>
         """;
+
+    private static string HtmlEncodeWithBreaks(string? value)
+    {
+        var text = string.IsNullOrWhiteSpace(value)
+            ? "Прошу связаться со мной."
+            : value.Trim();
+
+        return WebUtility.HtmlEncode(text)
+            .Replace("\r\n", "<br/>")
+            .Replace("\n", "<br/>");
+    }
 
     private static string SanitizeHeader(string value) =>
         value.Replace("\r", " ").Replace("\n", " ").Trim();
