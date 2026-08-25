@@ -97,6 +97,46 @@ export default function Home() {
     setSubmitError("");
   };
 
+  const formatPhone = (value) => {
+    let digits = value.replace(/\D/g, "");
+
+    if (digits.startsWith("8")) {
+      digits = "7" + digits.slice(1);
+    }
+
+    if (!digits.startsWith("7")) {
+      digits = "7" + digits;
+    }
+
+    digits = digits.slice(0, 11);
+
+    const number = digits.slice(1);
+
+    let result = "+7";
+
+    if (number.length > 0) {
+      result += ` (${number.slice(0, 3)}`;
+    }
+
+    if (number.length >= 3) {
+      result += ")";
+    }
+
+    if (number.length > 3) {
+      result += ` ${number.slice(3, 6)}`;
+    }
+
+    if (number.length > 6) {
+      result += ` ${number.slice(6, 8)}`;
+    }
+
+    if (number.length > 8) {
+      result += ` ${number.slice(8, 10)}`;
+    }
+
+    return result;
+  };
+
   const submitRequest = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -131,9 +171,11 @@ export default function Home() {
   };
 
   const updateField = (event) => {
+    const { name, value } = event.target;
+
     setFormData((current) => ({
       ...current,
-      [event.target.name]: event.target.value,
+      [name]: name === "phone" ? formatPhone(value) : value,
     }));
   };
 
@@ -498,8 +540,19 @@ export default function Home() {
                       type="tel"
                       value={formData.phone}
                       onChange={updateField}
-                      placeholder="+7 900 000-00-00"
+                      placeholder="+7 (900) 000 00 00"
+                      maxLength={18}
+                      pattern="\+7 \(\d{3}\) \d{3} \d{2} \d{2}"
+                      title="Введите телефон в формате +7 (900) 000 00 00"
                       required
+                      onFocus={() => {
+                        if (!formData.phone) {
+                          setFormData((current) => ({
+                            ...current,
+                            phone: "+7 (",
+                          }));
+                        }
+                      }}
                     />
                   </label>
                   <label>
@@ -532,7 +585,8 @@ export default function Home() {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Отправляем…" : "Отправить обращение"} <Arrow />
+                    {isSubmitting ? "Отправляем…" : "Отправить обращение"}{" "}
+                    <Arrow />
                   </button>
                   {submitError && (
                     <p className="form-error" role="alert">
@@ -551,7 +605,11 @@ export default function Home() {
                   Спасибо! Обращение уже поступило нашей команде. Мы свяжемся с
                   вами по указанным контактам.
                 </p>
-                <button className="button button-dark" type="button" onClick={closeForm}>
+                <button
+                  className="button button-dark"
+                  type="button"
+                  onClick={closeForm}
+                >
                   Закрыть <Arrow />
                 </button>
               </div>

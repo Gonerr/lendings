@@ -48,3 +48,4 @@ next-env.d.ts
 /backend/FirstCompany.Api/wwwroot/*
 !/backend/FirstCompany.Api/wwwroot/.gitkeep
 /publish-iis/
+/backend/.vs
