@@ -26,16 +26,20 @@ Node.js нужен только на компьютере, где формиру
 
 | Переменная | Пример |
 |---|---|
-| `Smtp__Host` | `smtp.example.ru` |
-| `Smtp__Port` | `587` |
-| `Smtp__EnableSsl` | `true` |
-| `Smtp__Username` | адрес или логин SMTP |
-| `Smtp__Password` | пароль приложения / SMTP-пароль |
-| `Smtp__FromEmail` | адрес отправителя |
+| `Smtp__Host` | `10.10.0.27` |
+| `Smtp__Port` | `25` |
+| `Smtp__EnableSsl` | `false` |
+| `Smtp__Username` | пусто для внутреннего relay |
+| `Smtp__Password` | пусто для внутреннего relay |
+| `Smtp__FromEmail` | `no-reply@l1-stroy.ru` |
 | `Smtp__FromName` | `Сайт ООО «Первый»` |
-| `Smtp__RecipientEmail` | `vopros@park-mall.shop` |
+| `Smtp__RecipientEmail` | `aalihacheva@l1n1.ru` |
 
 После изменения переменных перезапустите пул приложений.
+
+Текущие значения внутреннего relay уже записаны в `appsettings.json`, поэтому
+дополнительные переменные для запуска внутри сети Л1 не требуются. Сервер IIS
+должен иметь сетевой доступ к `10.10.0.27:25`.
 
 Альтернатива: скопируйте `appsettings.Production.example.json` в
 `appsettings.Production.json` уже внутри опубликованной папки, заполните SMTP-данные
