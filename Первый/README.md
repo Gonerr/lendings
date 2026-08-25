@@ -1,5 +1,9 @@
 # vinext-starter
 
+Сайт ООО «Первый» дополнен ASP.NET Core API для отправки обращений на
+`vopros@park-mall.shop`. Инструкция по общей публикации frontend и API на IIS:
+[IIS-DEPLOY.md](./IIS-DEPLOY.md).
+
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
 Drizzle support.

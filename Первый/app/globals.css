@@ -11,7 +11,6 @@
   --muted: #69736d;
   --line: rgba(19, 41, 32, 0.16);
 }
-
 * {
   box-sizing: border-box;
 }
@@ -807,7 +806,7 @@ footer {
   font-weight: 400;
 }
 
-.request-modal label:nth-of-type(4),
+.request-modal .message-field,
 .request-modal .consent,
 .submit-button {
   grid-column: 1 / -1;
@@ -857,6 +856,33 @@ footer {
 .submit-button {
   width: 100%;
   margin-top: 4px;
+}
+
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.request-honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+.form-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #a12929;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-error a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .success-state {
@@ -1201,7 +1227,7 @@ footer {
   }
 
   .request-modal label,
-  .request-modal label:nth-of-type(4),
+  .request-modal .message-field,
   .request-modal .consent,
   .submit-button {
     grid-column: 1;

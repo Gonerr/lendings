@@ -47,6 +47,12 @@ export default defineConfig(async () => {
     server: {
       host: "0.0.0.0",
       allowedHosts: ["terminal.local"],
+      proxy: {
+        "/api": {
+          target: process.env.VITE_DEV_API_TARGET ?? "http://localhost:5080",
+          changeOrigin: true,
+        },
+      },
       ...(isCodexSeatbeltSandbox
         ? { watch: { useFsEvents: false, usePolling: true } }
         : {}),

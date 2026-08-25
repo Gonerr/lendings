@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const CONTACT_EMAIL = "vopros@park-mall.shop";
 const CONTACT_PHONE = "+7 (812) 305-33-55";
@@ -81,49 +81,53 @@ function Arrow() {
 export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     message: "",
+    website: "",
   });
-
-  const mailBody = useMemo(
-    () =>
-      [
-        `Имя: ${formData.name}`,
-        `Телефон: ${formData.phone}`,
-        `E-mail: ${formData.email || "не указан"}`,
-        "",
-        formData.message || "Прошу связаться со мной.",
-      ].join("\n"),
-    [formData]
-  );
-
-  const mailtoHref = useMemo(
-    () =>
-      `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-        "Обращение с сайта ООО «Первый»"
-      )}&body=${encodeURIComponent(mailBody)}`,
-    [mailBody]
-  );
 
   const closeForm = () => {
     setIsFormOpen(false);
     setSubmitted(false);
+    setSubmitError("");
   };
 
   const submitRequest = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
 
     try {
-      await navigator.clipboard.writeText(mailBody);
-    } catch {
-      // Clipboard access is optional; the mail draft still opens below.
-    }
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setSubmitted(true);
-    window.location.href = mailtoHref;
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+        website: "",
+      });
+    } catch {
+      setSubmitError(
+        "Не получилось отправить обращение. Попробуйте ещё раз или напишите нам на e-mail."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const updateField = (event) => {
@@ -364,9 +368,8 @@ export default function Home() {
               Давайте обсудим
             </h2>
             <p>
-              Оставьте контакты и коротко опишите задачу. Форма подготовит
-              письмо на адрес нашей команды — вам останется проверить данные и
-              отправить его в почтовом приложении.
+              Оставьте контакты и коротко опишите задачу. Обращение сразу
+              поступит на почту нашей команды, и мы свяжемся с вами.
             </p>
             <button
               className="button button-gold"
@@ -465,10 +468,19 @@ export default function Home() {
                 <p className="eyebrow">Обратная связь</p>
                 <h2 id="request-title">Расскажите, чем помочь</h2>
                 <p className="modal-copy">
-                  Заполните форму — мы подготовим письмо на {CONTACT_EMAIL} и
-                  откроем его в вашем почтовом приложении.
+                  Заполните форму — обращение будет отправлено на {CONTACT_EMAIL}.
                 </p>
                 <form onSubmit={submitRequest}>
+                  <label className="request-honeypot" aria-hidden="true">
+                    Сайт
+                    <input
+                      name="website"
+                      value={formData.website}
+                      onChange={updateField}
+                      tabIndex="-1"
+                      autoComplete="off"
+                    />
+                  </label>
                   <label>
                     Ваше имя
                     <input
@@ -499,7 +511,7 @@ export default function Home() {
                       onChange={updateField}
                     />
                   </label>
-                  <label>
+                  <label className="message-field">
                     Комментарий <span>необязательно</span>
                     <textarea
                       name="message"
@@ -518,23 +530,30 @@ export default function Home() {
                   <button
                     className="button button-dark submit-button"
                     type="submit"
+                    disabled={isSubmitting}
                   >
-                    Отправить по e-mail <Arrow />
+                    {isSubmitting ? "Отправляем…" : "Отправить обращение"} <Arrow />
                   </button>
+                  {submitError && (
+                    <p className="form-error" role="alert">
+                      {submitError}{" "}
+                      <a href={`mailto:${CONTACT_EMAIL}`}>Написать напрямую</a>
+                    </p>
+                  )}
                 </form>
               </>
             ) : (
               <div className="success-state">
                 <span className="success-icon">✓</span>
                 <p className="eyebrow">Готово</p>
-                <h2 id="request-title">Обращение подготовлено</h2>
+                <h2 id="request-title">Обращение отправлено</h2>
                 <p>
-                  Письмо адресовано {CONTACT_EMAIL}. Проверьте данные и нажмите
-                  «Отправить» в почтовом приложении.
+                  Спасибо! Письмо уже поступило на {CONTACT_EMAIL}. Мы свяжемся
+                  с вами по указанным контактам.
                 </p>
-                <a className="button button-dark" href={mailtoHref}>
-                  Открыть почту ещё раз <Arrow />
-                </a>
+                <button className="button button-dark" type="button" onClick={closeForm}>
+                  Закрыть <Arrow />
+                </button>
               </div>
             )}
           </section>
