@@ -1,1 +1,181 @@
-<!DOCTYPE html><html lang="ru"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/images/fitness24-gym.webp"/><link rel="stylesheet" href="/_next/static/chunks/043-aza090_5r.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0ht900cau6_ur.js"/><script src="/_next/static/chunks/0t2z5hkh7v~~b.js" async=""></script><script src="/_next/static/chunks/07lhk_q6pmm3r.js" async=""></script><script src="/_next/static/chunks/turbopack-0cek.dh0dqtgy.js" async=""></script><script src="/_next/static/chunks/0dbhjjzl8qfwv.js" async=""></script><script src="/_next/static/chunks/0pk6-ls7vfeds.js" async=""></script><title>ООО «МАК» — физкультурно-оздоровительный комплекс</title><meta name="description" content="ООО «МАК» — физкультурно-оздоровительная деятельность в Санкт-Петербурге. Контакты, адрес и сведения о компании."/><link rel="shortcut icon" href="/favicon.svg"/><link rel="icon" href="/favicon.svg"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="antialiased"><div hidden=""><!--$--><!--/$--></div><main><header class="site-header"><a class="brand" href="#top" aria-label="ООО МАК — на главную"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-word">МАК</span><span class="brand-caption">физкультурно-оздоровительный комплекс</span></a><button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button><nav class="nav" aria-label="Основная навигация"><a href="#about">О комплексе</a><a href="#spaces">Пространства</a><a href="#company">О компании</a><a href="#contacts">Контакты</a></nav><button class="header-contact" type="button">Связаться<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></button></header><section class="hero" id="top"><div class="hero-copy"><p class="eyebrow">Санкт-Петербург · Кустодиева, 7</p><h1>Движение.<br/><span>Вода.</span><br/>Сила.</h1><p class="hero-lead">Физкультурно-оздоровительный комплекс для регулярных тренировок, активного отдыха и хорошего самочувствия.</p><div class="hero-actions"><button class="button button-red" type="button">Задать вопрос<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></button></div></div><figure class="hero-media"><img src="/images/fitness24-gym.webp" alt="Просторный тренажёрный зал FITNESS 24 на улице Кустодиева"/><figcaption>Спортивное пространство на Кустодиева, 7</figcaption></figure><div class="hero-index" aria-hidden="true">01 / МАК</div></section><div class="color-ribbon" aria-hidden="true"><span class="ribbon-red"></span><span class="ribbon-clay"></span><span class="ribbon-milk"></span><span class="ribbon-sky"></span><span class="ribbon-green"></span></div><section class="intro section-shell" id="about"><div class="section-kicker"><span>О комплексе</span><span>Север Санкт-Петербурга</span></div><div class="intro-grid"><h2>Место, где спорт становится частью обычного дня.</h2><div class="intro-copy"><p>ООО «МАК» работает в сфере физкультурно-оздоровительной деятельности. В центре внимания — понятная инфраструктура для движения, тренировок и восстановления рядом с домом.</p><p>На площадке по адресу ул. Кустодиева, 7 расположены спортивные зоны FITNESS 24: тренажёрный зал, бассейны, игровые и групповые пространства.</p><a class="source-link" href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">Подробнее о спортивной площадке<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div></div></section><section class="directions" id="spaces"><div class="section-shell"><div class="section-kicker light"><span>Пространства</span><span>Для разного ритма</span></div><div class="directions-heading"><h2>Выберите свой формат движения</h2><p>От самостоятельной тренировки до водных занятий — всё в одном физкультурно-оздоровительном комплексе.</p></div><div class="direction-list"><article class="direction-card card-red"><span class="direction-number">01</span><h3>Тренажёрный зал</h3><p>Пространство для силовых и функциональных тренировок, кардионагрузки и самостоятельных занятий.</p><span class="direction-dot" aria-hidden="true"></span></article><article class="direction-card card-blue"><span class="direction-number">02</span><h3>Водная зона</h3><p>Бассейн для тренировок и восстановления, отдельные форматы для аквафитнеса и занятий с детьми.</p><span class="direction-dot" aria-hidden="true"></span></article><article class="direction-card card-green"><span class="direction-number">03</span><h3>Спортивные залы</h3><p>Площадки для групповых программ, игровых видов спорта и регулярной физической активности.</p><span class="direction-dot" aria-hidden="true"></span></article></div></div></section><section class="photo-story"><div class="photo-story-image"><img src="/images/fitness24-pool.webp" alt="Светлый спортивный бассейн с дорожками" loading="lazy"/></div><div class="photo-story-copy"><p class="eyebrow dark">Водное пространство</p><h2>Тренировка и восстановление в воде</h2><p>По информации FITNESS 24, на площадке работают 25-метровый бассейн с пятью дорожками, отдельный бассейн для аквафитнеса и детский бассейн.</p><div class="pool-facts"><div><strong>25 м</strong><span>длина большого бассейна</span></div><div><strong>3</strong><span>бассейна для разных задач</span></div></div><a class="button button-dark" href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">О площадке FITNESS 24<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div></section><section class="rhythm section-shell"><div class="rhythm-title"><p class="eyebrow dark">Активный день</p><h2>Не рекорды ради рекордов. Движение ради себя.</h2></div><figure class="rhythm-photo"><img src="/images/fitness24-equipment.webp" alt="Современные тренажёры в клубе FITNESS 24" loading="lazy"/><figcaption>Фото: FITNESS 24, клуб «Просвещения»</figcaption></figure><div class="rhythm-note"><span class="poppy-symbol" aria-hidden="true"><i></i></span><p>Сильное тело начинается с привычки: найти удобное время, выбрать подходящую нагрузку и возвращаться к движению снова.</p></div></section><section class="company section-shell" id="company"><div class="section-kicker"><span>О компании</span><span>Реквизиты</span></div><div class="company-grid"><div class="company-heading"><p>ООО «МАК»</p><h2>Открыто и по делу.</h2><span>Физкультурно-оздоровительная деятельность</span></div><dl class="details-list"><div><dt>Полное наименование</dt><dd>ООО «МАК»</dd></div><div><dt>Дата регистрации</dt><dd>28 октября 2021 года</dd></div><div><dt>ОГРН</dt><dd>1217800168134</dd></div><div><dt>ИНН / КПП</dt><dd>7802917179 / 780201001</dd></div><div><dt>Генеральный директор</dt><dd>Белова Наталья Александровна</dd></div></dl></div></section><section class="contacts" id="contacts"><div class="contacts-main"><p class="eyebrow">Контакты</p><h2>Давайте поговорим</h2><p class="contacts-intro">По организационным вопросам свяжитесь с ООО «МАК» удобным способом.</p><div class="contacts-links"><a href="mailto:org.mak21@yandex.ru">org.mak21@yandex.ru</a></div><button class="button button-red" type="button">Написать нам<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></button></div><div class="contacts-address"><span class="contacts-label">Адрес</span><p>194291, Санкт-Петербург,<br/>ул. Кустодиева, д. 7, к. 2, стр. 1,<br/>помещ. 16-Н</p><a class="map-link" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Кустодиева%2C%207%2C%20корпус%202" target="_blank" rel="noreferrer">Открыть на карте<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div></section><footer class="footer"><div class="footer-brand"><span class="brand-mark small" aria-hidden="true"><span></span></span><strong>МАК</strong></div><div class="footer-meta"><p>© <!-- -->2026<!-- --> ООО «МАК». Информация не является публичной офертой.</p><p>Фотографии спортивного пространства:<!-- --> <a href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">FITNESS 24, клуб «Просвещения»</a></p></div><a class="footer-up" href="#top" aria-label="Наверх">↑</a></footer></main><!--$--><!--/$--><script src="/_next/static/chunks/0ht900cau6_ur.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n4:I[47257,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ClientPageRoot\"]\n5:I[31713,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"/_next/static/chunks/0pk6-ls7vfeds.js\"],\"default\"]\n8:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ViewportBoundary\"]\nd:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"MetadataBoundary\"]\nf:I[68027,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/043-aza090_5r.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/043-aza090_5r.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ru\",\"children\":[\"$\",\"body\",null,{\"className\":\"antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0pk6-ls7vfeds.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,null]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/043-aza090_5r.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"93o8iS6N3iPJQKoLPjvS3\"}\n"])</script><script>self.__next_f.push([1,"6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])</script><script>self.__next_f.push([1,"c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"10:I[27201,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"IconMark\"]\na:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"ООО «МАК» — физкультурно-оздоровительный комплекс\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"ООО «МАК» — физкультурно-оздоровительная деятельность в Санкт-Петербурге. Контакты, адрес и сведения о компании.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L10\",\"4\",{}]]\n"])</script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="/images/fitness24-gym.webp" />
+    <link rel="stylesheet" href="/_next/static/chunks/043-aza090_5r.css" data-precedence="next" />
+    <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0ht900cau6_ur.js" />
+    <script src="/_next/static/chunks/0t2z5hkh7v~~b.js" async=""></script>
+    <script src="/_next/static/chunks/07lhk_q6pmm3r.js" async=""></script>
+    <script src="/_next/static/chunks/turbopack-0cek.dh0dqtgy.js" async=""></script>
+    <script src="/_next/static/chunks/0dbhjjzl8qfwv.js" async=""></script>
+    <script src="/_next/static/chunks/0pk6-ls7vfeds.js" async=""></script>
+    <title>ООО «МАК» — физкультурно-оздоровительный комплекс</title>
+    <meta name="description" content="ООО «МАК» — физкультурно-оздоровительная деятельность в Санкт-Петербурге. Контакты, адрес и сведения о компании." />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
+    <script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script>
+</head>
+
+<body class="antialiased">
+    <div hidden=""><!--$--><!--/$--></div>
+    <main>
+        <header class="site-header"><a class="brand" href="#top" aria-label="ООО МАК — на главную"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-word">МАК</span><span class="brand-caption">физкультурно-оздоровительный комплекс</span></a><button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+            <nav class="nav" aria-label="Основная навигация"><a href="#about">О комплексе</a><a href="#spaces">Пространства</a><a href="#company">О компании</a><a href="#contacts">Контакты</a></nav><button class="header-contact" type="button">Связаться<svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14M14 7l5 5-5 5"></path>
+                </svg></button>
+        </header>
+        <section class="hero" id="top">
+            <div class="hero-copy">
+                <p class="eyebrow">Санкт-Петербург · Кустодиева, 7</p>
+                <h1>Движение.<br /><span>Вода.</span><br />Сила.</h1>
+                <p class="hero-lead">Физкультурно-оздоровительный комплекс для регулярных тренировок, активного отдыха и хорошего самочувствия.</p>
+                <div class="hero-actions"><button class="button button-red" type="button">Задать вопрос<svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14M14 7l5 5-5 5"></path>
+                        </svg></button></div>
+            </div>
+            <figure class="hero-media"><img src="/images/fitness24-gym.webp" alt="Просторный тренажёрный зал FITNESS 24 на улице Кустодиева" />
+                <figcaption>Спортивное пространство на Кустодиева, 7</figcaption>
+            </figure>
+            <div class="hero-index" aria-hidden="true">01 / МАК</div>
+        </section>
+        <div class="color-ribbon" aria-hidden="true"><span class="ribbon-red"></span><span class="ribbon-clay"></span><span class="ribbon-milk"></span><span class="ribbon-sky"></span><span class="ribbon-green"></span></div>
+        <section class="intro section-shell" id="about">
+            <div class="section-kicker"><span>О комплексе</span><span>Север Санкт-Петербурга</span></div>
+            <div class="intro-grid">
+                <h2>Место, где спорт становится частью обычного дня.</h2>
+                <div class="intro-copy">
+                    <p>ООО «МАК» работает в сфере физкультурно-оздоровительной деятельности. В центре внимания — понятная инфраструктура для движения, тренировок и восстановления рядом с домом.</p>
+                    <p>На площадке по адресу ул. Кустодиева, 7 расположены спортивные зоны FITNESS 24: тренажёрный зал, бассейны, игровые и групповые пространства.</p><a class="source-link" href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">Подробнее о спортивной площадке<svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14M14 7l5 5-5 5"></path>
+                        </svg></a>
+                </div>
+            </div>
+        </section>
+        <section class="directions" id="spaces">
+            <div class="section-shell">
+                <div class="section-kicker light"><span>Пространства</span><span>Для разного ритма</span></div>
+                <div class="directions-heading">
+                    <h2>Выберите свой формат движения</h2>
+                    <p>От самостоятельной тренировки до водных занятий — всё в одном физкультурно-оздоровительном комплексе.</p>
+                </div>
+                <div class="direction-list">
+                    <article class="direction-card card-red"><span class="direction-number">01</span>
+                        <h3>Тренажёрный зал</h3>
+                        <p>Пространство для силовых и функциональных тренировок, кардионагрузки и самостоятельных занятий.</p><span class="direction-dot" aria-hidden="true"></span>
+                    </article>
+                    <article class="direction-card card-blue"><span class="direction-number">02</span>
+                        <h3>Водная зона</h3>
+                        <p>Бассейн для тренировок и восстановления, отдельные форматы для аквафитнеса и занятий с детьми.</p><span class="direction-dot" aria-hidden="true"></span>
+                    </article>
+                    <article class="direction-card card-green"><span class="direction-number">03</span>
+                        <h3>Спортивные залы</h3>
+                        <p>Площадки для групповых программ, игровых видов спорта и регулярной физической активности.</p><span class="direction-dot" aria-hidden="true"></span>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="photo-story">
+            <div class="photo-story-image"><img src="/images/fitness24-pool.webp" alt="Светлый спортивный бассейн с дорожками" loading="lazy" /></div>
+            <div class="photo-story-copy">
+                <p class="eyebrow dark">Водное пространство</p>
+                <h2>Тренировка и восстановление в воде</h2>
+                <p>По информации FITNESS 24, на площадке работают 25-метровый бассейн с пятью дорожками, отдельный бассейн для аквафитнеса и детский бассейн.</p>
+                <div class="pool-facts">
+                    <div><strong>25 м</strong><span>длина большого бассейна</span></div>
+                    <div><strong>3</strong><span>бассейна для разных задач</span></div>
+                </div><a class="button button-dark" href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">О площадке FITNESS 24<svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M14 7l5 5-5 5"></path>
+                    </svg></a>
+            </div>
+        </section>
+        <section class="rhythm section-shell">
+            <div class="rhythm-title">
+                <p class="eyebrow dark">Активный день</p>
+                <h2>Не рекорды ради рекордов. Движение ради себя.</h2>
+            </div>
+            <figure class="rhythm-photo"><img src="/images/fitness24-equipment.webp" alt="Современные тренажёры в клубе FITNESS 24" loading="lazy" />
+                <figcaption>Фото: FITNESS 24, клуб «Просвещения»</figcaption>
+            </figure>
+            <div class="rhythm-note"><span class="poppy-symbol" aria-hidden="true"><i></i></span>
+                <p>Сильное тело начинается с привычки: найти удобное время, выбрать подходящую нагрузку и возвращаться к движению снова.</p>
+            </div>
+        </section>
+        <section class="company section-shell" id="company">
+            <div class="section-kicker"><span>О компании</span><span>Реквизиты</span></div>
+            <div class="company-grid">
+                <div class="company-heading">
+                    <p>ООО «МАК»</p>
+                    <h2>Открыто и по делу.</h2><span>Физкультурно-оздоровительная деятельность</span>
+                </div>
+                <dl class="details-list">
+                    <div>
+                        <dt>Полное наименование</dt>
+                        <dd>ООО «МАК»</dd>
+                    </div>
+                    <div>
+                        <dt>Дата регистрации</dt>
+                        <dd>28 октября 2021 года</dd>
+                    </div>
+                    <div>
+                        <dt>ОГРН</dt>
+                        <dd>1217800168134</dd>
+                    </div>
+                    <div>
+                        <dt>ИНН / КПП</dt>
+                        <dd>7802917179 / 780201001</dd>
+                    </div>
+                    <div>
+                        <dt>Генеральный директор</dt>
+                        <dd>Белова Наталья Александровна</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+        <section class="contacts" id="contacts">
+            <div class="contacts-main">
+                <p class="eyebrow">Контакты</p>
+                <h2>Давайте поговорим</h2>
+                <p class="contacts-intro">По организационным вопросам свяжитесь с ООО «МАК» удобным способом.</p>
+                <div class="contacts-links"><a href="mailto:org.mak21@yandex.ru">org.mak21@yandex.ru</a></div><button class="button button-red" type="button">Написать нам<svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M14 7l5 5-5 5"></path>
+                    </svg></button>
+            </div>
+            <div class="contacts-address"><span class="contacts-label">Адрес</span>
+                <p>194291, Санкт-Петербург,<br />ул. Кустодиева, д. 7, к. 2, стр. 1,<br />помещ. 16-Н</p><a class="map-link" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20улица%20Кустодиева%2C%207%2C%20корпус%202" target="_blank" rel="noreferrer">Открыть на карте<svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M14 7l5 5-5 5"></path>
+                    </svg></a>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-brand"><span class="brand-mark small" aria-hidden="true"><span></span></span><strong>МАК</strong></div>
+            <div class="footer-meta">
+                <p>© <!-- -->2026<!-- --> ООО «МАК». Информация не является публичной офертой.</p>
+                <p>Фотографии спортивного пространства:<!-- --> <a href="https://fitnessclub24.ru/clubs/prosvet/" target="_blank" rel="noreferrer">FITNESS 24, клуб «Просвещения»</a></p>
+            </div><a class="footer-up" href="#top" aria-label="Наверх">↑</a>
+        </footer>
+    </main><!--$--><!--/$-->
+    <script src="/_next/static/chunks/0ht900cau6_ur.js" id="_R_" async=""></script>
+    <script>
+        (self.__next_f = self.__next_f || []).push([0])
+    </script>
+    <script>
+        self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n4:I[47257,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ClientPageRoot\"]\n5:I[31713,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"/_next/static/chunks/0pk6-ls7vfeds.js\"],\"default\"]\n8:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ViewportBoundary\"]\nd:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"MetadataBoundary\"]\nf:I[68027,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/043-aza090_5r.css\",\"style\"]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "0:{\"P\":null,\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/043-aza090_5r.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ru\",\"children\":[\"$\",\"body\",null,{\"className\":\"antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0pk6-ls7vfeds.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,null]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/043-aza090_5r.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"93o8iS6N3iPJQKoLPjvS3\"}\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "10:I[27201,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"IconMark\"]\na:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"ООО «МАК» — физкультурно-оздоровительный комплекс\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"ООО «МАК» — физкультурно-оздоровительная деятельность в Санкт-Петербурге. Контакты, адрес и сведения о компании.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L10\",\"4\",{}]]\n"])
+    </script>
+</body>
+
+</html>

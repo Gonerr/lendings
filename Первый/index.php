@@ -1,1 +1,223 @@
-<!DOCTYPE html><html lang="ru"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/images/alleya-vkusov-hall-2.jpg"/><link rel="preload" as="image" href="/images/alleya-vkusov-corners.jpg"/><link rel="preload" as="image" href="/images/alleya-vkusov-hall-3.jpg"/><link rel="preload" as="image" href="/images/alleya-vkusov-hall-1.jpg"/><link rel="preload" as="image" href="/images/alleya-vkusov-lounge.jpg"/><link rel="preload" as="image" href="/images/park-mall-green-zone.jpg"/><link rel="stylesheet" href="/_next/static/chunks/03n1bvxr53c82.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0ht900cau6_ur.js"/><script src="/_next/static/chunks/0t2z5hkh7v~~b.js" async=""></script><script src="/_next/static/chunks/07lhk_q6pmm3r.js" async=""></script><script src="/_next/static/chunks/turbopack-0cek.dh0dqtgy.js" async=""></script><script src="/_next/static/chunks/0dbhjjzl8qfwv.js" async=""></script><script src="/_next/static/chunks/096h7dxcbs4en.js" async=""></script><title>Первый — фуд-холл «Аллея вкусов»</title><meta name="description" content="ООО «Первый» — управление фуд-холлом «Аллея вкусов» в Парк Молле, Санкт-Петербург."/><link rel="shortcut icon" href="/favicon.svg"/><link rel="icon" href="/favicon.svg"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="antialiased"><div hidden=""><!--$--><!--/$--></div><main><header class="site-header"><a class="brand" href="#top" aria-label="ООО Первый — на главную"><span class="brand-mark">I</span><span>ПЕРВЫЙ</span></a><nav class="desktop-nav" aria-label="Основная навигация"><a href="#about">О компании</a><a href="#services">Деятельность</a><a href="#details">Реквизиты</a><a href="#contacts">Контакты</a></nav><button class="header-action" type="button">Обратный звонок <span aria-hidden="true">↗</span></button><details class="mobile-nav"><summary aria-label="Открыть меню">Меню</summary><nav aria-label="Мобильная навигация"><a href="#about">О компании</a><a href="#services">Деятельность</a><a href="#details">Реквизиты</a><a href="#contacts">Контакты</a></nav></details></header><section class="hero" id="top"><div class="hero-image" style="background-image:url(/images/alleya-vkusov-hero.jpg)" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div><div class="hero-content shell"><p class="eyebrow light">Парк Молл · с 2007 года</p><h1>Пространство,<br/><em>в котором всё работает</em></h1><p class="hero-copy">ООО «Первый» — участник ЖСК и управляющая компания фуд-кортной зоны в торгово-развлекательном комплексе. Координируем ежедневные процессы и помогаем участникам решать рабочие вопросы без лишней бюрократии.</p><div class="hero-actions"><button class="button button-gold" type="button">Оставить заявку <span aria-hidden="true">↗</span></button><a class="text-link light-link" href="#services">Чем мы занимаемся <span aria-hidden="true">↓</span></a></div></div><div class="hero-note"><span>01</span><p>Управление общими пространствами и рабочее взаимодействие с операторами</p></div></section><section class="intro shell" id="about"><div><p class="eyebrow">О компании</p><h2>Спокойная работа сложного пространства</h2></div><div class="intro-copy"><p>«Аллея вкусов» объединяет более 20 ресторанных концепций: от сербской, итальянской и японской кухни до вьетнамских блюд и знакомых гастрономических форматов.</p><p>ООО «Первый» координирует ежедневную работу пространства, взаимодействие операторов и эксплуатационные вопросы, чтобы гостям было комфортно проводить здесь время каждый день.</p><div class="facts-row"><div><strong>2007</strong><span>год основания</span></div><div><strong>20+</strong><span>гастрономических концепций</span></div><div><strong>10–22</strong><span>ежедневно</span></div></div></div></section><section class="services-section" id="services"><div class="shell"><div class="section-heading"><div><p class="eyebrow light">Направления работы</p><h2>От общего порядка<br/>до конкретной задачи</h2></div><p>Единая точка координации помогает быстрее находить ответственных, фиксировать договорённости и не терять обращения в ежедневном потоке.</p></div><div class="service-grid"><article class="service-card"><span>01</span><h3>Управление пространством</h3><p>Организуем текущую работу фуд-кортной зоны и поддерживаем понятный порядок взаимодействия между участниками.</p></article><article class="service-card"><span>02</span><h3>Координация операторов</h3><p>Сводим рабочие вопросы в единый контур: от регламентов и доступа до обращений по эксплуатации.</p></article><article class="service-card"><span>03</span><h3>Эксплуатационные задачи</h3><p>Контролируем состояние общих зон и координируем подрядчиков по текущим вопросам объекта.</p></article><article class="service-card"><span>04</span><h3>Работа с обращениями</h3><p>Принимаем запросы, фиксируем детали и направляем вопрос ответственному участнику процесса.</p></article></div></div></section><section class="process shell"><div class="process-lead"><p class="eyebrow">Принцип работы</p><h2>Один запрос — понятный маршрут</h2><p>Не усложняем то, что можно решить прямым взаимодействием. Разбираемся в контексте, определяем ответственного и остаёмся на связи до результата.</p><button class="button button-dark" type="button">Обсудить вопрос <span aria-hidden="true">↗</span></button></div><ol class="process-list"><li><span>01</span><div><h3>Получаем обращение</h3><p>Фиксируем контакты, суть вопроса и важные детали.</p></div></li><li><span>02</span><div><h3>Определяем решение</h3><p>Подключаем нужного специалиста или участника процесса.</p></div></li><li><span>03</span><div><h3>Возвращаемся с ответом</h3><p>Сообщаем статус и согласовываем дальнейшие действия.</p></div></li></ol></section><section class="gallery-section" aria-label="Пространство и процессы"><div class="gallery-track"><figure class="gallery-item gallery-item-1"><img src="/images/alleya-vkusov-hall-2.jpg" alt="Просторная посадочная зона фуд-холла «Аллея вкусов»"/><figcaption><span>0<!-- -->1</span>Комфортное пространство</figcaption></figure><figure class="gallery-item gallery-item-2"><img src="/images/alleya-vkusov-corners.jpg" alt="Ресторанные концепции с кухнями разных стран"/><figcaption><span>0<!-- -->2</span>Кухни разных стран</figcaption></figure><figure class="gallery-item gallery-item-3"><img src="/images/alleya-vkusov-hall-3.jpg" alt="Зелёная зона с диванами и столами в фуд-холле"/><figcaption><span>0<!-- -->3</span>Зелёный интерьер</figcaption></figure><figure class="gallery-item gallery-item-4"><img src="/images/alleya-vkusov-hall-1.jpg" alt="Ряд ресторанных корнеров и посадочные места"/><figcaption><span>0<!-- -->4</span>Работа с операторами</figcaption></figure><figure class="gallery-item gallery-item-5"><img src="/images/alleya-vkusov-lounge.jpg" alt="Лаунж-зона фуд-холла с живыми растениями"/><figcaption><span>0<!-- -->5</span>Ежедневные процессы</figcaption></figure><figure class="gallery-item gallery-item-6"><img src="/images/park-mall-green-zone.jpg" alt="Общественное пространство Парк Молла с зелёной зоной"/><figcaption><span>0<!-- -->6</span>Пространство Парк Молла</figcaption></figure></div><p class="photo-credit">Фуд-холл «Аллея вкусов» · Парк Молл</p></section><section class="details-section" id="details"><div class="shell details-layout"><div class="details-intro"><p class="eyebrow">Официальная информация</p><h2>Реквизиты компании</h2><p>Данные об организации собраны в одном месте — удобно для договоров, счетов и деловой переписки.</p></div><dl class="details-list"><div><dt>Полное наименование</dt><dd>Общество с ограниченной ответственностью «Первый»</dd></div><div><dt>Юридический адрес</dt><dd>195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6</dd></div><div><dt>Дата регистрации</dt><dd>23 августа 2007 года</dd></div><div><dt>ОГРН</dt><dd>1077847557127</dd></div><div><dt>ИНН / КПП</dt><dd>7841368684 / 780601001</dd></div><div><dt>Генеральный директор</dt><dd>Кожемяко Людмила Михайловна</dd></div></dl></div></section><section class="contact-section" id="contacts"><div class="shell contact-grid"><div class="contact-panel"><p class="eyebrow light">Контакты</p><h2>Есть вопрос?<br/>Давайте обсудим</h2><p>Оставьте контакты и коротко опишите задачу. Обращение сразу поступит на почту нашей команды, и мы свяжемся с вами.</p><button class="button button-gold" type="button">Оставить заявку <span aria-hidden="true">↗</span></button><div class="contact-address"><span>Фуд-холл</span><address>195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6 Санкт-Петербург,<br/>ул. Таллинская, д. 7, лит. А,<br/>пом. 6Н, каб. 6</address><span>Связаться</span><div class="contact-links"><a href="mailto:vopros@park-mall.shop">vopros@park-mall.shop</a></div><a class="map-link" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20ул.%20Таллинская%2C%20д.%207%2C%20лит.%20А%2C%20пом.%206Н%2C%20каб.%206" target="_blank" rel="noreferrer">Открыть в картах <span aria-hidden="true">↗</span></a></div></div><div class="map-wrap"><iframe title="Карта: Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6" src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20Таллинская%20улица%2C%207&amp;z=16" allowFullScreen=""></iframe><div class="map-label"><span>ООО «Первый»</span><strong>Таллинская ул., 7</strong></div></div></div></section><footer><div class="shell footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark">I</span><span>ПЕРВЫЙ</span></a><nav aria-label="Навигация в подвале"><a href="#about">О компании</a><a href="#services">Деятельность</a><a href="#details">Реквизиты</a><a href="#contacts">Контакты</a></nav><button type="button">Обратная связь <span aria-hidden="true">↗</span></button></div><div class="shell footer-bottom"><span>© 2026 ООО «Первый»</span><span>Информация на сайте не является публичной офертой</span></div></footer></main><!--$--><!--/$--><script src="/_next/static/chunks/0ht900cau6_ur.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n4:I[47257,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ClientPageRoot\"]\n5:I[29615,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"/_next/static/chunks/096h7dxcbs4en.js\"],\"default\"]\n8:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ViewportBoundary\"]\nd:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"MetadataBoundary\"]\nf:I[68027,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/03n1bvxr53c82.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/03n1bvxr53c82.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ru\",\"children\":[\"$\",\"body\",null,{\"className\":\"antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/096h7dxcbs4en.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,null]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/03n1bvxr53c82.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"7LAT3vqGZOYYJ9EQAg7Vi\"}\n"])</script><script>self.__next_f.push([1,"6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])</script><script>self.__next_f.push([1,"c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"10:I[27201,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"IconMark\"]\na:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"Первый — фуд-холл «Аллея вкусов»\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"ООО «Первый» — управление фуд-холлом «Аллея вкусов» в Парк Молле, Санкт-Петербург.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L10\",\"4\",{}]]\n"])</script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="/images/alleya-vkusov-hall-2.jpg" />
+    <link rel="preload" as="image" href="/images/alleya-vkusov-corners.jpg" />
+    <link rel="preload" as="image" href="/images/alleya-vkusov-hall-3.jpg" />
+    <link rel="preload" as="image" href="/images/alleya-vkusov-hall-1.jpg" />
+    <link rel="preload" as="image" href="/images/alleya-vkusov-lounge.jpg" />
+    <link rel="preload" as="image" href="/images/park-mall-green-zone.jpg" />
+    <link rel="stylesheet" href="/_next/static/chunks/03n1bvxr53c82.css" data-precedence="next" />
+    <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0ht900cau6_ur.js" />
+    <script src="/_next/static/chunks/0t2z5hkh7v~~b.js" async=""></script>
+    <script src="/_next/static/chunks/07lhk_q6pmm3r.js" async=""></script>
+    <script src="/_next/static/chunks/turbopack-0cek.dh0dqtgy.js" async=""></script>
+    <script src="/_next/static/chunks/0dbhjjzl8qfwv.js" async=""></script>
+    <script src="/_next/static/chunks/096h7dxcbs4en.js" async=""></script>
+    <title>Первый — фуд-холл «Аллея вкусов»</title>
+    <meta name="description" content="ООО «Первый» — управление фуд-холлом «Аллея вкусов» в Парк Молле, Санкт-Петербург." />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
+    <script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script>
+</head>
+
+<body class="antialiased">
+    <div hidden=""><!--$--><!--/$--></div>
+    <main>
+        <header class="site-header"><a class="brand" href="#top" aria-label="ООО Первый — на главную"><span class="brand-mark">I</span><span>ПЕРВЫЙ</span></a>
+            <nav class="desktop-nav" aria-label="Основная навигация"><a href="#about">О компании</a><a href="#services">Деятельность</a><a href="#details">Реквизиты</a><a href="#contacts">Контакты</a></nav><button class="header-action" type="button">Обратный звонок <span aria-hidden="true">↗</span></button>
+            <details class="mobile-nav">
+                <summary aria-label="Открыть меню">Меню</summary>
+                <nav aria-label="Мобильная навигация"><a href="#about">О компании</a><a href="#services">Деятельность</a><a href="#details">Реквизиты</a><a href="#contacts">Контакты</a></nav>
+            </details>
+        </header>
+        <section class="hero" id="top">
+            <div class="hero-image" style="background-image:url(/images/alleya-vkusov-hero.jpg)" aria-hidden="true"></div>
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="hero-content shell">
+                <p class="eyebrow light">Парк Молл · с 2007 года</p>
+                <h1>Пространство,<br /><em>в котором всё работает</em></h1>
+                <p class="hero-copy">ООО «Первый» — участник ЖСК и управляющая компания фуд-кортной зоны в торгово-развлекательном комплексе. Координируем ежедневные процессы и помогаем участникам решать рабочие вопросы без лишней бюрократии.</p>
+                <div class="hero-actions"><button class="button button-gold" type="button">Оставить заявку <span aria-hidden="true">↗</span></button><a class="text-link light-link" href="#services">Чем мы занимаемся <span aria-hidden="true">↓</span></a></div>
+            </div>
+            <div class="hero-note"><span>01</span>
+                <p>Управление общими пространствами и рабочее взаимодействие с операторами</p>
+            </div>
+        </section>
+        <section class="intro shell" id="about">
+            <div>
+                <p class="eyebrow">О компании</p>
+                <h2>Спокойная работа сложного пространства</h2>
+            </div>
+            <div class="intro-copy">
+                <p>«Аллея вкусов» объединяет более 20 ресторанных концепций: от сербской, итальянской и японской кухни до вьетнамских блюд и знакомых гастрономических форматов.</p>
+                <p>ООО «Первый» координирует ежедневную работу пространства, взаимодействие операторов и эксплуатационные вопросы, чтобы гостям было комфортно проводить здесь время каждый день.</p>
+                <div class="facts-row">
+                    <div><strong>2007</strong><span>год основания</span></div>
+                    <div><strong>20+</strong><span>гастрономических концепций</span></div>
+                    <div><strong>10–22</strong><span>ежедневно</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="services-section" id="services">
+            <div class="shell">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow light">Направления работы</p>
+                        <h2>От общего порядка<br />до конкретной задачи</h2>
+                    </div>
+                    <p>Единая точка координации помогает быстрее находить ответственных, фиксировать договорённости и не терять обращения в ежедневном потоке.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card"><span>01</span>
+                        <h3>Управление пространством</h3>
+                        <p>Организуем текущую работу фуд-кортной зоны и поддерживаем понятный порядок взаимодействия между участниками.</p>
+                    </article>
+                    <article class="service-card"><span>02</span>
+                        <h3>Координация операторов</h3>
+                        <p>Сводим рабочие вопросы в единый контур: от регламентов и доступа до обращений по эксплуатации.</p>
+                    </article>
+                    <article class="service-card"><span>03</span>
+                        <h3>Эксплуатационные задачи</h3>
+                        <p>Контролируем состояние общих зон и координируем подрядчиков по текущим вопросам объекта.</p>
+                    </article>
+                    <article class="service-card"><span>04</span>
+                        <h3>Работа с обращениями</h3>
+                        <p>Принимаем запросы, фиксируем детали и направляем вопрос ответственному участнику процесса.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="process shell">
+            <div class="process-lead">
+                <p class="eyebrow">Принцип работы</p>
+                <h2>Один запрос — понятный маршрут</h2>
+                <p>Не усложняем то, что можно решить прямым взаимодействием. Разбираемся в контексте, определяем ответственного и остаёмся на связи до результата.</p><button class="button button-dark" type="button">Обсудить вопрос <span aria-hidden="true">↗</span></button>
+            </div>
+            <ol class="process-list">
+                <li><span>01</span>
+                    <div>
+                        <h3>Получаем обращение</h3>
+                        <p>Фиксируем контакты, суть вопроса и важные детали.</p>
+                    </div>
+                </li>
+                <li><span>02</span>
+                    <div>
+                        <h3>Определяем решение</h3>
+                        <p>Подключаем нужного специалиста или участника процесса.</p>
+                    </div>
+                </li>
+                <li><span>03</span>
+                    <div>
+                        <h3>Возвращаемся с ответом</h3>
+                        <p>Сообщаем статус и согласовываем дальнейшие действия.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section class="gallery-section" aria-label="Пространство и процессы">
+            <div class="gallery-track">
+                <figure class="gallery-item gallery-item-1"><img src="/images/alleya-vkusov-hall-2.jpg" alt="Просторная посадочная зона фуд-холла «Аллея вкусов»" />
+                    <figcaption><span>0<!-- -->1</span>Комфортное пространство</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-item-2"><img src="/images/alleya-vkusov-corners.jpg" alt="Ресторанные концепции с кухнями разных стран" />
+                    <figcaption><span>0<!-- -->2</span>Кухни разных стран</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-item-3"><img src="/images/alleya-vkusov-hall-3.jpg" alt="Зелёная зона с диванами и столами в фуд-холле" />
+                    <figcaption><span>0<!-- -->3</span>Зелёный интерьер</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-item-4"><img src="/images/alleya-vkusov-hall-1.jpg" alt="Ряд ресторанных корнеров и посадочные места" />
+                    <figcaption><span>0<!-- -->4</span>Работа с операторами</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-item-5"><img src="/images/alleya-vkusov-lounge.jpg" alt="Лаунж-зона фуд-холла с живыми растениями" />
+                    <figcaption><span>0<!-- -->5</span>Ежедневные процессы</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-item-6"><img src="/images/park-mall-green-zone.jpg" alt="Общественное пространство Парк Молла с зелёной зоной" />
+                    <figcaption><span>0<!-- -->6</span>Пространство Парк Молла</figcaption>
+                </figure>
+            </div>
+            <p class="photo-credit">Фуд-холл «Аллея вкусов» · Парк Молл</p>
+        </section>
+        <section class="details-section" id="details">
+            <div class="shell details-layout">
+                <div class="details-intro">
+                    <p class="eyebrow">Официальная информация</p>
+                    <h2>Реквизиты компании</h2>
+                    <p>Данные об организации собраны в одном месте — удобно для договоров, счетов и деловой переписки.</p>
+                </div>
+                <dl class="details-list">
+                    <div>
+                        <dt>Полное наименование</dt>
+                        <dd>Общество с ограниченной ответственностью «Первый»</dd>
+                    </div>
+                    <div>
+                        <dt>Юридический адрес</dt>
+                        <dd>195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6</dd>
+                    </div>
+                    <div>
+                        <dt>Дата регистрации</dt>
+                        <dd>23 августа 2007 года</dd>
+                    </div>
+                    <div>
+                        <dt>ОГРН</dt>
+                        <dd>1077847557127</dd>
+                    </div>
+                    <div>
+                        <dt>ИНН / КПП</dt>
+                        <dd>7841368684 / 780601001</dd>
+                    </div>
+                    <div>
+                        <dt>Генеральный директор</dt>
+                        <dd>Кожемяко Людмила Михайловна</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+        <section class="contact-section" id="contacts">
+            <div class="shell contact-grid">
+                <div class="contact-panel">
+                    <p class="eyebrow light">Контакты</p>
+                    <h2>Есть вопрос?<br />Давайте обсудим</h2>
+                    <p>Оставьте контакты и коротко опишите задачу. Обращение сразу поступит на почту нашей команды, и мы свяжемся с вами.</p><button class="button button-gold" type="button">Оставить заявку <span aria-hidden="true">↗</span></button>
+                    <div class="contact-address"><span>Фуд-холл</span>
+                        <address>195196, Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6 Санкт-Петербург,<br />ул. Таллинская, д. 7, лит. А,<br />пом. 6Н, каб. 6</address><span>Связаться</span>
+                        <div class="contact-links"><a href="mailto:vopros@park-mall.shop">vopros@park-mall.shop</a></div><a class="map-link" href="https://yandex.ru/maps/?text=Санкт-Петербург%2C%20ул.%20Таллинская%2C%20д.%207%2C%20лит.%20А%2C%20пом.%206Н%2C%20каб.%206" target="_blank" rel="noreferrer">Открыть в картах <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+                <div class="map-wrap"><iframe title="Карта: Санкт-Петербург, ул. Таллинская, д. 7, лит. А, пом. 6Н, каб. 6" src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20Таллинская%20улица%2C%207&amp;z=16" allowFullScreen=""></iframe>
+                    <div class="map-label"><span>ООО «Первый»</span><strong>Таллинская ул., 7</strong></div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="shell footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark">I</span><span>ПЕРВЫЙ</span></a>
+                <nav aria-label="Навигация в подвале"><a href="#about">О компании</a><a href="#services">Деятельность</a><a href="#details">Реквизиты</a><a href="#contacts">Контакты</a></nav><button type="button">Обратная связь <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="shell footer-bottom"><span>© 2026 ООО «Первый»</span><span>Информация на сайте не является публичной офертой</span></div>
+        </footer>
+    </main><!--$--><!--/$-->
+    <script src="/_next/static/chunks/0ht900cau6_ur.js" id="_R_" async=""></script>
+    <script>
+        (self.__next_f = self.__next_f || []).push([0])
+    </script>
+    <script>
+        self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\"]\n4:I[47257,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ClientPageRoot\"]\n5:I[29615,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"/_next/static/chunks/096h7dxcbs4en.js\"],\"default\"]\n8:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"ViewportBoundary\"]\nd:I[97367,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"MetadataBoundary\"]\nf:I[68027,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/03n1bvxr53c82.css\",\"style\"]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "0:{\"P\":null,\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/03n1bvxr53c82.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0dbhjjzl8qfwv.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ru\",\"children\":[\"$\",\"body\",null,{\"className\":\"antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/096h7dxcbs4en.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,null]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/03n1bvxr53c82.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"7LAT3vqGZOYYJ9EQAg7Vi\"}\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "10:I[27201,[\"/_next/static/chunks/0dbhjjzl8qfwv.js\"],\"IconMark\"]\na:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"Первый — фуд-холл «Аллея вкусов»\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"ООО «Первый» — управление фуд-холлом «Аллея вкусов» в Парк Молле, Санкт-Петербург.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L10\",\"4\",{}]]\n"])
+    </script>
+</body>
+
+</html>
