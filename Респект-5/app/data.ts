@@ -1,5 +1,5 @@
-export const PHONE_DISPLAY = "+7 (921) 393-22-99";
-export const PHONE_LINK = "tel:+79213932299";
+export const PHONE_DISPLAY = "+7 (921)-903-95-14";
+export const PHONE_LINK = "tel:+79219039514";
 export const EMAIL = "orespekt5@yandex.ru";
 
 export const services = [

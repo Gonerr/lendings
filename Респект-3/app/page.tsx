@@ -159,7 +159,8 @@ export default function Home() {
             `Организация / УК: ${form.company}`,
             `Направление: ${form.topic || "не указано"}`,
             "",
-            form.message || "Просим связаться для уточнения технической задачи.",
+            form.message ||
+              "Просим связаться для уточнения технической задачи.",
           ].join("\n"),
           website: "",
         }),
@@ -525,8 +526,9 @@ export default function Home() {
             <div className="contact-caveat">
               <span>Телефон и e-mail</span>
               <p>
-                Официальные публичные контакты не указаны. Заявки передаются
-                через действующий канал управляющей компании.
+                +7 (921) 393-22-99
+                <br />
+                orespekt5@yandex.ru
               </p>
             </div>
           </address>
@@ -563,7 +565,7 @@ export default function Home() {
           </button>
         </div>
         <div className="footer-bottom section-shell">
-          <span>© 2026 ООО «Респект-3»</span>
+          <span>© {new Date().getFullYear()} ООО «Респект-3»</span>
           <span>Информация на сайте не является публичной офертой</span>
         </div>
       </footer>
@@ -676,7 +678,8 @@ export default function Home() {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Отправляем…" : "Отправить заявку"} <span>↗</span>
+                    {isSubmitting ? "Отправляем…" : "Отправить заявку"}{" "}
+                    <span>↗</span>
                   </button>
                 </form>
               </>

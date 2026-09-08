@@ -11,5 +11,5 @@ public sealed class SmtpOptions
     public string Password { get; init; } = string.Empty;
     public string FromEmail { get; init; } = "no-reply@l1-stroy.ru";
     public string FromName { get; init; } = "Сайт компании Л1";
-    public string RecipientEmail { get; init; } = "aalihacheva@l1n1.ru";
+    public string RecipientEmail { get; init; } = "oprajmo@yandex.ru";
 }

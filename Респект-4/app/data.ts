@@ -1,5 +1,5 @@
-export const PHONE = "+7 (812) 207-37-38";
-export const PHONE_LINK = "+78122073738";
+export const PHONE = "+7 (921) 393-22-99";
+export const PHONE_LINK = "+79213932299";
 export const EMAIL = "orespekt5@yandex.ru";
 export const ADDRESS =
   "196084, Санкт-Петербург, ул. Киевская, д. 3, литера А, помещение 33-Н, офис 2";

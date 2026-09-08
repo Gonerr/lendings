@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const CONTACT_EMAIL = "vopros@park-mall.shop";
-const CONTACT_PHONE = "+7 (812) 305-33-55";
+// const CONTACT_PHONE = "+7 (812) 207-26-13";
 const heroImage = "/images/alleya-vkusov-hero.jpg";
 
 const gallery = [
@@ -433,7 +433,7 @@ export default function Home() {
               </address>
               <span>Связаться</span>
               <div className="contact-links">
-                <a href="tel:+78123053355">{CONTACT_PHONE}</a>
+                {/* <a href="tel:+78122072613">{CONTACT_PHONE}</a> */}
                 <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </div>
               <a

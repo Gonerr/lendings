@@ -2,8 +2,8 @@
 
 import { FormEvent, useEffect, useState } from "react";
 
-const PHONE_DISPLAY = "+7 (903) 092-22-10";
-const PHONE_LINK = "tel:+79030922210";
+// const PHONE_DISPLAY = "+7 (903) 092-22-10";
+// const PHONE_LINK = "tel:+79030922210";
 const EMAIL = "org.mak21@yandex.ru";
 
 const directions = [
@@ -206,11 +206,7 @@ export default function Home() {
           </a>
         </nav>
 
-        <button
-          className="header-contact"
-          type="button"
-          onClick={openForm}
-        >
+        <button className="header-contact" type="button" onClick={openForm}>
           Связаться
           <ArrowIcon />
         </button>
@@ -239,9 +235,9 @@ export default function Home() {
               Задать вопрос
               <ArrowIcon />
             </button>
-            <a className="text-link" href={PHONE_LINK}>
+            {/* <a className="text-link" href={PHONE_LINK}>
               {PHONE_DISPLAY}
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -418,7 +414,7 @@ export default function Home() {
             По организационным вопросам свяжитесь с ООО «МАК» удобным способом.
           </p>
           <div className="contacts-links">
-            <a href={PHONE_LINK}>{PHONE_DISPLAY}</a>
+            {/* <a href={PHONE_LINK}>{PHONE_DISPLAY}</a> */}
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>
           <button

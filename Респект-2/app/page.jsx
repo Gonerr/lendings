@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const PHONE = "+7 (812) 207-37-38";
-const EMAIL = "orespekt5@yandex.ru";
+const PHONE = "+7 (921) 367-13-76";
+const EMAIL = "2004respect2@gmail.com";
 
 const services = [
   {
@@ -487,7 +487,7 @@ export default function Home() {
             <strong>ООО «ЧОО Респект-2»</strong>
             <p>Частная охранная организация</p>
           </div>
-          <a href="tel:+78122073738">{PHONE}</a>
+          <a href="tel:+79213671376">{PHONE}</a>
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </div>
         <div className="container registry-note">
@@ -608,7 +608,11 @@ export default function Home() {
                   Спасибо! Мы получили обращение и свяжемся с вами по указанному
                   телефону.
                 </p>
-                <button className="button form-button" type="button" onClick={closeForm}>
+                <button
+                  className="button form-button"
+                  type="button"
+                  onClick={closeForm}
+                >
                   Закрыть
                 </button>
               </div>
