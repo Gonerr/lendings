@@ -119,6 +119,7 @@ function e(string $value): string
                         <div><dt>Дата регистрации</dt><dd><?= e($company['registered']) ?></dd></div>
                         <div><dt>ОГРН</dt><dd><?= e($company['ogrn']) ?></dd></div>
                         <div><dt>ИНН / КПП</dt><dd><?= e($company['inn']) ?> / <?= e($company['kpp']) ?></dd></div>
+                        <div><dt>Налоговый режим / категория</dt><dd>УСН / микропредприятие</dd></div>
                         <div><dt>Юридический адрес</dt><dd><?= e($company['address']) ?></dd></div>
                     </dl>
                 </div>
