@@ -4,8 +4,6 @@ declare(strict_types=1);
 $company = [
     'name' => 'ООО «КЕБИНВЕСТ»',
     'email' => 'kebinvest1@yandex.ru',
-    'phone' => '+7 (905) 215-64-84',
-    'phoneHref' => '+79052156484',
     'address' => '194291, Санкт-Петербург, ул. Кустодиева, д. 7, к. 2, стр. 1, помещ. 17-Н',
     'ogrn' => '1217800062347',
     'inn' => '7841093775',
@@ -25,32 +23,32 @@ function e(string $value): string
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#17312f">
-    <meta name="description" content="ООО «КЕБИНВЕСТ» — собственник коммерческих помещений в физкультурно-оздоровительном комплексе Санкт-Петербурга. Информация о компании, реквизиты и контакты.">
-    <title>КЕБИНВЕСТ — недвижимость для движения</title>
+    <meta name="theme-color" content="#f7f5ee">
+    <meta name="description" content="Физкультурно-оздоровительный комплекс на улице Кустодиева в Санкт-Петербурге. Пространство для движения и информация о компании ООО «КЕБИНВЕСТ».">
+    <title>ФОК на Кустодиева — пространство для движения</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body id="top">
     <a class="skip-link" href="#main">К содержимому</a>
 
     <header class="site-header">
         <div class="container header-inner">
-            <a class="brand" href="#top" aria-label="Кебинвест — на главную">
-                <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>
-                <span class="brand-name">КЕБИНВЕСТ<small>коммерческая недвижимость</small></span>
+            <a class="brand" href="#top" aria-label="ФОК на Кустодиева — на главную">
+                <span class="brand-mark" aria-hidden="true"><span></span></span>
+                <span class="brand-copy"><strong>ФОК</strong><small>на Кустодиева</small></span>
             </a>
-            <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="main-nav" aria-expanded="false">
-                <span></span><span></span>
-            </button>
-            <nav class="nav" id="main-nav" aria-label="Основная навигация">
-                <a href="#about">О компании</a>
-                <a href="#approach">Наша роль</a>
-                <a href="#details">Реквизиты</a>
+            <nav class="desktop-nav" aria-label="Основная навигация">
+                <a href="#about">О пространстве</a>
+                <a href="#gallery">Атмосфера</a>
+                <a href="#company">О компании</a>
                 <a href="#contacts">Контакты</a>
             </nav>
-            <a class="header-contact" href="mailto:<?= e($company['email']) ?>">Написать нам <span aria-hidden="true">↗</span></a>
+            <a class="header-link" href="mailto:<?= e($company['email']) ?>">Написать нам <span aria-hidden="true">↗</span></a>
+            <details class="mobile-menu">
+                <summary aria-label="Открыть меню"><span></span><span></span></summary>
+                <nav aria-label="Мобильная навигация"><a href="#about">О пространстве</a><a href="#gallery">Атмосфера</a><a href="#company">О компании</a><a href="#contacts">Контакты</a></nav>
+            </details>
         </div>
     </header>
 
@@ -58,90 +56,52 @@ function e(string $value): string
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow"><span class="eyebrow-line"></span> Санкт-Петербург · с 2021 года</p>
-                    <h1 id="hero-title">Пространство<br>для <em>движения.</em></h1>
-                    <p class="hero-lead">КЕБИНВЕСТ владеет коммерческими помещениями в физкультурно-оздоровительном комплексе. Сегодня в них работает арендатор — «Спортлайн».</p>
-                    <div class="hero-actions">
-                        <a class="button button-light" href="#about">О компании <span aria-hidden="true">↗</span></a>
-                        <a class="quiet-link" href="#contacts">Контакты <span aria-hidden="true">↗</span></a>
-                    </div>
+                    <p class="eyebrow"><span class="dot"></span> Санкт-Петербург · Кустодиева, 7</p>
+                    <h1 id="hero-title">Здесь начинается <em>движение.</em></h1>
+                    <p class="hero-lead">Физкультурно-оздоровительный комплекс — пространство, в котором легко найти время для активности и сменить ритм повседневного дня.</p>
+                    <div class="hero-actions"><a class="round-link" href="#about"><span aria-hidden="true">↘</span></a><span>Узнать о пространстве</span></div>
+                    <span class="hero-index">01 <span></span> 04</span>
                 </div>
-                <div class="hero-art" role="img" aria-label="Абстрактная архитектурная композиция спортивного пространства">
-                    <div class="art-grid" aria-hidden="true"></div>
-                    <div class="art-halo" aria-hidden="true"></div>
-                    <div class="art-building" aria-hidden="true"><span></span><span></span><span></span></div>
-                    <div class="art-window" aria-hidden="true"></div>
-                    <div class="art-caption"><span>01 / 03</span><span>ПРОСТРАНСТВО В ДЕЛЕ</span></div>
-                    <div class="art-side-label" aria-hidden="true">K / САНКТ-ПЕТЕРБУРГ</div>
-                </div>
+                <figure class="hero-photo">
+                    <img src="https://images.unsplash.com/photo-1730244548329-4ae2f4fcaa7c?auto=format&amp;fit=crop&amp;w=1600&amp;q=82" alt="Иллюстративная фотография крытого бассейна с дорожками" fetchpriority="high">
+                    <figcaption><span>Пространство для себя</span><small>Иллюстративное фото · Unsplash</small></figcaption>
+                </figure>
             </div>
-            <div class="container hero-foot"><span>НЕДВИЖИМОСТЬ · ФОК</span><span>ЛИСТАЙТЕ ВНИЗ <span aria-hidden="true">↓</span></span></div>
         </section>
 
-        <section class="intro section-pad" id="about" aria-labelledby="about-title">
+        <div class="marquee" aria-hidden="true"><div class="container"><span>ДВИЖЕНИЕ</span><i>✳</i><span>ЭНЕРГИЯ</span><i>✳</i><span>СВОЙ РИТМ</span><i>✳</i><span>ПРОСТРАНСТВО</span></div></div>
+
+        <section class="intro section-space" id="about" aria-labelledby="about-title">
             <div class="container">
-                <div class="section-top"><span>01 / О КОМПАНИИ</span><span>СОБСТВЕННОСТЬ И АРЕНДА</span></div>
-                <div class="intro-grid">
-                    <h2 id="about-title">За каждым активным местом есть <i>пространство.</i></h2>
-                    <div class="intro-text">
-                        <p class="lead">Мы обеспечиваем основу, на которой работает спортивная инфраструктура.</p>
-                        <p>ООО «КЕБИНВЕСТ» — собственник коммерческой недвижимости в физкультурно-оздоровительном комплексе Санкт-Петербурга. Помещения переданы в аренду компании «Спортлайн», которая сейчас ведёт там деятельность.</p>
-                        <p>Вопросы посещения, тренировок и услуг комплекса относятся к деятельности арендатора. По вопросам, связанным с ООО «КЕБИНВЕСТ» и принадлежащими ему помещениями, воспользуйтесь контактами ниже.</p>
-                        <a class="inline-link" href="#contacts">Перейти к контактам <span aria-hidden="true">↗</span></a>
-                    </div>
-                </div>
+                <div class="section-heading"><span class="section-number">01 / О ПРОСТРАНСТВЕ</span><span class="section-line"></span></div>
+                <div class="intro-grid"><h2 id="about-title">Больше, чем точка <em>на карте.</em></h2><div class="intro-copy"><p class="intro-lead">Место, куда можно прийти за движением, переключиться и уделить время себе.</p><p>ФОК расположен в Выборгском районе Санкт-Петербурга на улице Кустодиева. Спортивное пространство становится частью привычного городского маршрута — рядом с домом, работой и повседневными делами.</p><a class="text-link" href="#gallery">Посмотреть атмосферу <span aria-hidden="true">↗</span></a></div></div>
             </div>
         </section>
 
-        <section class="role section-pad" id="approach" aria-labelledby="role-title">
+        <section class="gallery section-space" id="gallery" aria-labelledby="gallery-title">
             <div class="container">
-                <div class="section-top"><span>02 / НАША РОЛЬ</span><span>КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ</span></div>
-                <div class="role-heading"><h2 id="role-title">У пространства<br>есть <i>назначение.</i></h2><p>Помещения комплекса используются действующим арендатором. Здесь коммерческая недвижимость служит повседневной работе спортивной площадки.</p></div>
-                <div class="role-cards">
-                    <article class="role-card"><span class="card-index">01 / СОБСТВЕННОСТЬ</span><div class="card-icon icon-architecture" aria-hidden="true"><span></span></div><h3>Помещения ФОКа</h3><p>КЕБИНВЕСТ владеет коммерческими помещениями в физкультурно-оздоровительном комплексе.</p></article>
-                    <article class="role-card"><span class="card-index">02 / АРЕНДА</span><div class="card-icon icon-partnership" aria-hidden="true"><span></span></div><h3>Действующий арендатор</h3><p>Помещения предоставлены в аренду «Спортлайну», который ведёт деятельность на этой площадке.</p></article>
-                    <article class="role-card"><span class="card-index">03 / СВЯЗЬ</span><div class="card-icon icon-contact" aria-hidden="true"><span></span></div><h3>Открытые контакты</h3><p>Для деловых и организационных вопросов доступны телефон и электронная почта компании.</p></article>
+                <div class="section-heading"><span class="section-number">02 / АТМОСФЕРА</span><span class="section-line"></span></div>
+                <div class="gallery-heading"><h2 id="gallery-title">Пространство<br><em>в движении.</em></h2><p>Свет, воздух и энергия спортивной среды. Фотографии передают настроение и не изображают помещения этого комплекса.</p></div>
+                <div class="gallery-grid">
+                    <figure class="gallery-photo gallery-large"><img src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Иллюстративное фото тренажёрного зала" loading="lazy"><figcaption><span>01 / Энергия движения</span><small>Фото: Rodrigo S / Unsplash</small></figcaption></figure>
+                    <figure class="gallery-photo gallery-small"><img src="https://images.unsplash.com/photo-1775993167284-8e6a6e56ab69?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="Иллюстративное фото спортивного зала" loading="lazy"><figcaption><span>02 / Простор для занятий</span><small>Фото: Palak Pitroda / Unsplash</small></figcaption></figure>
                 </div>
+                <p class="photo-note">Иллюстративные фотографии спортивных объектов. Снимки конкретного ФОКа будут добавлены после согласования прав на них.</p>
             </div>
         </section>
 
-        <section class="statement" aria-label="Принцип работы">
-            <div class="container statement-inner"><span class="statement-star" aria-hidden="true">✳</span><p>Недвижимость, которая <em>работает.</em></p><span class="statement-caption">КЕБИНВЕСТ / САНКТ-ПЕТЕРБУРГ</span></div>
-        </section>
+        <section class="quote" aria-label="О движении"><div class="container quote-inner"><span aria-hidden="true">✳</span><p>Найти свой темп.<br><em>Оставаться в движении.</em></p><small>ФОК / САНКТ-ПЕТЕРБУРГ</small></div></section>
 
-        <section class="details section-pad" id="details" aria-labelledby="details-title">
+        <section class="company section-space" id="company" aria-labelledby="company-title">
             <div class="container">
-                <div class="section-top"><span>03 / РЕКВИЗИТЫ</span><span>СВЕДЕНИЯ О КОМПАНИИ</span></div>
-                <div class="details-grid">
-                    <div class="details-heading"><h2 id="details-title">По делу.<br><i>Прозрачно.</i></h2><p>Основные регистрационные сведения ООО «КЕБИНВЕСТ».</p></div>
-                    <dl class="details-list">
-                        <div><dt>Полное наименование</dt><dd><?= e($company['name']) ?></dd></div>
-                        <div><dt>Дата регистрации</dt><dd><?= e($company['registered']) ?></dd></div>
-                        <div><dt>ОГРН</dt><dd><?= e($company['ogrn']) ?></dd></div>
-                        <div><dt>ИНН / КПП</dt><dd><?= e($company['inn']) ?> / <?= e($company['kpp']) ?></dd></div>
-                        <div><dt>Налоговый режим / категория</dt><dd>УСН / микропредприятие</dd></div>
-                        <div><dt>Юридический адрес</dt><dd><?= e($company['address']) ?></dd></div>
-                    </dl>
-                </div>
+                <div class="section-heading"><span class="section-number">03 / О КОМПАНИИ</span><span class="section-line"></span></div>
+                <div class="company-grid"><div class="company-copy"><h2 id="company-title">Информация<br><em>о компании.</em></h2><p>ООО «КЕБИНВЕСТ» — собственник коммерческих помещений физкультурно-оздоровительного комплекса. Ниже опубликованы регистрационные сведения и контакт для обращений к компании.</p></div><dl class="details-list"><div><dt>Полное наименование</dt><dd><?= e($company['name']) ?></dd></div><div><dt>Дата регистрации</dt><dd><?= e($company['registered']) ?></dd></div><div><dt>ОГРН</dt><dd><?= e($company['ogrn']) ?></dd></div><div><dt>ИНН / КПП</dt><dd><?= e($company['inn']) ?> / <?= e($company['kpp']) ?></dd></div><div><dt>Налоговый режим / категория</dt><dd>УСН / микропредприятие</dd></div><div><dt>Юридический адрес</dt><dd><?= e($company['address']) ?></dd></div></dl></div>
             </div>
         </section>
 
-        <section class="contacts section-pad" id="contacts" aria-labelledby="contacts-title">
-            <div class="container">
-                <div class="section-top"><span>04 / КОНТАКТЫ</span><span>НА СВЯЗИ ПО ДЕЛОВЫМ ВОПРОСАМ</span></div>
-                <div class="contacts-grid">
-                    <div><h2 id="contacts-title">Есть вопрос?<br><i>Пишите нам.</i></h2><p>По вопросам деятельности компании и принадлежащих ей помещений свяжитесь с нами напрямую.</p><a class="button button-dark" href="mailto:<?= e($company['email']) ?>">Написать письмо <span aria-hidden="true">↗</span></a></div>
-                    <div class="contact-info">
-                        <div><span class="contact-label">ЭЛЕКТРОННАЯ ПОЧТА</span><a href="mailto:<?= e($company['email']) ?>"><?= e($company['email']) ?> <span aria-hidden="true">↗</span></a></div>
-                        <div><span class="contact-label">ТЕЛЕФОН</span><a href="tel:<?= e($company['phoneHref']) ?>"><?= e($company['phone']) ?> <span aria-hidden="true">↗</span></a></div>
-                        <div><span class="contact-label">ЮРИДИЧЕСКИЙ АДРЕС</span><p><?= e($company['address']) ?></p></div>
-                    </div>
-                </div>
-                <div class="registry-note"><span class="registry-icon" aria-hidden="true">i</span><p>ООО «КЕБИНВЕСТ» внесено в реестр операторов персональных данных Роскомнадзора, регистрационный № <?= e($company['rkn']) ?>. Ответственная за организацию обработки персональных данных — <?= e($company['person']) ?>. По вопросам обработки данных обращайтесь по указанным контактам.</p></div>
-            </div>
-        </section>
+        <section class="contacts section-space" id="contacts" aria-labelledby="contacts-title"><div class="container"><div class="section-heading light"><span class="section-number">04 / КОНТАКТЫ</span><span class="section-line"></span></div><div class="contacts-grid"><div><p class="contact-kicker">ДЛЯ ОБРАЩЕНИЙ К ООО «КЕБИНВЕСТ»</p><h2 id="contacts-title">Давайте<br><em>на связи.</em></h2></div><div class="contact-side"><p>По вопросам, связанным с компанией и принадлежащими ей помещениями, напишите нам на электронную почту.</p><a class="contact-email" href="mailto:<?= e($company['email']) ?>"><?= e($company['email']) ?><span aria-hidden="true">↗</span></a><div class="contact-address"><span>ЮРИДИЧЕСКИЙ АДРЕС</span><p><?= e($company['address']) ?></p></div></div></div></div></section>
     </main>
 
-    <footer class="footer"><div class="container footer-inner"><a class="footer-brand" href="#top">КЕБИНВЕСТ <span aria-hidden="true">↗</span></a><span>© <?= date('Y') ?> <?= e($company['name']) ?><br>ОГРН <?= e($company['ogrn']) ?> · ИНН <?= e($company['inn']) ?></span><a href="#top">Наверх ↑</a></div></footer>
+    <footer class="footer"><div class="container footer-grid"><div class="footer-brand">ФОК <span>на Кустодиева</span></div><div><p>© <?= date('Y') ?> <?= e($company['name']) ?><br>ОГРН <?= e($company['ogrn']) ?> · ИНН <?= e($company['inn']) ?></p><p class="footer-registry">Реестр операторов персональных данных № <?= e($company['rkn']) ?>. Ответственная за организацию обработки персональных данных — <?= e($company['person']) ?>. Обращения: <a href="mailto:<?= e($company['email']) ?>"><?= e($company['email']) ?></a>.</p></div><a class="back-top" href="#top">Наверх ↑</a></div><div class="container footer-bottom"><span>Фотографии на странице иллюстративные, лицензия Unsplash. <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Об условиях использования ↗</a></span></div></footer>
 </body>
 </html>
