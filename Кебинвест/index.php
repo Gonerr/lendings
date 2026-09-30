@@ -63,7 +63,7 @@ function e(string $value): string
                     <span class="hero-index">01 <span></span> 04</span>
                 </div>
                 <figure class="hero-photo">
-                    <img src="https://images.unsplash.com/photo-1730244548329-4ae2f4fcaa7c?auto=format&amp;fit=crop&amp;w=1600&amp;q=82" alt="Иллюстративная фотография крытого бассейна с дорожками" fetchpriority="high">
+                    <img src="images/pool.webp" alt="Иллюстративная фотография крытого бассейна с дорожками" fetchpriority="high">
                     <figcaption><span>Пространство для себя</span><small>Фото: Mariusz Smenzyk / Unsplash</small></figcaption>
                 </figure>
             </div>
@@ -83,8 +83,8 @@ function e(string $value): string
                 <div class="section-heading"><span class="section-number">02 / АТМОСФЕРА</span><span class="section-line"></span></div>
                 <div class="gallery-heading"><h2 id="gallery-title">Пространство<br><em>в движении.</em></h2><p>Свет, воздух и энергия спортивной среды. Фотографии передают настроение и не изображают помещения этого комплекса.</p></div>
                 <div class="gallery-grid">
-                    <figure class="gallery-photo gallery-large"><img src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Иллюстративное фото тренажёрного зала" loading="lazy"><figcaption><span>01 / Энергия движения</span><small>Фото: Rodrigo S / Unsplash</small></figcaption></figure>
-                    <figure class="gallery-photo gallery-small"><img src="https://images.unsplash.com/photo-1775993167284-8e6a6e56ab69?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="Иллюстративное фото спортивного зала" loading="lazy"><figcaption><span>02 / Простор для занятий</span><small>Фото: Palak Pitroda / Unsplash</small></figcaption></figure>
+                    <figure class="gallery-photo gallery-large"><img src="images/gym.webp" alt="Иллюстрация тренажёрного зала, созданная для сайта" loading="lazy"><figcaption><span>01 / Энергия движения</span><small>Иллюстрация</small></figcaption></figure>
+                    <figure class="gallery-photo gallery-small"><img src="images/sports-hall.webp" alt="Иллюстрация спортивного зала, созданная для сайта" loading="lazy"><figcaption><span>02 / Простор для занятий</span><small>Иллюстрация</small></figcaption></figure>
                 </div>
                 <p class="photo-note">Фотографии носят иллюстративный характер и не изображают помещения этого комплекса.</p>
             </div>
@@ -102,6 +102,6 @@ function e(string $value): string
         <section class="contacts section-space" id="contacts" aria-labelledby="contacts-title"><div class="container"><div class="section-heading light"><span class="section-number">04 / КОНТАКТЫ</span><span class="section-line"></span></div><div class="contacts-grid"><div><p class="contact-kicker">ДЛЯ ОБРАЩЕНИЙ К ООО «КЕБИНВЕСТ»</p><h2 id="contacts-title">Давайте<br><em>на связи.</em></h2></div><div class="contact-side"><p>По вопросам, связанным с компанией и принадлежащими ей помещениями, напишите нам на электронную почту.</p><a class="contact-email" href="mailto:<?= e($company['email']) ?>"><?= e($company['email']) ?><span aria-hidden="true">↗</span></a><div class="contact-address"><span>ЮРИДИЧЕСКИЙ АДРЕС</span><p><?= e($company['address']) ?></p></div></div></div></div></section>
     </main>
 
-    <footer class="footer"><div class="container footer-grid"><div class="footer-brand">ФОК <span>на Кустодиева</span></div><div><p>© <?= date('Y') ?> <?= e($company['name']) ?><br>ОГРН <?= e($company['ogrn']) ?> · ИНН <?= e($company['inn']) ?></p><p class="footer-registry">Реестр операторов персональных данных № <?= e($company['rkn']) ?>. Ответственная за организацию обработки персональных данных — <?= e($company['person']) ?>. Обращения: <a href="mailto:<?= e($company['email']) ?>"><?= e($company['email']) ?></a>.</p></div><a class="back-top" href="#top">Наверх ↑</a></div><div class="container footer-bottom"><span>Фотографии на странице иллюстративные, лицензия Unsplash. <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Об условиях использования ↗</a></span></div></footer>
+    <footer class="footer"><div class="container footer-grid"><div class="footer-brand">ФОК <span>на Кустодиева</span></div><div><p>© <?= date('Y') ?> <?= e($company['name']) ?><br>ОГРН <?= e($company['ogrn']) ?> · ИНН <?= e($company['inn']) ?></p><p class="footer-registry">Реестр операторов персональных данных № <?= e($company['rkn']) ?>. Ответственная за организацию обработки персональных данных — <?= e($company['person']) ?>. Обращения: <a href="mailto:<?= e($company['email']) ?>"><?= e($company['email']) ?></a>.</p></div><a class="back-top" href="#top">Наверх ↑</a></div><div class="container footer-bottom"><span>Изображения иллюстративные и не показывают помещения комплекса. Фото бассейна: Mariusz Smenzyk / <a href="https://unsplash.com/photos/an-indoor-swimming-pool-with-blue-water-xs9r8fPUats" target="_blank" rel="noopener noreferrer">Unsplash ↗</a>. Остальные изображения созданы для этого сайта.</span></div></footer>
 </body>
 </html>
