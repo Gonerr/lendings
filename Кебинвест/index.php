@@ -64,7 +64,7 @@ function e(string $value): string
                 </div>
                 <figure class="hero-photo">
                     <img src="https://images.unsplash.com/photo-1730244548329-4ae2f4fcaa7c?auto=format&amp;fit=crop&amp;w=1600&amp;q=82" alt="Иллюстративная фотография крытого бассейна с дорожками" fetchpriority="high">
-                    <figcaption><span>Пространство для себя</span><small>Иллюстративное фото · Unsplash</small></figcaption>
+                    <figcaption><span>Пространство для себя</span><small>Фото: Mariusz Smenzyk / Unsplash</small></figcaption>
                 </figure>
             </div>
         </section>
@@ -86,7 +86,7 @@ function e(string $value): string
                     <figure class="gallery-photo gallery-large"><img src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Иллюстративное фото тренажёрного зала" loading="lazy"><figcaption><span>01 / Энергия движения</span><small>Фото: Rodrigo S / Unsplash</small></figcaption></figure>
                     <figure class="gallery-photo gallery-small"><img src="https://images.unsplash.com/photo-1775993167284-8e6a6e56ab69?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="Иллюстративное фото спортивного зала" loading="lazy"><figcaption><span>02 / Простор для занятий</span><small>Фото: Palak Pitroda / Unsplash</small></figcaption></figure>
                 </div>
-                <p class="photo-note">Иллюстративные фотографии спортивных объектов. Снимки конкретного ФОКа будут добавлены после согласования прав на них.</p>
+                <p class="photo-note">Фотографии носят иллюстративный характер и не изображают помещения этого комплекса.</p>
             </div>
         </section>
 
